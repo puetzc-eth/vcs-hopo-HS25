@@ -1,0 +1,150 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[main=ngerman]{babel}
+\usepackage[babel=true,tracking=true,kerning=true,letterspace=500,expansion=true,protrusion=true]{microtype}
+\usepackage[german=swiss]{csquotes}
+\MakeOuterQuote{"}
+
+\usepackage{graphicx}
+\usepackage{grffile}
+\graphicspath{{img/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage{libertinus}
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  top=25mm,   % Platz für Kopfzeile
+  left=20mm,
+  right=20mm,
+  bottom=30mm,   % etwas größerer unterer Rand
+  headsep=12mm,
+  footskip=25mm, % mehr vertikaler Abstand zur Fußzeile
+  nomarginpar
+}
+\setlength\parindent{0pt}
+
+\usepackage[bf,sf]{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% --- Kopf- und Fußzeilenlayout ---
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\fancypagestyle{fancy}{%
+  \fancyhf{}%
+  % Kopfzeilen-Logos
+  \fancyhead[L]{\includegraphics[height=11mm]{VCS-Logo.png}}%
+  \fancyhead[R]{\includegraphics[height=11mm]{vseth_Logo_bylines_Fachverein.png}}%
+  % Fußzeile mit Kontaktinformationen
+  \fancyfoot[L]{%
+    \parbox[t]{0.75\textwidth}{\footnotesize
+      Vereinigung der Chemiestudierenden (VCS)\\
+      ETH Hönggerberg, HCI, Vladimir-Prelog-Weg 1, 8093 Zürich \quad | \quad Postfach 84\\
+      E-Mail: \texttt{vorstand@vcs.ethz.ch} \quad | \quad \url{https://vcs.ethz.ch}
+    }%
+  }%
+  \fancyfoot[R]{\footnotesize Seite \thepage\ von \pageref{LastPage}}%
+}
+\pagestyle{fancy}
+
+\usepackage{hyperref}
+\usepackage{xurl}
+\hypersetup{
+    colorlinks=true,
+    citecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\urlstyle{rm}
+
+% --- Dokumenttitel ---
+\title{\vspace{-1em}\textbf{Auswirkungen von PAKETH auf das Chemiestudium am D-CHAB}}
+\author{Vereinigung der Chemiestudierenden (VCS) \\ ETH Zürich}
+\date{\today}
+
+\begin{document}
+
+% Kopfzeile auch auf Titelseite
+\thispagestyle{fancy}
+
+\maketitle
+
+\section*{Einleitung}
+
+Wir danken Ihnen herzlich für die \textbf{PAKETH-Initiative}. Die Verlängerung der Sommerpause um mehr als zwei Wochen ist ein wichtiger und längst überfälliger Schritt. Viele Studierende starten bislang erschöpft in das Herbstsemester – zusätzliche Regenerationszeit ist daher sehr willkommen. Ebenso schätzen wir die neu geschaffene Möglichkeit, in dieser Zeit externe Praktika zu absolvieren und Arbeitserfahrung zu sammeln.
+
+Gleichzeitig möchten wir aufzeigen, dass die Umsetzung von PAKETH am \textbf{D-CHAB} mit erheblichen Herausforderungen verbunden ist. Insbesondere die Verkürzung der Lernphase trifft das Chemiestudium in besonderem Masse, da es stark durch aufwendige Laborpraktika geprägt ist. Die bisherige Lernzeit im Sommer war für viele Studierende entscheidend, um den umfangreichen Stoff der Vorlesungen nachzuarbeiten und zu festigen.
+
+\section{Hohe Arbeitsbelastung durch Praktika}
+
+Das Chemiestudium am D-CHAB ist ausgesprochen praxisorientiert: Allein im B.Sc.\ Chemie umfassen die obligatorischen Praktika 51 von 180~ECTS, also fast ein Drittel des gesamten Studienumfangs. In der Praxis bedeutet dies, dass Studierende in den ersten fünf Semestern 8–16 Stunden Laborpräsenz pro Woche leisten müssen. Hinzu kommen jeweils mehrere Stunden Vorbereitung, Auswertung und Berichtserstellung – der effektive Aufwand liegt somit bei rund 10–20 Stunden pro Woche (je nach Semester).
+
+Diese zeitliche Belastung hat zur Folge, dass die Vorlesungsinhalte häufig erst in der Lernphase im Sommer gründlich nachgearbeitet werden können. Nur die besten 5–10~\% der Studierenden schaffen es, während des Semesters den Vorlesungen kontinuierlich zu folgen. Der Grossteil konzentriert sich auf das Bestehen der Laborversuche und nutzt die Lernphase, um theoretische Defizite auszugleichen.
+
+Mit der PAKETH-Verkürzung der Lernzeit wird dieser Ausgleich schwieriger. Um denselben Wissensstand zu erreichen, müssten D-CHAB-Studierende während des Semesters etwa zwei zusätzliche Wochen Selbststudium leisten – bei 14 Semesterwochen entspricht das einer Reduktion des Curriculums um rund ein Siebtel. Eine pauschale Streichung von Inhalten wäre jedoch nicht im Sinne der Studierenden oder des Departments, da wir die Qualität und Exzellenz der Ausbildung unbedingt bewahren möchten.
+
+Mögliche Wege zur Entlastung sehen wir daher insbesondere in einer präzisen Überarbeitung der Praktika:
+
+\begin{itemize}
+  \item \textbf{Verkürzte Reports:} In vielen PC- und Analytikpraktika könnte der Aufwand erheblich reduziert werden, wenn Daten nur ausgewertet und die Ergebnisse mündlich präsentiert würden. Dies würde nicht nur Zeit sparen, sondern zugleich wissenschaftliche Präsentationskompetenzen fördern.
+  \item \textbf{Bessere Abstimmung zwischen Vorlesungen und Praktika:} Derzeit wird die theoretische Grundlage vieler Experimente erst in späteren Vorlesungen vermittelt (z.\,B.\ in den PC-Praktika oder im OACP). Eine stärkere inhaltliche Koordination würde die Effizienz des Lernens deutlich erhöhen.
+  \item \textbf{Modernisierung des Erstsemesterpraktikums:} Einige Versuche sind inzwischen veraltet und könnten ohne Verlust an Ausbildungsqualität gestrichen werden.
+  \item \textbf{Reform des OACP~II-Praktikums:} Dieses Praktikum im 3.\ Semester umfasst derzeit 16~Stunden Laborarbeit pro Woche und ist für die Studienkoordination nach PAKETH eine besondere Herausforderung. Eine mögliche Lösung wäre die Aufteilung in einen Semesterteil (z.\,B.\ zwei Nachmittage pro Woche à vier Stunden) und einen kompakten Ferienblock (zwei Wochen Vollzeit). Damit liesse sich die Belastung im Semester drastisch reduzieren, ohne die Qualität der Ausbildung oder die Betreuungsressourcen der Forschungsgruppen zu gefährden.
+\end{itemize}
+
+\section{Lehrplan und inhaltliche Abstimmung}
+
+Neben der hohen Präsenzzeit im Labor ist auch der theoretische Teil des Curriculums sehr dicht. Ein typisches Semester umfasst rund sechs Vorlesungen, deren Inhalte teilweise redundant sind. So werden Themen wie etwa Hund’sche Regeln, Punktgruppen, die LCAO-Methode oder der harmonische Oszillator in mehreren Vorlesungen aus verschiedenen Perspektiven wiederholt behandelt.
+
+Hier wäre eine bessere inhaltliche Abstimmung und Priorisierung sinnvoll:
+
+\begin{itemize}
+  \item Ein Thema sollte idealerweise nur in einer Vorlesung, dafür mit der nötigen Tiefe und Rigorosität, vermittelt werden.
+  \item Einige Inhalte sind veraltet oder zu spezialisiert für ein Kernfach (z.\,B.\ der EPR-Teil in PC~IV) und könnten besser in fortgeschrittenen Wahlvorlesungen im Master angeboten werden.
+  \item Umgekehrt sollten zentrale Grundlagen konsistenter und vernetzter vermittelt werden, um Überschneidungen und Lücken zu vermeiden.
+  \item Eine didaktisch besser abgestimmte Reihenfolge im Basisjahr würde die Effizienz und Motivation der Studierenden deutlich erhöhen.
+\end{itemize}
+
+\section{Realistische Arbeitsbelastung und mögliche Verlängerung des Studiums}
+
+Viele Fächer des Bachelorstudiums sind im Verhältnis zu ihrem tatsächlichen Aufwand unterkreditiert. Zum Beispiel umfasst das gesamte Curriculum der organischen Chemie im Bachelor nur 21~ECTS, während allein Analysis~I+II im Mathematik- und Physik-Basisjahr 20~ECTS ausmachen. Dies bedeutet nicht, dass die Vergabe dieser Punkte in Frage gestellt wird, sondern dass der in der organischen Chemie tatsächlich erforderliche Aufwand nicht genau abgebildet wird.
+
+Auch im Vergleich zu Masterkursen fällt das Ungleichgewicht zwischen Kursen ähnlichen Aufwands auf (z.\,B.\ OC~II mit 3~ECTS vs.\ OC~VI mit 6~ECTS). Eine realistische Arbeitszeitanalyse würde daher zeigen, dass die tatsächliche Belastung der Studierenden über der vorgesehenen Vollzeitbelastung liegt.
+
+Langfristig wäre es daher sinnvoll, eine \textbf{Verlängerung der Regelstudienzeit} zu prüfen – etwa durch:
+
+\begin{itemize}
+  \item einen 7-semestrigen Bachelor, oder
+  \item einen 4-semestrigen Master,
+\end{itemize}
+
+was einer Gesamtstudienzeit von fünf Jahren entspräche. Dies würde erlauben, den Stoff angemessener zu verteilen, die Fächer fairer zu kreditieren und Studierenden mehr Zeit für nachhaltiges Lernen und vertieftes Verständnis zu geben.
+
+\section{Reformbereitschaft und Umsetzung am D-CHAB}
+
+Die erfolgreiche Umsetzung von PAKETH erfordert tiefgreifende strukturelle Anpassungen. Leider beobachten wir aktuell, dass die Studienkoordination und Teile der Departementsleitung PAKETH vor allem als formelle Kalenderanpassung verstehen, nicht jedoch als Anlass für inhaltliche Reformen. Wir befürchten, dass ohne substanzielle Anpassungen insbesondere die ersten Jahrgänge nach PAKETH deutlich höhere Durchfallraten oder ein oberflächlicheres Lernen erleben könnten.
+
+Wir wünschen uns daher, dass die Schulleitung klar kommuniziert, dass PAKETH weit mehr ist als eine terminliche Änderung: Es ist eine Chance für echte curriculare Erneuerung – für ein Studium, das exzellent bleibt, aber realistisch, nachhaltig und lernförderlich gestaltet ist.
+
+\section{Anrechnung der Vorstandsarbeit als 1~ECTS (GESS-Fach)}
+
+Zudem möchten wir anregen, zu prüfen, ob eine kleine Anerkennung für die ehrenamtliche Vorstandsarbeit in den Fachvereinen in Form eines Kreditpunktes pro Semester in der Kategorie der GESS-Fächer möglich wäre.
+
+Diese Tätigkeit erfolgt selbstverständlich auf freiwilliger Basis, erfordert jedoch einen erheblichen zeitlichen Aufwand neben dem Studium. Eine solche Gutschrift könnte daher als wertschätzende Geste und zugleich als Anreiz dienen, mehr Studierende für dieses wichtige, aber auch zeitintensive Engagement zu gewinnen.
+
+Durch die Anerkennung in Form eines Kreditpunktes könnte das Engagement besser mit dem Studienalltag vereinbart und die ehrenamtliche Arbeit zugleich auch formell gewürdigt werden. Ausserdem werden durch Tätigkeit im Vorstand ähnliche Kompetenzen wie in einem GESS-Fach vermittelt, darunter Event-Management, Budgetierung und Leadership.
+
+\vspace{2em}
+
+\noindent\textbf{Mit freundlichen Grüssen,}\\[0.5em]
+\textit{Vereinigung der Chemiestudierenden (VCS)}\\
+ETH Zürich
+
+\end{document}
