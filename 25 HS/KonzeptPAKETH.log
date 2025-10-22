@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.17)  18 OCT 2025 16:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.17)  21 OCT 2025 22:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -336,18 +336,20 @@ Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
 \c@LT@tables=\count302
 \c@LT@chunks=\count303
 \LT@p@ftn=\toks28
-)
-Package hyperref Info: Option `colorlinks' set `true' on input line 36.
+) (c:/texlive/2024/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+ Excluding comment 'comment')
+Package hyperref Info: Option `colorlinks' set `true' on input line 37.
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'ngerman'.
-LaTeX Font Info:    Trying to load font information for T1+LibertinusSerif-TLF on input line 44.
+LaTeX Font Info:    Trying to load font information for T1+LibertinusSerif-TLF on input line 45.
  (c:/texlive/2024/texmf-dist/tex/latex/libertinus-type1/T1LibertinusSerif-TLF.fd
 File: T1LibertinusSerif-TLF.fd 2024/09/22 (autoinst) Font definitions for T1/LibertinusSerif-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 44.
+(Font)              scaled to size 10.0pt on input line 45.
  (c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count304
@@ -355,37 +357,37 @@ File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 ) (./KonzeptPAKETH.aux)
 \openout1 = `KonzeptPAKETH.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Info: Redefining \microtypecontext on input line 44.
-Package microtype Info: Applying patch `item' on input line 44.
-Package microtype Info: Applying patch `toc' on input line 44.
-Package microtype Info: Applying patch `eqnum' on input line 44.
-Package microtype Info: Applying patch `footnote' on input line 44.
-Package microtype Info: Applying patch `verbatim' on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Info: Redefining \microtypecontext on input line 45.
+Package microtype Info: Applying patch `item' on input line 45.
+Package microtype Info: Applying patch `toc' on input line 45.
+Package microtype Info: Applying patch `eqnum' on input line 45.
+Package microtype Info: Applying patch `footnote' on input line 45.
+Package microtype Info: Applying patch `verbatim' on input line 45.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 44.
+LaTeX Info: Redefining \showhyphens on input line 45.
 Package microtype Info: Tracking enabled.
 Package microtype Info: Using default tracking set `smallcaps'.
 Package microtype Info: No adjustment of interword spacing.
@@ -396,7 +398,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LibertinusSerif-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package csquotes Info: Redefining character " on input line 44.
+Package csquotes Info: Redefining character " on input line 45.
  (c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count305
@@ -453,40 +455,40 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 44.
+Package hyperref Info: Link coloring ON on input line 45.
 (./KonzeptPAKETH.out) (./KonzeptPAKETH.out)
-\@outlinefile=\write3
-\openout3 = `KonzeptPAKETH.out'.
+\@outlinefile=\write4
+\openout4 = `KonzeptPAKETH.out'.
 
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 46.
+(Font)              scaled to size 17.28pt on input line 47.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/n' will be
-(Font)              scaled to size 17.28pt on input line 46.
+(Font)              scaled to size 17.28pt on input line 47.
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 46.
+(Font)              scaled to size 12.0pt on input line 47.
  (c:/texlive/2024/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 46.
+(Font)              <12> on input line 47.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 46.
+(Font)              <8> on input line 47.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 46.
-LaTeX Font Info:    Trying to load font information for T1+LibertinusSans-TLF on input line 47.
+(Font)              <6> on input line 47.
+LaTeX Font Info:    Trying to load font information for T1+LibertinusSans-TLF on input line 48.
  (c:/texlive/2024/texmf-dist/tex/latex/libertinus-type1/T1LibertinusSans-TLF.fd
 File: T1LibertinusSans-TLF.fd 2024/09/22 (autoinst) Font definitions for T1/LibertinusSans-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 47.
+(Font)              scaled to size 10.0pt on input line 48.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LibertinusSans-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 47.
+(Font)              scaled to size 10.0pt on input line 48.
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 47.
+(Font)              scaled to size 14.4pt on input line 48.
  (./KonzeptPAKETH.toc
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/n' will be
 (Font)              scaled to size 10.0pt on input line 2.
@@ -495,1230 +497,315 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 4.
 )
-\tf@toc=\write4
-\openout4 = `KonzeptPAKETH.toc'.
+\tf@toc=\write5
+\openout5 = `KonzeptPAKETH.toc'.
 
 
 
 [1
 
 {c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_sfissr.enc}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_75t36g.enc}{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_mfadfl.enc}]
-LaTeX Font Info:    Trying to load font information for TS1+LibertinusSerif-TLF on input line 58.
+LaTeX Font Info:    Trying to load font information for TS1+LibertinusSerif-TLF on input line 59.
  (c:/texlive/2024/texmf-dist/tex/latex/libertinus-type1/TS1LibertinusSerif-TLF.fd
 File: TS1LibertinusSerif-TLF.fd 2024/09/22 (autoinst) Font definitions for TS1/LibertinusSerif-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 58.
+(Font)              scaled to size 10.0pt on input line 59.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LibertinusSerif-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 89.
+(Font)              scaled to size 12.0pt on input line 90.
 
-Overfull \hbox (14.01991pt too wide) in alignment at lines 101--106
- [] [] [] [] [] 
- []
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
-
-Overfull \hbox (14.01991pt too wide) in alignment at lines 106--112
- [] [] [] [] [] 
- []
-
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 172.
-
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 172--172
- []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
- []
-
-
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 176--176
- []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
- []
-
-
-Overfull \hbox (14.01991pt too wide) in alignment at lines 112--181
- [] [] [] [] [] 
  []
 
 
 
 [2{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_rlktsf.enc}]
-Overfull \hbox (14.01991pt too wide) in alignment at lines 187--192
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
+
+ []
+
+
+
+[3]
+Overfull \hbox (14.01991pt too wide) in alignment at lines 136--141
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (14.01991pt too wide) in alignment at lines 192--198
+Overfull \hbox (14.01991pt too wide) in alignment at lines 141--147
+ [] [] [] [] [] 
+ []
+
+LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 160.
+
+Overfull \hbox (1.58511pt too wide) in paragraph at lines 189--189
+ \T1/LibertinusSerif-TLF/m/n/10 (-20) Spek- 
+ []
+
+
+Overfull \hbox (9.02635pt too wide) in paragraph at lines 189--189
+ \T1/LibertinusSerif-TLF/m/n/10 (-20) übung)| 
+ []
+
+
+Overfull \hbox (3.00769pt too wide) in paragraph at lines 207--207
+ []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
+ []
+
+
+Overfull \hbox (3.00769pt too wide) in paragraph at lines 211--211
+ []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
+ []
+
+
+Overfull \hbox (14.01991pt too wide) in alignment at lines 147--221
+ [] [] [] [] [] 
+ []
+
+[4{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_sncvby.enc}] Excluding 'comment' comment.
+Overfull \hbox (14.01991pt too wide) in alignment at lines 278--283
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 264--264
- []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
- []
-
-
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 268--268
- []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
- []
-
-
-Overfull \hbox (14.01991pt too wide) in alignment at lines 198--273
+Overfull \hbox (14.01991pt too wide) in alignment at lines 283--289
  [] [] [] [] [] 
  []
 
 
-
-[3{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_sncvby.enc}] [4]
-Overfull \hbox (14.01991pt too wide) in alignment at lines 279--284
- [] [] [] [] [] 
- []
-
-
-Overfull \hbox (14.01991pt too wide) in alignment at lines 284--290
- [] [] [] [] [] 
- []
-
-
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 350--350
+Overfull \hbox (3.00769pt too wide) in paragraph at lines 349--349
  []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
  []
 
 
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 354--354
+Overfull \hbox (3.00769pt too wide) in paragraph at lines 353--353
  []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
  []
 
 
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 358--358
+Overfull \hbox (3.00769pt too wide) in paragraph at lines 357--357
  []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
  []
 
 
-Overfull \hbox (14.01991pt too wide) in alignment at lines 290--363
+Overfull \hbox (14.01991pt too wide) in alignment at lines 289--362
  [] [] [] [] [] 
  []
 
 [5]
-Overfull \hbox (14.01991pt too wide) in alignment at lines 369--374
+Overfull \hbox (14.01991pt too wide) in alignment at lines 368--373
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (14.01991pt too wide) in alignment at lines 374--380
+Overfull \hbox (14.01991pt too wide) in alignment at lines 373--379
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 440--440
+Overfull \hbox (3.00769pt too wide) in paragraph at lines 439--439
  []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
  []
 
 
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 444--444
+Overfull \hbox (3.00769pt too wide) in paragraph at lines 443--443
  []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
  []
 
 
-Overfull \hbox (14.01991pt too wide) in alignment at lines 380--449
+Overfull \hbox (14.01991pt too wide) in alignment at lines 379--448
  [] [] [] [] [] 
  []
 
 [6]
-Overfull \hbox (14.01991pt too wide) in alignment at lines 455--460
+Overfull \hbox (14.01991pt too wide) in alignment at lines 454--459
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (14.01991pt too wide) in alignment at lines 460--466
+Overfull \hbox (14.01991pt too wide) in alignment at lines 459--465
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 526--526
+Overfull \hbox (3.00769pt too wide) in paragraph at lines 525--525
  []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
  []
 
 
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 530--530
+Overfull \hbox (3.00769pt too wide) in paragraph at lines 529--529
  []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
  []
 
 
-Overfull \hbox (14.01991pt too wide) in alignment at lines 466--535
+Overfull \hbox (14.01991pt too wide) in alignment at lines 465--534
  [] [] [] [] [] 
  []
 
 [7]
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 547.
-LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/b/n' will be
-(Font)              scaled to size 8.0pt on input line 551.
-
-Overfull \hbox (67.2835pt too wide) in alignment at lines 549--553
- [] [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (67.2835pt too wide) in alignment at lines 553--558
- [] [] [] [] [] [] [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Stöchiometrie
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) und Mas-sen-bi-
- []
-
-
-Underfull \hbox (badness 4378) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) lanz $\OMS/cmsy/m/n/8 !$ \T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Sum-men-for-mel,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Mas-sen-pro-zen-te,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zen-tra-tio-nen,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Gleich-ge-wichts-kon-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) A $\OMS/cmsy/m/n/8 !$ \T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Dis-so-zia-ti-ons-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) gleich-ge-wicht,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Pro-to-ly-se-re-ak-ti-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) ons-gleich-ge-wicht,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Ver-tei-lungs-gleich-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) ge-wicht von
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zen-tra-tio-nen
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) B $\OMS/cmsy/m/n/8 !$ \T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te:
- []
-
-
-Underfull \hbox (badness 1509) in paragraph at lines 563--563
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Werten, Be-rech-nen
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--564
-\T1/LibertinusSerif-TLF/m/n/8 (+20) E $\OMS/cmsy/m/n/8 !$ \T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Nomenklatur,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Struk-tu-ren-leh-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-\T1/LibertinusSerif-TLF/m/n/8 (+20) re $\OMS/cmsy/m/n/8 !$ \T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Stö-chio-me-trie,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Nomenklatur und
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Nomenklatur und
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Le-voistruk-tur $\OMS/cmsy/m/n/8 !$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-\T1/LibertinusSerif-TLF/m/n/8 (+20) ver-tei-lung, mo-le-
- []
-
-
-Underfull \hbox (badness 2970) in paragraph at lines 566--566
-\T1/LibertinusSerif-TLF/m/n/8 (+20) ku-la-re. Me-so-me-rie,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Lewis-Säuren,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Nomenklatur und
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Ste-reoi-so-me-rie $\OMS/cmsy/m/n/8 !$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Nomenklatur und
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Ste-reoi-so-me-rie $\OMS/cmsy/m/n/8 !$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te: Be-stim-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-\T1/LibertinusSerif-TLF/m/n/8 (+20) mung ab-so-lu-te
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-fi-gu-ra-ti-on,
- []
-
-
-Underfull \hbox (badness 5217) in paragraph at lines 566--566
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Fi-scher Pro-jek-ti-on,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--566
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Ste-reo-che-mi-sche
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--567
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Nomenklatur und
- []
-
-
-Underfull \hbox (badness 3449) in paragraph at lines 566--567
-\T1/LibertinusSerif-TLF/m/n/8 (+20) die Ein-füh-rung in
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--567
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te: Elek-tro-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 566--567
-\T1/LibertinusSerif-TLF/m/n/8 (+20) nen-kon-fi-gu-ra-ti-on,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) PC Ba-sics $\OMS/cmsy/m/n/8 !$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te: Pha-sen-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) gleich-ge-wich-te,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) spe-zi-fi-sche Wär-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) me-ka-pa-zi-tät, Wär-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) me-kraft-ma-schi-nen,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) idea-le und rea-le
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Ga-se, ki-ne-ti-sche
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Gas-theo-rie. QM
- []
-
-
-Underfull \hbox (badness 3449) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Ein-füh-rung in die
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Ther-mo-dy-na-mik,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kraft, po-ten-ti-el-le
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Mathematische
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Ein-füh-rung $\OMS/cmsy/m/n/8 !$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te: Vek-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) tor-rech-nung $\OMS/cmsy/m/n/8 !$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Ele-mentar-teil-
- []
-
-
-Underfull \hbox (badness 1436) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) chen $\OMS/cmsy/m/n/8 !$ \T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Elek-tro-nen-mas-se,
- []
-
-
-Underfull \hbox (badness 2253) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) La-dung Ele-men-tar-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) mit-tels Mil-li-kan
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Atomaufbau $\OMS/cmsy/m/n/8 !$
- []
-
-
-Underfull \hbox (badness 4765) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te: Mo-del-le
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kräf-ten in-ner-halb
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) ei-nes Atoms und
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Trai-ning von PC
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Radioaktivität $\OMS/cmsy/m/n/8 !$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Elek-tro-nen-mi-kro-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Radioaktivität $\OMS/cmsy/m/n/8 !$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) klea-re Kern-mas-se,
- []
-
-
-Underfull \hbox (badness 2376) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) zeit, Zer-falls-ge-setz,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--569
-\T1/LibertinusSerif-TLF/m/n/8 (+20) spek-tro-che-mi-scher
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Radioaktivität $\OMS/cmsy/m/n/8 !$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te: Li-ni-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
-\T1/LibertinusSerif-TLF/m/n/8 (+20) en-spek-tren $\OMS/cmsy/m/n/8 !$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
-\T1/LibertinusSerif-TLF/m/n/8 (+20) von Gries-lin-gen,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Spek-tren sind
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Dis-kret son-dern
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
-\T1/LibertinusSerif-TLF/m/n/8 (+20) kann man nicht
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
-\T1/LibertinusSerif-TLF/m/n/8 (+20) ver-se-hen, dass
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
-\T1/LibertinusSerif-TLF/m/n/8 (+20) man da-her neue
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
-\T1/LibertinusSerif-TLF/m/n/8 (+20) mo-del-le braucht,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Fre-quenz, ener-gie,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 569--570
-\T1/LibertinusSerif-TLF/m/n/8 (+20) spek-tro-che-mi-scher
- []
-
-
-Underfull \hbox (badness 3724) in paragraph at lines 572--572
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Mengenlehre, Voll-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Komplexe Zah-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-\T1/LibertinusSerif-TLF/m/n/8 (+20) len $\OMS/cmsy/m/n/8 !$ \T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Grund-re-chen-ar-ten.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Um-rech-nen zwi-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Po-lar-form, Be-trag,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Komplexe Zah-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-\T1/LibertinusSerif-TLF/m/n/8 (+20) len $\OMS/cmsy/m/n/8 !$ \T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Wur-zel-zie-hen,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Haupt-wert der
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Dif-fe-ren-zi-al und
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Potenzreihen $\OMS/cmsy/m/n/8 !$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te: kon-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-\T1/LibertinusSerif-TLF/m/n/8 (+20) ver-genz-ra-di-us,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-\T1/LibertinusSerif-TLF/m/n/8 (+20) In-jek-ti-vi-tät, Sur-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-\T1/LibertinusSerif-TLF/m/n/8 (+20) jek-ti-vi-tät, Links
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
-\T1/LibertinusSerif-TLF/m/n/8 (+20) und rechts-sei-ti-ge
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 575--575
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Test Week Lö-sen
- []
-
-
-Underfull \hbox (badness 1331) in paragraph at lines 575--575
-\T1/LibertinusSerif-TLF/m/n/8 (+20) von Li-nea-ren Glei-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 575--575
-\T1/LibertinusSerif-TLF/m/n/8 (+20) chungs-sys-te-men
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 578--578
-[]|\T1/LibertinusSerif-TLF/b/n/8 (+20) Informatik (PA-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 578--578
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Einführung in
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 578--578
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Py-thon: Pri-mi-ti-ve,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 578--578
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Lists, State-ments,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 578--578
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Auswertung ei-nes
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 578--578
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Ex-pe-ri-ments (Ein-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 578--578
-\T1/LibertinusSerif-TLF/m/n/8 (+20) füh-rung Num-Py,
+Overfull \hbox (26.01547pt too wide) in paragraph at lines 549--549
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 578--578
-\T1/LibertinusSerif-TLF/m/n/8 (+20) la-ti-on of (Con-da)
+Overfull \hbox (23.87286pt too wide) in paragraph at lines 549--550
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
  []
 
 
-Underfull \hbox (badness 4205) in paragraph at lines 578--578
-\T1/LibertinusSerif-TLF/m/n/8 (+20) (kom-pli-zier-te Da-ta
+Overfull \hbox (74.79993pt too wide) in alignment at lines 546--551
+ [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 584--584
-[]|\T1/LibertinusSerif-TLF/b/n/8 (+20) Praktikum All-ge-
+Overfull \hbox (26.01547pt too wide) in paragraph at lines 555--555
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
  []
 
 
-Underfull \hbox (badness 3417) in paragraph at lines 584--584
-\T1/LibertinusSerif-TLF/m/n/8 (+20) oxid Ar-bei-ten mit
+Overfull \hbox (23.87286pt too wide) in paragraph at lines 555--556
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 584--584
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Millikan Ex-pe-ri-
+Overfull \hbox (74.79993pt too wide) in alignment at lines 551--557
+ [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (67.2835pt too wide) in alignment at lines 558--587
- [] [] [] [] [] [] [] 
+Overfull \hbox (74.79993pt too wide) in alignment at lines 557--588
+ [] [] [] [] [] [] 
  []
 
 [8]
-LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 589.
-LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/b/n' will be
-(Font)              scaled to size 8.0pt on input line 589.
-
-Underfull \hbox (badness 10000) in paragraph at lines 593--593
-[]|\T1/LibertinusSerif-TLF/b/n/8 (+20) 45 (Me-di-um
- []
-
-
-Overfull \hbox (65.45537pt too wide) in alignment at lines 591--595
- [] [] [] [] [] [] [] [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 598--598
-[]|\T1/LibertinusSerif-TLF/b/n/8 (+20) 45 (Me-di-um
- []
-
-
-Overfull \hbox (65.45537pt too wide) in alignment at lines 595--600
- [] [] [] [] [] [] [] [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Redox-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Reaktionen
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Oxi-da-ti-ons-zah-
- []
-
-
-Underfull \hbox (badness 1215) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) len, Ab-glei-chen
- []
-
-
-Underfull \hbox (badness 3039) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) von Re-dox-re-ak-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Redox-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Reaktionen
- []
-
-
-Underfull \hbox (badness 1248) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) B $\OMS/cmsy/m/n/8 !$ \T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+12) Span-nungs-rei-he,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) elek-tro-che-mi-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Nernst-glei-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) chung, Redox-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Gleich-Gewicht
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Redox-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Reaktionen
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Strom-lo-ses
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+17) An-schlie-ÿun-gen
- []
-
-
-Overfull \hbox (33.21141pt too wide) in paragraph at lines 605--605
-[]|\T1/LibertinusSerif-TLF/m/n/8 (-20) Konzentrationsrechnungen
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Re-duk-tio-nen
- []
-
-
-Overfull \hbox (33.21141pt too wide) in paragraph at lines 605--605
-[]|\T1/LibertinusSerif-TLF/m/n/8 (-20) Konzentrationsrechnungen
- []
-
-
-Underfull \hbox (badness 1248) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) B $\OMS/cmsy/m/n/8 !$ \T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Spal-ten von
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kom-ple-xen,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Um-fang von
- []
-
-
-Overfull \hbox (33.21141pt too wide) in paragraph at lines 605--605
-[]|\T1/LibertinusSerif-TLF/m/n/8 (-20) Konzentrationsrechnungen
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Sta-bi-li-tät der
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kom-ple-xen,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) spal-tung von
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kom-ple-xen in
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) elek-tro-nen-man-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) in elek-tro-nen-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--605
-\T1/LibertinusSerif-TLF/m/n/8 (+20) man-gel von
- []
-
-
-Overfull \hbox (33.21141pt too wide) in paragraph at lines 605--606
-[]|\T1/LibertinusSerif-TLF/m/n/8 (-20) Konzentrationsrechnungen
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--606
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Um-fangs-zen-
- []
-
-
-Underfull \hbox (badness 6300) in paragraph at lines 605--606
-\T1/LibertinusSerif-TLF/m/n/8 (+20) trala-tom, Ober-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--606
-\T1/LibertinusSerif-TLF/m/n/8 (+20) flä-chen-be-stand,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--606
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Um-fangs-zen-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--606
-\T1/LibertinusSerif-TLF/m/n/8 (+20) trala-tom im
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 605--606
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Kris-tall, Struk-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Nomenklatur
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
-\T1/LibertinusSerif-TLF/m/n/8 (+20) und Hy-bri-di-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
-\T1/LibertinusSerif-TLF/m/n/8 (+20) sie-rung und
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Nomenklatur
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
-\T1/LibertinusSerif-TLF/m/n/8 (+20) und Hy-bri-di-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
-\T1/LibertinusSerif-TLF/m/n/8 (+20) sie-rung und
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Nomenklatur
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
-\T1/LibertinusSerif-TLF/m/n/8 (+20) und Hy-bri-di-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
-\T1/LibertinusSerif-TLF/m/n/8 (+20) sie-rung und
- []
-
-
-Overfull \hbox (19.16228pt too wide) in paragraph at lines 608--608
-[]|\T1/LibertinusSerif-TLF/m/n/8 (-20) Konfunktionsmoleküle
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Text-syn-the-se
- []
-
-
-Underfull \hbox (badness 4279) in paragraph at lines 608--608
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Text-po-li-tik von
- []
-
-
-Overfull \hbox (19.16228pt too wide) in paragraph at lines 608--608
-[]|\T1/LibertinusSerif-TLF/m/n/8 (-20) Konfunktionsmoleküle
- []
-
-
-Underfull \hbox (badness 1248) in paragraph at lines 608--608
-\T1/LibertinusSerif-TLF/m/n/8 (+20) B $\OMS/cmsy/m/n/8 !$ \T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Cy-cloali-pha-ne,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Über-de-ckung,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Stuhl-und
- []
-
-
-Overfull \hbox (19.16228pt too wide) in paragraph at lines 608--608
-[]|\T1/LibertinusSerif-TLF/m/n/8 (-20) Konfunktionsmoleküle
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 608--608
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Ver-knüp-fung
- []
-
-
-Overfull \hbox (40.20573pt too wide) in paragraph at lines 608--609
-[]|\T1/LibertinusSerif-TLF/m/n/8 (-20) Koordinationsmodifikationen
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 611--611
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) QM $\OMS/cmsy/m/n/8 !$ \T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 611--611
-\T1/LibertinusSerif-TLF/m/n/8 (+20) zep-te: Zwei
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 611--611
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Teil-chen, H2
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 611--611
-\T1/LibertinusSerif-TLF/m/n/8 (+20) nen, Or-bi-ta-len
- []
-
-
-Underfull \hbox (badness 3333) in paragraph at lines 611--611
-\T1/LibertinusSerif-TLF/m/n/8 (+20) H2 Mo-le-kü-li-on,
- []
-
-
-Underfull \hbox (badness 4995) in paragraph at lines 611--611
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Wann, Or-bi-ta-le
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 611--611
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) QM $\OMS/cmsy/m/n/8 !$ \T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 611--611
-\T1/LibertinusSerif-TLF/m/n/8 (+20) zep-te: Zwei
- []
-
-
-Underfull \hbox (badness 5050) in paragraph at lines 611--611
-\T1/LibertinusSerif-TLF/m/n/8 (+20) ver-ste-hen, dass
+Overfull \hbox (26.01547pt too wide) in paragraph at lines 595--595
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 611--611
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Fre-quenz,
+Overfull \hbox (23.87286pt too wide) in paragraph at lines 595--596
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 611--611
-\T1/LibertinusSerif-TLF/m/n/8 (+20) ener-gie, spek-
+Overfull \hbox (74.79993pt too wide) in alignment at lines 592--597
+ [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 611--611
-\T1/LibertinusSerif-TLF/m/n/8 (+20) tro-che-mi-scher
+Overfull \hbox (26.01547pt too wide) in paragraph at lines 601--601
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--614
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Optimierung
+Overfull \hbox (23.87286pt too wide) in paragraph at lines 601--602
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--614
-\OMS/cmsy/m/n/8 !$ \T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-te:
+Overfull \hbox (74.79993pt too wide) in alignment at lines 597--603
+ [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--614
-\T1/LibertinusSerif-TLF/m/n/8 (+20) L'Hospital,
+Overfull \hbox (74.79993pt too wide) in alignment at lines 603--642
+ [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--614
-[]|\T1/LibertinusSerif-TLF/m/n/8 (-14) Taylorpolynome,
+Overfull \hbox (26.01547pt too wide) in paragraph at lines 649--649
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--614
-[]|\T1/LibertinusSerif-TLF/m/n/8 (+20) Funktionen
+Overfull \hbox (23.87286pt too wide) in paragraph at lines 649--650
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--614
-\OMS/cmsy/m/n/8 !$ \T1/LibertinusSerif-TLF/m/n/8 (+20) Kon-zep-
+Overfull \hbox (74.79993pt too wide) in alignment at lines 646--651
+ [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--614
-\T1/LibertinusSerif-TLF/m/n/8 (+20) te: Ab-lei-tung,
+Overfull \hbox (26.01547pt too wide) in paragraph at lines 655--655
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--614
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Mit-tel-wert-
+Overfull \hbox (23.87286pt too wide) in paragraph at lines 655--656
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--614
-\T1/LibertinusSerif-TLF/m/n/8 (+20) satz, Ber-nou-li
+Overfull \hbox (74.79993pt too wide) in alignment at lines 651--657
+ [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--614
-\T1/LibertinusSerif-TLF/m/n/8 (+20) he-ana-ly-se,
+Overfull \hbox (74.79993pt too wide) in alignment at lines 657--678
+ [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--614
-\T1/LibertinusSerif-TLF/m/n/8 (+20) Hy-per-bo-li-sche
+Overfull \hbox (26.01547pt too wide) in paragraph at lines 685--685
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
  []
 
 
-Overfull \hbox (8.03093pt too wide) in paragraph at lines 617--617
-[]|\T1/LibertinusSerif-TLF/m/n/8 (-20) Wahrscheinlichkeit| 
+Overfull \hbox (23.87286pt too wide) in paragraph at lines 685--686
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
  []
 
 
-Overfull \hbox (41.65651pt too wide) in paragraph at lines 617--618
-[]|\T1/LibertinusSerif-TLF/m/n/8 (-20) Wahrscheinlichkeitsrechnung| 
+Overfull \hbox (74.79993pt too wide) in alignment at lines 682--687
+ [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 620--620
-[]|\T1/LibertinusSerif-TLF/b/n/8 (+20) Informatik (PA-
+Overfull \hbox (26.01547pt too wide) in paragraph at lines 691--691
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
  []
 
 
-Overfull \hbox (2.72867pt too wide) in paragraph at lines 620--620
-[]|\T1/LibertinusSerif-TLF/m/n/8 (-20) Chemoinformatik
+Overfull \hbox (23.87286pt too wide) in paragraph at lines 691--692
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 626--626
-[]|\T1/LibertinusSerif-TLF/b/n/8 (+20) Praktikum All-ge-
+Overfull \hbox (74.79993pt too wide) in alignment at lines 687--693
+ [] [] [] [] [] [] 
  []
 
 
-Overfull \hbox (65.45537pt too wide) in alignment at lines 600--629
- [] [] [] [] [] [] [] [] 
+Overfull \hbox (74.79993pt too wide) in alignment at lines 693--704
+ [] [] [] [] [] [] 
  []
 
 [9]
@@ -1729,21 +816,21 @@ LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
  ***********
 Package rerunfilecheck Info: File `KonzeptPAKETH.out' has not changed.
-(rerunfilecheck)             Checksum: 835022AFEC5A2F29EDEBF708D04E5108;2888.
+(rerunfilecheck)             Checksum: A96E91B4F7BAEE826354FAE98727B461;2802.
  ) 
 Here is how much of TeX's memory you used:
- 15204 strings out of 473362
- 254582 string characters out of 5725050
- 798325 words of memory out of 5000000
- 37855 multiletter control sequences out of 15000+600000
- 650370 words of font info for 199 fonts, out of 8000000 for 9000
+ 15176 strings out of 473362
+ 252757 string characters out of 5725050
+ 779347 words of memory out of 5000000
+ 37901 multiletter control sequences out of 15000+600000
+ 624026 words of font info for 144 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,7n,79p,1222b,665s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Bold.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Bold.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Italic.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Regular.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on KonzeptPAKETH.pdf (10 pages, 457091 bytes).
+ 75i,7n,79p,1043b,671s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Bold.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Bold.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Italic.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Regular.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on KonzeptPAKETH.pdf (10 pages, 454835 bytes).
 PDF statistics:
- 161 PDF objects out of 1000 (max. 8388607)
- 136 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 54369 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 168 PDF objects out of 1000 (max. 8388607)
+ 143 compressed objects within 2 object streams
+ 32 named destinations out of 1000 (max. 500000)
+ 44137 words of extra memory for PDF output out of 51595 (max. 10000000)
 
