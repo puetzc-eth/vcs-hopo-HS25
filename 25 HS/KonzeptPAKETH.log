@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.17)  21 OCT 2025 22:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.17)  23 OCT 2025 07:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -518,319 +518,191 @@ Package microtype Info: Loading generic protrusion settings for font family
 LaTeX Font Info:    Font shape `T1/LibertinusSans-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 90.
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
-
- []
-
-
 
 [2{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_rlktsf.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 115--116
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
-
- []
-
-
-
-[3]
-Overfull \hbox (14.01991pt too wide) in alignment at lines 136--141
+Overfull \hbox (14.01991pt too wide) in alignment at lines 116--121
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (14.01991pt too wide) in alignment at lines 141--147
+Overfull \hbox (14.01991pt too wide) in alignment at lines 121--127
  [] [] [] [] [] 
  []
 
 LaTeX Font Info:    Font shape `T1/LibertinusSerif-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 160.
+(Font)              scaled to size 10.0pt on input line 140.
 
-Overfull \hbox (1.58511pt too wide) in paragraph at lines 189--189
+Overfull \hbox (1.58511pt too wide) in paragraph at lines 169--169
  \T1/LibertinusSerif-TLF/m/n/10 (-20) Spek- 
  []
 
 
-Overfull \hbox (9.02635pt too wide) in paragraph at lines 189--189
+Overfull \hbox (9.02635pt too wide) in paragraph at lines 169--169
  \T1/LibertinusSerif-TLF/m/n/10 (-20) übung)| 
  []
 
 
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 207--207
+Overfull \hbox (3.00769pt too wide) in paragraph at lines 187--187
  []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
  []
 
 
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 211--211
+Overfull \hbox (3.00769pt too wide) in paragraph at lines 191--191
  []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
  []
 
 
-Overfull \hbox (14.01991pt too wide) in alignment at lines 147--221
+Overfull \hbox (14.01991pt too wide) in alignment at lines 127--201
  [] [] [] [] [] 
  []
 
-[4{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_sncvby.enc}] Excluding 'comment' comment.
-Overfull \hbox (14.01991pt too wide) in alignment at lines 278--283
- [] [] [] [] [] 
+[3{c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_sncvby.enc}] Excluding 'comment' comment. Excluding 'comment' comment. Excluding 'comment' comment. Excluding 'comment' comment.
+
+[4]
+Overfull \hbox (4.81584pt too wide) in paragraph at lines 535--535
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Selbststudium| 
  []
 
 
-Overfull \hbox (14.01991pt too wide) in alignment at lines 283--289
- [] [] [] [] [] 
+Overfull \hbox (40.52579pt too wide) in paragraph at lines 535--535
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
  []
 
 
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 349--349
- []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
+Overfull \hbox (33.54887pt too wide) in paragraph at lines 535--536
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
  []
 
 
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 353--353
- []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
+Overfull \hbox (4.81584pt too wide) in paragraph at lines 541--541
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Selbststudium| 
  []
 
 
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 357--357
- []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
+Overfull \hbox (40.52579pt too wide) in paragraph at lines 541--541
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
  []
 
 
-Overfull \hbox (14.01991pt too wide) in alignment at lines 289--362
- [] [] [] [] [] 
+Overfull \hbox (33.54887pt too wide) in paragraph at lines 541--542
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
+ []
+
+
+Overfull \hbox (4.81584pt too wide) in paragraph at lines 581--581
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Selbststudium| 
+ []
+
+
+Overfull \hbox (40.52579pt too wide) in paragraph at lines 581--581
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
+ []
+
+
+Overfull \hbox (33.54887pt too wide) in paragraph at lines 581--582
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
+ []
+
+
+Overfull \hbox (4.81584pt too wide) in paragraph at lines 587--587
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Selbststudium| 
+ []
+
+
+Overfull \hbox (40.52579pt too wide) in paragraph at lines 587--587
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
+ []
+
+
+Overfull \hbox (33.54887pt too wide) in paragraph at lines 587--588
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
  []
 
 [5]
-Overfull \hbox (14.01991pt too wide) in alignment at lines 368--373
- [] [] [] [] [] 
+Overfull \hbox (4.81584pt too wide) in paragraph at lines 635--635
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Selbststudium| 
  []
 
 
-Overfull \hbox (14.01991pt too wide) in alignment at lines 373--379
- [] [] [] [] [] 
+Overfull \hbox (40.52579pt too wide) in paragraph at lines 635--635
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
  []
 
 
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 439--439
- []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
+Overfull \hbox (33.54887pt too wide) in paragraph at lines 635--636
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
  []
 
 
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 443--443
- []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
+Overfull \hbox (4.81584pt too wide) in paragraph at lines 641--641
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Selbststudium| 
  []
 
 
-Overfull \hbox (14.01991pt too wide) in alignment at lines 379--448
- [] [] [] [] [] 
+Overfull \hbox (40.52579pt too wide) in paragraph at lines 641--641
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
  []
+
+
+Overfull \hbox (33.54887pt too wide) in paragraph at lines 641--642
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
+ []
+
+
+Overfull \hbox (4.81584pt too wide) in paragraph at lines 671--671
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Selbststudium| 
+ []
+
+
+Overfull \hbox (40.52579pt too wide) in paragraph at lines 671--671
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
+ []
+
+
+Overfull \hbox (33.54887pt too wide) in paragraph at lines 671--672
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
+ []
+
+
+Overfull \hbox (4.81584pt too wide) in paragraph at lines 677--677
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Selbststudium| 
+ []
+
+
+Overfull \hbox (40.52579pt too wide) in paragraph at lines 677--677
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
+ []
+
+
+Overfull \hbox (33.54887pt too wide) in paragraph at lines 677--678
+[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
+ []
+
+
 
 [6]
-Overfull \hbox (14.01991pt too wide) in alignment at lines 454--459
- [] [] [] [] [] 
- []
 
-
-Overfull \hbox (14.01991pt too wide) in alignment at lines 459--465
- [] [] [] [] [] 
- []
-
-
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 525--525
- []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
- []
-
-
-Overfull \hbox (3.00769pt too wide) in paragraph at lines 529--529
- []|\T1/LibertinusSerif-TLF/m/n/10 (-20) variabel| 
- []
-
-
-Overfull \hbox (14.01991pt too wide) in alignment at lines 465--534
- [] [] [] [] [] 
- []
-
-[7]
-Overfull \hbox (26.01547pt too wide) in paragraph at lines 549--549
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
- []
-
-
-Overfull \hbox (23.87286pt too wide) in paragraph at lines 549--550
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
- []
-
-
-Overfull \hbox (74.79993pt too wide) in alignment at lines 546--551
- [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (26.01547pt too wide) in paragraph at lines 555--555
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
- []
-
-
-Overfull \hbox (23.87286pt too wide) in paragraph at lines 555--556
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
- []
-
-
-Overfull \hbox (74.79993pt too wide) in alignment at lines 551--557
- [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (74.79993pt too wide) in alignment at lines 557--588
- [] [] [] [] [] [] 
- []
-
-[8]
-Overfull \hbox (26.01547pt too wide) in paragraph at lines 595--595
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
- []
-
-
-Overfull \hbox (23.87286pt too wide) in paragraph at lines 595--596
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
- []
-
-
-Overfull \hbox (74.79993pt too wide) in alignment at lines 592--597
- [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (26.01547pt too wide) in paragraph at lines 601--601
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
- []
-
-
-Overfull \hbox (23.87286pt too wide) in paragraph at lines 601--602
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
- []
-
-
-Overfull \hbox (74.79993pt too wide) in alignment at lines 597--603
- [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (74.79993pt too wide) in alignment at lines 603--642
- [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (26.01547pt too wide) in paragraph at lines 649--649
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
- []
-
-
-Overfull \hbox (23.87286pt too wide) in paragraph at lines 649--650
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
- []
-
-
-Overfull \hbox (74.79993pt too wide) in alignment at lines 646--651
- [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (26.01547pt too wide) in paragraph at lines 655--655
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
- []
-
-
-Overfull \hbox (23.87286pt too wide) in paragraph at lines 655--656
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
- []
-
-
-Overfull \hbox (74.79993pt too wide) in alignment at lines 651--657
- [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (74.79993pt too wide) in alignment at lines 657--678
- [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (26.01547pt too wide) in paragraph at lines 685--685
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
- []
-
-
-Overfull \hbox (23.87286pt too wide) in paragraph at lines 685--686
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
- []
-
-
-Overfull \hbox (74.79993pt too wide) in alignment at lines 682--687
- [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (26.01547pt too wide) in paragraph at lines 691--691
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Prüfungsvorbereitung| 
- []
-
-
-Overfull \hbox (23.87286pt too wide) in paragraph at lines 691--692
-[]|\T1/LibertinusSerif-TLF/b/n/10 (-20) Gesamtaufwand| 
- []
-
-
-Overfull \hbox (74.79993pt too wide) in alignment at lines 687--693
- [] [] [] [] [] [] 
- []
-
-
-Overfull \hbox (74.79993pt too wide) in alignment at lines 693--704
- [] [] [] [] [] [] 
- []
-
-[9]
-
-[10] (./KonzeptPAKETH.aux)
+[7] (./KonzeptPAKETH.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
  ***********
 Package rerunfilecheck Info: File `KonzeptPAKETH.out' has not changed.
-(rerunfilecheck)             Checksum: A96E91B4F7BAEE826354FAE98727B461;2802.
+(rerunfilecheck)             Checksum: 73E212DE1BCF16FC8874EF78C6F3A11F;2481.
  ) 
 Here is how much of TeX's memory you used:
- 15176 strings out of 473362
- 252757 string characters out of 5725050
- 779347 words of memory out of 5000000
- 37901 multiletter control sequences out of 15000+600000
- 624026 words of font info for 144 fonts, out of 8000000 for 9000
+ 15222 strings out of 473362
+ 254490 string characters out of 5725050
+ 771102 words of memory out of 5000000
+ 37899 multiletter control sequences out of 15000+600000
+ 628752 words of font info for 179 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,7n,79p,1043b,671s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,7n,79p,1399b,665s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSans-Bold.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Bold.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Italic.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Regular.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on KonzeptPAKETH.pdf (10 pages, 454835 bytes).
+Output written on KonzeptPAKETH.pdf (7 pages, 444569 bytes).
 PDF statistics:
- 168 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
- 44137 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 157 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
+ 27 named destinations out of 1000 (max. 500000)
+ 44145 words of extra memory for PDF output out of 51595 (max. 10000000)
 
