@@ -1,10 +1,14 @@
 \babel@toc {ngerman}{}\relax 
 \contentsline {section}{\numberline {1}Einleitung}{2}{section.1}%
 \contentsline {section}{\numberline {2}Erörterung der Workloadanalyse}{2}{section.2}%
-\contentsline {section}{\numberline {3}Änderungen an den Curricula der einzelnen Studiengänge}{2}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Chemie BSc}{2}{subsection.3.1}%
-\contentsline {section}{\numberline {4}Alternative Leistungsnachweise}{4}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Midterm-Prüfungen}{5}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Notenbonus-Systeme}{5}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Vorteile der alternativen Bewertungsformen}{5}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Conclusion}{6}{section.5}%
+\contentsline {subsection}{\numberline {2.1}Methodologie der Workload-Berechnung}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Erkenntnisse aus der Workload-Analyse}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Vergleich mit anderen Departements}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Qualitätssicherung und Realisierbarkeit}{3}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Änderungen an den Curricula der einzelnen Studiengänge}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Chemie BSc}{3}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Alternative Leistungsnachweise}{6}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Midterm-Prüfungen}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Notenbonus-Systeme}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Vorteile der alternativen Bewertungsformen}{7}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Conclusion}{8}{section.5}%
