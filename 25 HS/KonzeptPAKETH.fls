@@ -237,8 +237,6 @@ INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSer
 INPUT c:/texlive/2024/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusSerif-Italic-tlf-t1.vf
 INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSerif-Italic-tlf-t1--base.tfm
 INPUT c:/texlive/2024/texmf-dist/fonts/enc/dvips/libertinus-type1/lbn1_sncvby.enc
-INPUT c:/texlive/2024/texmf-dist/fonts/vf/public/libertinus-type1/LibertinusSans-Bold-tlf-t1.vf
-INPUT c:/texlive/2024/texmf-dist/fonts/tfm/public/libertinus-type1/LibertinusSans-Bold-tlf-t1--base.tfm
 INPUT KonzeptPAKETH.aux
 INPUT ./KonzeptPAKETH.out
 INPUT ./KonzeptPAKETH.out
@@ -246,4 +244,3 @@ INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusS
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Bold.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Italic.pfb
 INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/libertinus-type1/LibertinusSerif-Regular.pfb
-INPUT c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
