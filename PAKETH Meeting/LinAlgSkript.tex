@@ -1,0 +1,3276 @@
+\documentclass[a4paper,11pt]{article}
+
+% --------------------------------------------------------------------
+% PACKAGES
+% --------------------------------------------------------------------
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{pifont}
+
+\geometry{margin=2.5cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlist[enumerate]{itemsep=4pt, topsep=4pt}
+
+% --------------------------------------------------------------------
+% COLOR BOXES (nur für Beispiele/Literatur, keine Merksatz-Boxen)
+% --------------------------------------------------------------------
+\tcbset{
+  colback=white,
+  colframe=black,
+  arc=2mm,
+  boxrule=0.6pt,
+}
+
+\newtcolorbox{beispielbox}{
+  colback=green!2,
+  colframe=green!50!black,
+  title={Beispiel},
+  fonttitle=\bfseries,
+}
+
+\newtcolorbox{extrabox}{
+  colback=orange!3,
+  colframe=orange!70!black,
+  title={Weiterführende Literatur / Hinweise},
+  fonttitle=\bfseries,
+}
+
+\newtcolorbox{chemiebox}{
+  colback=blue!5,
+  colframe=blue!60!black,
+  title={Anwendung in der Chemie},
+  fonttitle=\bfseries,
+}
+
+\newtcolorbox{warnbox}{
+  colback=red!3,
+  colframe=red!70!black,
+  title={Achtung},
+  fonttitle=\bfseries,
+}
+
+% --------------------------------------------------------------------
+% MACROS & THEOREM STYLES
+% --------------------------------------------------------------------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\ii}{\mathrm{i}}
+
+\newtheoremstyle{defstyle}%
+  {6pt}{6pt}%
+  {}{}%
+  {\bfseries}{}%
+  {.5em}%
+  {}
+\theoremstyle{defstyle}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{bemerkung}[definition]{Bemerkung}
+\newtheorem{beispiel}[definition]{Beispiel}
+\newtheorem{theorem}[definition]{Satz}
+\newtheorem{lemma}[definition]{Lemma}
+
+% --------------------------------------------------------------------
+% DOCUMENT
+% --------------------------------------------------------------------
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Lineare Algebra für Chemiker}}\\[0.5em]
+{\large Vorlesungsskript mit Beispielen und Anwendungen}\\[0.5em]
+ETH Zürich
+\end{center}
+
+Dieses Skript richtet sich an Studierende der Chemie. Ziel ist es,
+die Begriffe der Linearen Algebra so einzuführen, dass sie sowohl
+mathematisch präzise sind als auch unmittelbar in chemische Kontexte
+übersetzt werden können:
+Reaktionsstöchiometrie, Kinetik, Spektroskopie, Quantenchemie,
+Molekülorbitaltheorie, Symmetrien und Datenanalyse.
+
+Jedes Kapitel folgt demselben Muster:
+\begin{itemize}
+  \item anschauliche Einführung im Fließtext,
+  \item mathematisch rigorose Definition(en),
+  \item mindestens eine ausführliche Beispielrechnung,
+  \item passende Unterthemen zur inhaltlichen Vertiefung.
+\end{itemize}
+
+\vspace{1em}
+
+\tableofcontents
+\newpage
+
+\section{Einleitung}
+
+Die lineare Algebra ist ein fundamentaler Bereich der Mathematik, der sich mit Vektorräumen und linearen Abbildungen zwischen ihnen beschäftigt. Für Chemiker ist sie nicht nur ein mathematisches Werkzeug, sondern die unverzichtbare Sprache der modernen Chemie.
+
+\subsection{Warum lineare Algebra für Chemiker?}
+
+In der modernen Chemie durchdringen lineare algebraische Konzepte praktisch alle Bereiche:
+
+\textbf{Quantenchemie und Molekülorbitaltheorie:} Die Schrödinger-Gleichung $\hat{H}\psi = E\psi$ ist ein Eigenwertproblem, bei dem Hamiltonoperatoren als Matrizen dargestellt werden. Die Berechnung von Molekülorbitalen durch Linearkombination von Atomorbitalen (LCAO-Methode) ist pure lineare Algebra.
+
+\textbf{Spektroskopie:} NMR-, IR- und UV/Vis-Spektroskopie basieren auf der Wechselwirkung elektromagnetischer Strahlung mit Materie. Die Intensitäten und Übergänge werden durch Übergangsmatrixelemente $\langle \psi_i | \hat{\mu} | \psi_j \rangle$ bestimmt.
+
+\textbf{Kristallographie:} Kristallstrukturen werden durch Symmetrieoperationen beschrieben, die als lineare Transformationen in Matrixform dargestellt werden. Die Fourier-Transformation zur Strukturbestimmung ist ebenfalls ein lineares Verfahren.
+
+\textbf{Statistische Thermodynamik:} Zustandssummen und Boltzmann-Verteilungen werden oft als Vektoroperationen in hochdimensionalen Räumen behandelt.
+
+\textbf{Chemische Kinetik:} Reaktionsnetzwerke lassen sich als gekoppelte Differentialgleichungssysteme darstellen, deren Lösung matrixbasierte Methoden erfordert.
+
+\subsection{Aufbau dieses Skripts}
+
+Dieses Skript richtet sich an Studierende der Chemie und folgt einem praxisorientierten Ansatz. Jedes mathematische Konzept wird unmittelbar mit chemischen Anwendungen verknüpft, von der Reaktionsstöchiometrie über Spektroskopie bis hin zur Quantenchemie.
+
+Jedes Kapitel folgt demselben Muster:
+\begin{itemize}
+  \item anschauliche Einführung mit chemischen Beispielen,
+  \item mathematisch rigorose Definition(en),
+  \item mindestens eine ausführliche Beispielrechnung aus der Chemie,
+  \item passende Unterthemen zur inhaltlichen Vertiefung,
+  \item Übungsaufgaben mit direktem Chemiebezug.
+\end{itemize}
+
+Das Ziel ist es, die Begriffe der Linearen Algebra so zu vermitteln, dass sie sowohl mathematisch präzise sind als auch unmittelbar in chemische Kontexte übertragen werden können.
+
+\section{Mengen, Abbildungen und Gruppen}
+
+\subsection{Anschauliche Erklärung}
+
+In der Chemie arbeiten wir mit „Sammlungen“ von Objekten:
+Elemente, Moleküle, Spezies in einem Reaktionsschema, mögliche Zustände eines Systems.
+Mathematisch sprechen wir von \emph{Mengen}.
+Zwischen solchen Mengen definieren wir Zuordnungen: etwa
+„jedem Molekül wird seine molare Masse zugeordnet“ oder
+„jedem Zustand wird seine Energie zugeordnet“.
+Das sind \emph{Abbildungen}.
+
+Manchmal betrachten wir systematische Transformationen:
+Permutation von Liganden, Rotationen eines Moleküls,
+Vertauschung äquivalenter Orbitale.
+Die Menge solcher Operationen kann eine zusätzliche Struktur besitzen:
+man kann Operationen hintereinander ausführen, es gibt eine „Nichtstun“-Operation,
+und oft lässt sich jede Operation rückgängig machen.
+Solche Strukturen sind \emph{Gruppen} und bilden die Sprache der Symmetrie.
+
+\subsection{Mathematische Definitionen}
+
+\subsubsection{Grundlegende Strukturen}
+
+\begin{definition}[Menge]
+Eine Menge ist eine Sammlung unterscheidbarer Objekte, genannt Elemente.
+Wir schreiben $a \in M$ falls $a$ Element der Menge $M$ ist.
+\end{definition}
+
+\begin{definition}[Kartesisches Produkt]
+Für Mengen $A,B$ ist das kartesische Produkt
+\[
+A \times B = \{(a,b) \mid a \in A, b \in B\}
+\]
+die Menge aller geordneten Paare.
+\end{definition}
+
+\begin{definition}[Abbildung]
+Seien $A,B$ Mengen.
+Eine Abbildung $f:A\to B$ ordnet jedem $a\in A$ genau ein Bild $f(a)\in B$ zu.
+Die Menge $A$ heißt Definitionsbereich, $B$ heißt Wertebereich.
+Das \textbf{Bild} von $f$ ist $\operatorname{im}(f) = \{f(a) \mid a \in A\} \subseteq B$.
+Für $M \subseteq B$ ist das \textbf{Urbild} $f^{-1}(M) = \{a \in A \mid f(a) \in M\}$.
+\end{definition}
+
+\begin{bemerkung}
+Wichtige Unterscheidung: Eine Abbildung $f: A \to B$ ist vollständig bestimmt durch:
+\begin{itemize}
+\item Den Definitionsbereich $A$
+\item Den Wertebereich $B$ 
+\item Die Zuordnungsvorschrift $f$
+\end{itemize}
+Das Bild $\operatorname{im}(f)$ kann echter Teilraum von $B$ sein.
+\end{bemerkung}
+
+\begin{definition}[Komposition von Abbildungen]
+Seien $f:A \to B$ und $g:B \to C$ Abbildungen. Die Komposition $g \circ f: A \to C$ 
+ist definiert durch $(g \circ f)(a) = g(f(a))$ für alle $a \in A$.
+\end{definition}
+
+\begin{beispielbox}
+In der Chemie: Die Abbildung $f: \text{Molekül} \to \text{Molmasse}$ und 
+$g: \text{Molmasse} \to \text{Stoffmenge}$ (bei gegebener Masse) können komponiert werden 
+zu $(g \circ f): \text{Molekül} \to \text{Stoffmenge}$.
+\end{beispielbox}
+
+\begin{definition}[Injektiv, Surjektiv, Bijektiv]
+Eine Abbildung $f:A\to B$ heißt
+\begin{itemize}
+  \item \textbf{injektiv} (eineindeutig), falls aus $f(a_1)=f(a_2)$ stets $a_1=a_2$ folgt,
+  \item \textbf{surjektiv} (auf), falls zu jedem $b\in B$ ein $a\in A$ mit $f(a)=b$ existiert,
+  \item \textbf{bijektiv} (umkehrbar eindeutig), falls sie injektiv und surjektiv ist.
+\end{itemize}
+Bijektive Abbildungen besitzen eine eindeutig bestimmte Umkehrabbildung $f^{-1}:B\to A$ mit
+$f^{-1}(f(a)) = a$ für alle $a \in A$ und $f(f^{-1}(b)) = b$ für alle $b \in B$.
+\end{definition}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Eigenschaften von Abbildungen}
+
+Betrachten Sie die Abbildungen:
+\begin{align}
+f_1: \mathbb{R} \to \mathbb{R}, \quad f_1(x) &= x^2\\
+f_2: \mathbb{R} \to \mathbb{R}_{\geq 0}, \quad f_2(x) &= x^2\\
+f_3: \mathbb{R}_{\geq 0} \to \mathbb{R}_{\geq 0}, \quad f_3(x) &= x^2\\
+f_4: \mathbb{R}_{\geq 0} \to \mathbb{R}_{\geq 0}, \quad f_4(x) &= \sqrt{x}
+\end{align}
+
+\textbf{Analyse:}
+\begin{itemize}
+\item $f_1$: nicht injektiv ($f_1(2) = f_1(-2) = 4$), nicht surjektiv ($-1 \notin \operatorname{im}(f_1)$)
+\item $f_2$: nicht injektiv, surjektiv (Bild = $\mathbb{R}_{\geq 0}$)
+\item $f_3$: injektiv, surjektiv, also bijektiv
+\item $f_4$: injektiv, surjektiv, also bijektiv. Ist die Umkehrfunktion von $f_3$.
+\end{itemize}
+\end{beispielbox}
+
+\begin{bemerkung}
+Injektivität bedeutet: verschiedene Eingaben führen zu verschiedenen Ausgaben.
+Surjektivität bedeutet: jede mögliche Ausgabe wird auch tatsächlich erreicht.
+\end{bemerkung}
+
+\subsubsection{Algebraische Strukturen}
+
+\begin{definition}[Verknüpfung]
+Eine (innere) Verknüpfung auf einer Menge $G$ ist eine Abbildung $\ast: G \times G \to G$.
+Statt $\ast(a,b)$ schreibt man meist $a \ast b$.
+\end{definition}
+
+\begin{definition}[Gruppe]
+Eine Gruppe ist ein Paar $(G,\ast)$ aus einer Menge $G$ und einer Verknüpfung
+$\ast:G\times G\to G$ mit:
+\begin{enumerate}[label=(G\arabic*)]
+  \item \textbf{Assoziativität:} $(a\ast b)\ast c = a\ast (b\ast c)$ für alle $a,b,c \in G$.
+  \item \textbf{Neutrales Element:} Es gibt ein $e\in G$ mit $e\ast a = a\ast e = a$ für alle $a \in G$.
+  \item \textbf{Inverses Element:} Zu jedem $a\in G$ existiert $a^{-1}\in G$ mit
+  $a\ast a^{-1}=a^{-1}\ast a=e$.
+\end{enumerate}
+Ist zusätzlich $a\ast b = b\ast a$ für alle $a,b\in G$, heißt die Gruppe abelsch (kommutativ).
+\end{definition}
+
+\begin{definition}[Untergruppe]
+Eine Teilmenge $H \subseteq G$ einer Gruppe $(G,\ast)$ heißt Untergruppe, wenn
+\begin{itemize}
+  \item $H$ unter $\ast$ abgeschlossen ist: $a,b \in H \Rightarrow a \ast b \in H$
+  \item $e \in H$ (das neutrale Element liegt in $H$)
+  \item $a \in H \Rightarrow a^{-1} \in H$ (mit jedem Element liegt auch sein Inverses in $H$)
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Körper]
+Ein Körper $(K, +, \cdot)$ ist eine Menge $K$ mit zwei Verknüpfungen, sodass
+\begin{itemize}
+  \item $(K, +)$ eine abelsche Gruppe ist (mit neutralem Element $0$)
+  \item $(K \setminus \{0\}, \cdot)$ eine abelsche Gruppe ist (mit neutralem Element $1$)
+  \item Distributivität: $a \cdot (b + c) = a \cdot b + a \cdot c$ für alle $a,b,c \in K$
+\end{itemize}
+Wichtige Körper: $\Q$ (rationale Zahlen), $\R$ (reelle Zahlen), $\C$ (komplexe Zahlen).
+\end{definition}
+
+\begin{definition}[Abelsche Gruppe]
+Ist zusätzlich $a\ast b = b\ast a$ für alle $a,b\in G$, heißt die Gruppe abelsch (kommutativ).
+\end{definition}
+
+\begin{definition}[Abelsche Gruppe]
+Ist zusätzlich $a\ast b = b\ast a$ für alle $a,b\in G$, heißt die Gruppe abelsch (kommutativ).
+\end{definition}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Zyklische Gruppen}
+
+Die zyklische Gruppe $\mathbb{Z}_4 = \{0, 1, 2, 3\}$ mit Addition modulo 4:
+
+Verknüpfungstafel:
+\begin{center}
+\begin{tabular}{c|cccc}
+$+$ & 0 & 1 & 2 & 3 \\
+\hline
+0 & 0 & 1 & 2 & 3 \\
+1 & 1 & 2 & 3 & 0 \\
+2 & 2 & 3 & 0 & 1 \\
+3 & 3 & 0 & 1 & 2 \\
+\end{tabular}
+\end{center}
+
+\textbf{Eigenschaften:}
+\begin{itemize}
+\item Neutrales Element: $e = 0$
+\item Inverse: $1^{-1} = 3$, $2^{-1} = 2$, $3^{-1} = 1$
+\item Erzeuger: $g = 1$ erzeugt die ganze Gruppe: $\langle 1 \rangle = \{0, 1, 2, 3\}$
+\item Ordnung: $|\mathbb{Z}_4| = 4$
+\end{itemize}
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Nicht-abelsche Gruppe}
+
+Die Diedergruppe $D_3$ (Symmetrien eines gleichseitigen Dreiecks):
+\begin{align}
+D_3 = \{e, r, r^2, s, sr, sr^2\}
+\end{align}
+wobei $r$ eine Drehung um $120^\circ$ und $s$ eine Spiegelung ist.
+
+Wichtige Relationen:
+\begin{itemize}
+\item $r^3 = e$ (dreimalige Drehung ist Identität)
+\item $s^2 = e$ (zweimalige Spiegelung ist Identität)  
+\item $srs = r^{-1} = r^2$ (Spiegelung kehrt Drehrichtung um)
+\end{itemize}
+
+Diese Gruppe ist nicht-abelsch: $rs = sr^2 \neq sr = r^2s$.
+\end{beispielbox}
+
+\begin{theorem}[Lagrange]
+Ist $G$ eine endliche Gruppe und $H$ eine Untergruppe von $G$, dann teilt $|H|$ die Ordnung $|G|$.
+\end{theorem}
+
+\begin{definition}[Gruppenhomomorphismus]
+Eine Abbildung $\phi: G \to H$ zwischen Gruppen heißt Homomorphismus, wenn
+\[
+\phi(g_1 \ast g_2) = \phi(g_1) \circ \phi(g_2)
+\]
+für alle $g_1, g_2 \in G$ gilt. Ein bijektiver Homomorphismus heißt Isomorphismus.
+\end{definition}
+
+\subsection{Beispielrechnung: Permutationen von Liganden}
+
+Betrachten wir einen tetraedrischen Komplex $\mathrm{ML_4}$ mit vier unterscheidbaren Liganden
+$L_1,L_2,L_3,L_4$.
+Die Permutationen dieser Liganden bilden die symmetrische Gruppe $S_4$.
+
+Wir betrachten exemplarisch zwei Permutationen:
+\[
+\sigma = (1\ 2),\quad \tau = (2\ 3\ 4).
+\]
+Die Komposition $\tau\circ \sigma$ bedeutet:
+zuerst $\sigma$ anwenden (1 und 2 tauschen),
+dann $\tau$ (2\,$\to$3, 3\,$\to$4, 4\,$\to$2).
+
+Wir verfolgen die Wirkung auf die Positionen:
+\begin{itemize}
+  \item $1 \xrightarrow{\sigma} 2 \xrightarrow{\tau} 3$,
+  \item $2 \xrightarrow{\sigma} 1 \xrightarrow{\tau} 1$,
+  \item $3 \xrightarrow{\sigma} 3 \xrightarrow{\tau} 4$,
+  \item $4 \xrightarrow{\sigma} 4 \xrightarrow{\tau} 2$.
+\end{itemize}
+Damit ist
+\[
+\tau\circ\sigma = (1\ 3\ 4\ 2).
+\]
+Dies illustriert:
+\begin{itemize}
+  \item Komposition ist wohldefiniert und assoziativ,
+  \item es gibt ein neutrales Element (Identität),
+  \item jede Permutation ist invertierbar.
+\end{itemize}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Zyklenstruktur in $S_4$}
+
+Die symmetrische Gruppe $S_4$ hat 24 Elemente, die sich nach Zyklentyp klassifizieren lassen:
+
+\begin{center}
+\begin{tabular}{lcc}
+\textbf{Zyklentyp} & \textbf{Anzahl} & \textbf{Beispiel} \\
+\hline
+$(1)(2)(3)(4)$ & 1 & $\text{id}$ \\
+$(12)(3)(4)$ & 6 & $(1\ 2)$ \\
+$(123)(4)$ & 8 & $(1\ 2\ 3)$ \\
+$(1234)$ & 6 & $(1\ 2\ 3\ 4)$ \\
+$(12)(34)$ & 3 & $(1\ 2)(3\ 4)$ \\
+\hline
+\textbf{Gesamt} & 24 & \\
+\end{tabular}
+\end{center}
+
+\textbf{Wichtige Eigenschaften:}
+\begin{itemize}
+\item Ordnung von $(1\ 2)$: $|(1\ 2)| = 2$
+\item Ordnung von $(1\ 2\ 3)$: $|(1\ 2\ 3)| = 3$  
+\item Ordnung von $(1\ 2\ 3\ 4)$: $|(1\ 2\ 3\ 4)| = 4$
+\item Ordnung von $(1\ 2)(3\ 4)$: $|(1\ 2)(3\ 4)| = 2$
+\end{itemize}
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Signum-Funktion}
+
+Das Signum einer Permutation $\sigma \in S_n$ ist definiert als:
+\[
+\text{sgn}(\sigma) = \prod_{1 \leq i < j \leq n} \frac{\sigma(j) - \sigma(i)}{j - i}
+\]
+
+\textbf{Berechnung für $\sigma = (1\ 2\ 3) \in S_3$:}
+
+$\sigma(1) = 2$, $\sigma(2) = 3$, $\sigma(3) = 1$
+
+\begin{align}
+\text{sgn}(\sigma) &= \frac{\sigma(2) - \sigma(1)}{2 - 1} \cdot \frac{\sigma(3) - \sigma(1)}{3 - 1} \cdot \frac{\sigma(3) - \sigma(2)}{3 - 2}\\
+&= \frac{3 - 2}{1} \cdot \frac{1 - 2}{2} \cdot \frac{1 - 3}{1}\\
+&= 1 \cdot \left(-\frac{1}{2}\right) \cdot (-2) = 1
+\end{align}
+
+Also ist $(1\ 2\ 3)$ eine gerade Permutation.
+
+Allgemein: Ein $k$-Zyklus ist gerade wenn $k$ ungerade ist.
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel 1: Verknüpfungstafeln}
+
+Für die Gruppe $\mathbb{Z}_3 = \{0, 1, 2\}$ mit Addition modulo 3:
+\begin{center}
+\begin{tabular}{c|ccc}
+$+$ & 0 & 1 & 2 \\
+\hline
+0 & 0 & 1 & 2 \\
+1 & 1 & 2 & 0 \\
+2 & 2 & 0 & 1 \\
+\end{tabular}
+\end{center}
+
+Neutrales Element: $0$ (da $0 + a = a$ für alle $a$)
+Inverse: $0^{-1} = 0$, $1^{-1} = 2$, $2^{-1} = 1$
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel 2: Symmetrische Gruppe $S_3$}
+
+Die Permutationen von $\{1,2,3\}$:
+\begin{align}
+\text{id} &= (1)(2)(3) \quad \text{(Identität)}\\
+\sigma_1 &= (1\ 2)(3) \quad \text{(Transposition)}\\
+\sigma_2 &= (1\ 3)(2) \quad \text{(Transposition)}\\
+\sigma_3 &= (2\ 3)(1) \quad \text{(Transposition)}\\
+\tau_1 &= (1\ 2\ 3) \quad \text{(3-Zyklus)}\\
+\tau_2 &= (1\ 3\ 2) \quad \text{(3-Zyklus)}
+\end{align}
+
+Komposition: $\tau_1 \circ \sigma_1 = (1\ 2\ 3) \circ (1\ 2) = (2\ 3)$
+\end{beispielbox}
+
+\begin{extrabox}
+Standardreferenzen:
+Einführungen zur Gruppentheorie in der Chemie behandeln Punktgruppen,
+Charaktertafeln und deren Anwendung auf MO-Diagramme und IR/Raman-Auswahlregeln.
+\end{extrabox}
+
+\subsection{Konkrete chemische Beispiele}
+
+\subsubsection{Ammoniak NH3: Punktgruppe C3v}
+
+Das Ammoniakmolekül besitzt eine dreizählige Rotationsachse durch das N-Atom und drei Spiegelebenen.
+Die Symmetrieoperationen sind:
+\begin{itemize}
+  \item $E$: Identität
+  \item $C_3$, $C_3^2$: Drehungen um $120^\circ$ und $240^\circ$
+  \item $\sigma_v^{(1)}$, $\sigma_v^{(2)}$, $\sigma_v^{(3)}$: drei Spiegelebenen
+\end{itemize}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Äquivalenzrelationen und Partitionen}
+
+Sei $X = \{1, 2, 3, 4, 5, 6\}$ und $R$ die Relation "$a$ und $b$ haben denselben Rest bei Division durch 3".
+
+\textbf{Äquivalenzklassen:}
+\begin{align}
+[1] &= \{1, 4\} \quad \text{(Rest 1)}\\
+[2] &= \{2, 5\} \quad \text{(Rest 2)}\\
+[0] &= \{3, 6\} \quad \text{(Rest 0)}
+\end{align}
+
+Die Partition von $X$ ist: $\{\{1,4\}, \{2,5\}, \{3,6\}\}$
+
+\textbf{Eigenschaften von $R$:}
+\begin{itemize}
+\item \textbf{Reflexiv:} $1R1$ da $1 \equiv 1 \pmod{3}$ 
+\item \textbf{Symmetrisch:} Wenn $1R4$, dann $4R1$ 
+\item \textbf{Transitiv:} $1R4$ und $4R1 \Rightarrow 1R1$ 
+\end{itemize}
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Ordnungsrelationen}
+
+Sei $A = \{1, 2, 3, 6\}$ mit der Relation $\leq$ (übliche Ordnung).
+
+\textbf{Hasse-Diagramm:}
+\begin{center}
+\begin{tikzpicture}
+\node (6) at (0,2) {6};
+\node (3) at (-1,1) {3};
+\node (2) at (1,1) {2};
+\node (1) at (0,0) {1};
+\draw (1) -- (2) -- (6);
+\draw (1) -- (3) -- (6);
+\end{tikzpicture}
+\end{center}
+
+Eigenschaften:
+\begin{itemize}
+\item \textbf{Reflexiv:} $a \leq a$ für alle $a \in A$
+\item \textbf{Antisymmetrisch:} $a \leq b$ und $b \leq a \Rightarrow a = b$
+\item \textbf{Transitiv:} $a \leq b$ und $b \leq c \Rightarrow a \leq c$
+\end{itemize}
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Abbildungskomposition}
+
+Seien $f: \{1,2,3\} \to \{a,b\}$ mit $f(1) = a$, $f(2) = b$, $f(3) = a$ und
+$g: \{a,b\} \to \{x,y,z\}$ mit $g(a) = x$, $g(b) = y$.
+
+Die Komposition $g \circ f: \{1,2,3\} \to \{x,y,z\}$ ist:
+\begin{align}
+(g \circ f)(1) &= g(f(1)) = g(a) = x\\
+(g \circ f)(2) &= g(f(2)) = g(b) = y\\
+(g \circ f)(3) &= g(f(3)) = g(a) = x
+\end{align}
+
+\textbf{Eigenschaften von $f$:}
+\begin{itemize}
+\item Nicht injektiv: $f(1) = f(3) = a$
+\item Surjektiv: $\text{Bild}(f) = \{a,b\}$
+\end{itemize}
+
+\textbf{Eigenschaften von $g$:}
+\begin{itemize}
+\item Injektiv: verschiedene Elemente haben verschiedene Bilder
+\item Nicht surjektiv: $z \notin \text{Bild}(g)$
+\end{itemize}
+\end{beispielbox}
+
+\subsection{Weiterführende Themen}
+
+Die Gruppentheorie hat zahlreiche Anwendungen in der Chemie:
+\begin{itemize}
+  \item Punktgruppen und Molekülsymmetrie
+  \item Kristallographie und Raumgruppen
+  \item Charaktertafeln für Schwingungsanalyse
+  \item Auswahlregeln in der Spektroskopie
+  \item Orbitalwechselwirkungen in Komplexen
+\end{itemize}
+
+Grundlegende mathematische Konzepte wie Äquivalenzrelationen und Ordnungsstrukturen 
+bilden das Fundament für komplexere algebraische Strukturen.
+
+\newpage
+
+% ====================================================================
+% 2. VEKTORRÄUME UND LINEARE ABBILDUNGEN  
+% ====================================================================
+
+\section{Vektorräume und lineare Abbildungen}
+
+Diese bilden die Punktgruppe $C_{3v}$ mit 6 Elementen.
+
+\begin{beispielbox}
+Betrachten wir die Wirkung von $C_3$ auf die drei H-Atome:
+$H_1 \to H_2 \to H_3 \to H_1$. Als Permutation: $(1\ 2\ 3)$.
+Die Komposition $C_3 \circ C_3 = C_3^2$ entspricht $(1\ 2\ 3) \circ (1\ 2\ 3) = (1\ 3\ 2)$.
+\end{beispielbox}
+
+\subsubsection{Methan CH4: Tetraedrische Symmetrie}
+
+Das Methanmolekül gehört zur Punktgruppe $T_d$ mit 24 Symmetrieoperationen:
+\begin{itemize}
+  \item 1 Identität $E$
+  \item 8 Drehungen $C_3$, $C_3^2$ um die vier C-H-Achsen
+  \item 3 Drehungen $C_2$ um Koordinatenachsen
+  \item 6 Spiegelungen $S_4$, $S_4^3$ (Drehspiegelungen)
+  \item 6 Spiegelungen $\sigma_d$ an Diagonalebenen
+\end{itemize}
+
+\subsection{Anwendungen in der Spektroskopie}
+
+\subsubsection{IR-Auswahlregeln}
+
+Eine Schwingung ist IR-aktiv, wenn sie das Dipolmoment ändert.
+Dies geschieht nur, wenn die Schwingung zur irreduziblen Darstellung des Dipoloperators gehört.
+
+Für NH$_3$ (C$_{3v}$):
+\begin{itemize}
+  \item Symmetrische Streckschwingung: $A_1$ (IR-aktiv)
+  \item Antisymmetrische Streckschwingung: $E$ (IR-aktiv)
+  \item Deformationsschwingung: $E$ (IR-aktiv)
+\end{itemize}
+
+\subsubsection{Kombinationsverbot in der MO-Theorie}
+
+Zwei Atomorbitale können nur dann zu einem Molekülorbital kombinieren, wenn ihr Symmetrieprodukt die völlig symmetrische Darstellung $A_1$ enthält.
+
+\subsection{Übungsaufgaben}
+
+\begin{enumerate}
+  \item Bestimmen Sie alle Symmetrieoperationen von Wasser (H$_2$O) und zeigen Sie, dass sie eine Gruppe bilden.
+  
+  \item Für Benzol (C$_6$H$_6$): Wie viele Symmetrieoperationen gibt es? Welche Punktgruppe?
+  
+  \item Berechnen Sie $(1\ 2\ 3)(2\ 4)$ und $(2\ 4)(1\ 2\ 3)$ und zeigen Sie, dass Permutationen nicht kommutieren.
+  
+  \item Welche Schwingungen von CO$_2$ (linear, D$_{\infty h}$) sind IR-aktiv, welche Raman-aktiv?
+\end{enumerate}
+
+\newpage
+
+% ====================================================================
+% 2. MATRIZEN, VEKTOREN, VEKTORRÄUME
+% ====================================================================
+
+\section{Matrizen, Vektoren und Vektorräume}
+
+\subsection{Anschauliche Erklärung}
+
+Zustände in der Chemie lassen sich oft durch endlich viele Zahlen beschreiben:
+Konzentrationen, Belegungen, Intensitäten, Koeffizienten von Orbitalkombinationen.
+Solche geordneten $n$-Tupel fassen wir als \emph{Vektoren} in $\R^n$ (oder $\C^n$) auf.
+
+Lineare Kombinationen von Zuständen (z.B. Überlagerungen von Orbitale,
+Mischungen von Spektren) werden durch Addition und skalare Multiplikation beschrieben.
+Die Menge aller zulässigen Linearkombinationen bildet einen \emph{Vektorraum}.
+
+\emph{Matrizen} beschreiben lineare Abbildungen zwischen Vektorräumen:
+Sie sind das Rechenwerkzeug für Koordinatentransformationen, Reaktionsstöchiometrie,
+Modellierung gekoppelter Gleichungen und vieles mehr.
+
+\subsection{Mathematische Definitionen}
+
+\subsubsection{Vektorräume - Fundamentale Strukturen}
+
+\begin{definition}[Vektorraum]
+Ein Vektorraum $V$ über einem Körper $K$ (typisch $K=\R$ oder $\C$) ist eine Menge
+mit zwei Verknüpfungen:
+\begin{itemize}
+  \item Vektoraddition $+:V\times V\to V$,
+  \item Skalarmultiplikation $\cdot:K\times V\to V$ (oft kurz $\lambda v$ statt $\lambda \cdot v$),
+\end{itemize}
+die folgende Axiome erfüllen:
+
+\textbf{Axiome der Vektoraddition:}
+\begin{enumerate}[label=(V\arabic*)]
+  \item \textbf{Assoziativität:} $(u + v) + w = u + (v + w)$ für alle $u,v,w \in V$
+  \item \textbf{Kommutativität:} $u + v = v + u$ für alle $u,v \in V$
+  \item \textbf{Neutrales Element:} Es gibt ein $\mathbf{0} \in V$ mit $v + \mathbf{0} = v$ für alle $v \in V$
+  \item \textbf{Inverses Element:} Zu jedem $v \in V$ gibt es ein $(-v) \in V$ mit $v + (-v) = \mathbf{0}$
+\end{enumerate}
+
+\textbf{Axiome der Skalarmultiplikation:}
+\begin{enumerate}[label=(S\arabic*), start=1]
+  \item \textbf{Assoziativität:} $(\alpha \beta) v = \alpha (\beta v)$ für alle $\alpha, \beta \in K, v \in V$
+  \item \textbf{Neutrales Element:} $1 \cdot v = v$ für alle $v \in V$ (wobei $1$ das Einselement in $K$ ist)
+  \item \textbf{Distributivität I:} $\alpha (u + v) = \alpha u + \alpha v$ für alle $\alpha \in K, u,v \in V$
+  \item \textbf{Distributivität II:} $(\alpha + \beta) v = \alpha v + \beta v$ für alle $\alpha, \beta \in K, v \in V$
+\end{enumerate}
+\end{definition}
+
+\subsection{Vektorräume in der Chemie}
+
+Bevor wir abstrakt über Vektorräume sprechen, betrachten wir konkrete chemische Beispiele:
+
+\begin{chemiebox}
+\textbf{Chemische Vektorräume}
+
+\textbf{1. Reaktionskoordinaten:} In einer Reaktion A + B $\rightleftharpoons$ C können die Stoffmengen durch einen Vektor $(n_A, n_B, n_C)^T \in \mathbb{R}^3$ beschrieben werden. Alle möglichen Zustände bilden einen Vektorraum.
+
+\textbf{2. Wellenfunktionen:} In der Quantenchemie sind Wellenfunktionen $\psi$ Elemente eines unendlichdimensionalen Vektorraums. Linearkombinationen $c_1\psi_1 + c_2\psi_2$ sind wieder gültige Wellenfunktionen (Superpositionsprinzip).
+
+\textbf{3. Molekülorbitale:} Die LCAO-Methode stellt Molekülorbitale als Linearkombinationen von Atomorbitalen dar: $\psi_{MO} = \sum_i c_i \phi_i$. Die Koeffizienten $c_i$ bilden einen Vektor im $\mathbb{R}^n$ oder $\mathbb{C}^n$.
+
+\textbf{4. Spektraldaten:} Ein NMR-Spektrum kann als Vektor der Intensitäten bei verschiedenen chemischen Verschiebungen aufgefasst werden. Addition von Spektren entspricht der Vektoraddition.
+
+\textbf{5. Kristallgitter:} Gittervektoren in der Kristallographie spannen den dreidimensionalen Raum auf. Alle Gitterpunkte entstehen durch ganzzahlige Linearkombinationen der Basisvektoren.
+\end{chemiebox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Körperaxiome überprüfen}
+
+Betrachten wir $\mathbb{Z}_5 = \{0, 1, 2, 3, 4\}$ mit Addition und Multiplikation modulo 5.
+
+\textbf{Additions- und Multiplikationstafeln:}
+\begin{center}
+\begin{tabular}{c|ccccc}
+$+$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+0 & 0 & 1 & 2 & 3 & 4 \\
+1 & 1 & 2 & 3 & 4 & 0 \\
+2 & 2 & 3 & 4 & 0 & 1 \\
+3 & 3 & 4 & 0 & 1 & 2 \\
+4 & 4 & 0 & 1 & 2 & 3 \\
+\end{tabular}
+\qquad
+\begin{tabular}{c|ccccc}
+$\cdot$ & 0 & 1 & 2 & 3 & 4 \\
+\hline
+0 & 0 & 0 & 0 & 0 & 0 \\
+1 & 0 & 1 & 2 & 3 & 4 \\
+2 & 0 & 2 & 4 & 1 & 3 \\
+3 & 0 & 3 & 1 & 4 & 2 \\
+4 & 0 & 4 & 3 & 2 & 1 \\
+\end{tabular}
+\end{center}
+
+\textbf{Inverse Elemente:}
+\begin{itemize}
+\item Additive Inverse: $-0 = 0$, $-1 = 4$, $-2 = 3$, $-3 = 2$, $-4 = 1$
+\item Multiplikative Inverse: $1^{-1} = 1$, $2^{-1} = 3$, $3^{-1} = 2$, $4^{-1} = 4$
+\end{itemize}
+
+Also ist $\mathbb{Z}_5$ ein Körper mit 5 Elementen.
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Standard-Vektorräume}
+
+\textbf{1. Der $\mathbb{R}^3$:} Vektoren sind Tripel $(x,y,z)$ reeller Zahlen.
+\begin{align}
+(1,2,3) + (4,5,6) &= (5,7,9)\\
+2 \cdot (1,2,3) &= (2,4,6)\\
+\mathbf{0} &= (0,0,0)
+\end{align}
+
+\textbf{2. Polynomraum $\mathbb{R}[x]_{\leq 2}$:} Polynome vom Grad $\leq 2$.
+\begin{align}
+p(x) &= 2x^2 + 3x + 1\\
+q(x) &= x^2 - x + 5\\
+(p + q)(x) &= 3x^2 + 2x + 6\\
+(3p)(x) &= 6x^2 + 9x + 3
+\end{align}
+
+\textbf{3. Funktionenraum $C[0,1]$:} Stetige Funktionen auf $[0,1]$.
+\[
+(f + g)(x) = f(x) + g(x), \quad (\lambda f)(x) = \lambda f(x)
+\]
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Polynomraum}
+
+Der Vektorraum $P_3$ aller Polynome vom Grad höchstens 3:
+\[
+P_3 = \{a_0 + a_1x + a_2x^2 + a_3x^3 \mid a_i \in \mathbb{R}\}
+\]
+
+Basis: $\{1, x, x^2, x^3\}$, Dimension: 4
+
+Vektoraddition: $(2 + 3x) + (1 - x + x^2) = 3 + 2x + x^2$
+Skalarmultiplikation: $2 \cdot (1 + x) = 2 + 2x$
+
+Alle Vektorraumaxiome sind erfüllt. Der Nullvektor ist das Nullpolynom $0$.
+\end{beispielbox}
+
+\begin{bemerkung}
+Diese Axiome scheinen abstrakt, sind aber in der Chemie allgegenwärtig:
+\begin{itemize}
+  \item Konzentrationsvektoren in Reaktionsmischungen erfüllen diese Eigenschaften
+  \item Wellenfunktionen in der Quantenchemie bilden einen komplexen Vektorraum
+  \item Spektraldaten können als Vektoren in hochdimensionalen Räumen aufgefasst werden
+\end{itemize}
+\end{bemerkung}
+
+\begin{definition}[Untervektorraum]
+Eine Teilmenge $U \subseteq V$ heißt Untervektorraum von $V$, wenn
+\begin{enumerate}
+  \item $\mathbf{0} \in U$ (der Nullvektor liegt in $U$)
+  \item $u, v \in U \Rightarrow u + v \in U$ (Abgeschlossenheit unter Addition)
+  \item $\alpha \in K, u \in U \Rightarrow \alpha u \in U$ (Abgeschlossenheit unter Skalarmultiplikation)
+\end{enumerate}
+\end{definition}
+
+\begin{beispielbox}
+In der Chemie: Die Menge aller Konzentrationsverteilungen, die eine bestimmte 
+Erhaltungsgleichung (z.B. Elementbilanz) erfüllen, bildet einen Untervektorraum 
+des gesamten Konzentrationsraums.
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Untervektorraum}
+
+Im $\mathbb{R}^3$ ist die Menge aller Vektoren der Form $(a, 2a, 3a)$ mit $a \in \mathbb{R}$ ein Untervektorraum:
+\[
+U = \{(a, 2a, 3a) \mid a \in \mathbb{R}\}
+\]
+
+Prüfung:
+\begin{itemize}
+\item Nullvektor: $(0,0,0) \in U$ für $a = 0$ 
+\item Abgeschlossenheit unter Addition: $(a,2a,3a) + (b,2b,3b) = (a+b, 2(a+b), 3(a+b)) \in U$ 
+\item Abgeschlossenheit unter Skalarmultiplikation: $c \cdot (a,2a,3a) = (ca, 2ca, 3ca) \in U$ 
+\end{itemize}
+\end{beispielbox}
+
+\subsubsection{Lineare Abhängigkeit und Basis}
+
+\begin{definition}[Linearkombination]
+Für Vektoren $v_1,\dots,v_k\in V$ und Skalare $\alpha_1,\dots,\alpha_k\in K$
+heißt
+\[
+\alpha_1 v_1 + \alpha_2 v_2 + \cdots + \alpha_k v_k
+\]
+eine Linearkombination der Vektoren $v_1, \ldots, v_k$.
+\end{definition}
+
+\begin{definition}[Lineare Unabhängigkeit]
+Vektoren $v_1,\dots,v_k\in V$ heißen linear unabhängig, wenn aus
+\[
+\alpha_1 v_1 + \alpha_2 v_2 + \cdots + \alpha_k v_k = \mathbf{0}
+\]
+stets $\alpha_1 = \alpha_2 = \cdots = \alpha_k = 0$ folgt.
+Andernfalls heißen sie linear abhängig.
+\end{definition}
+
+\begin{definition}[Erzeugendensystem]
+Eine Menge $\{v_1,\dots,v_k\} \subseteq V$ heißt Erzeugendensystem von $V$, wenn
+sich jeder Vektor $v \in V$ als Linearkombination der $v_i$ darstellen lässt:
+\[
+V = \operatorname{span}\{v_1,\dots,v_k\} = \left\{ \sum_{i=1}^k \alpha_i v_i \mid \alpha_i \in K \right\}
+\]
+\end{definition}
+
+\begin{definition}[Basis]
+Eine Menge $\mathcal{B} = \{v_1,\dots,v_n\} \subseteq V$ heißt Basis von $V$, wenn
+\begin{enumerate}
+  \item $\mathcal{B}$ ist linear unabhängig
+  \item $\mathcal{B}$ ist ein Erzeugendensystem von $V$
+\end{enumerate}
+Äquivalent: Jeder Vektor $v \in V$ lässt sich eindeutig als Linearkombination der Basisvektoren schreiben.
+\end{definition}
+
+\begin{chemiebox}
+\textbf{Lineare Unabhängigkeit in der MO-Theorie}
+
+Betrachten wir das H$_2^+$-Molekülion mit zwei 1s-Atomorbitalen $\phi_1$ und $\phi_2$:
+
+Die Molekülorbitale sind:
+\begin{align}
+\psi_+ &= c_1 \phi_1 + c_2 \phi_2 \quad \text{(bindendes MO)}\\
+\psi_- &= c_3 \phi_1 + c_4 \phi_2 \quad \text{(antibindendes MO)}
+\end{align}
+
+Die Koeffizientenvektoren $(c_1, c_2)^T$ und $(c_3, c_4)^T$ sind linear unabhängig, da keiner als Vielfaches des anderen darstellbar ist. 
+
+Für das bindende MO gilt typisch $c_1 = c_2 = 1/\sqrt{2}$, für das antibindende $c_3 = 1/\sqrt{2}, c_4 = -1/\sqrt{2}$.
+
+Diese beiden Vektoren bilden eine Basis des zweidimensionalen Koeffizientenraums - jede andere mögliche Linearkombination der Atomorbitale lässt sich als Linearkombination dieser beiden Molekülorbitale schreiben.
+\end{chemiebox}
+
+\begin{chemiebox}
+\textbf{Basis in der Kristallographie}
+
+In einem kubischen Kristall spannen die drei Basisvektoren
+\begin{align}
+\vec{a}_1 &= a(1,0,0)^T\\
+\vec{a}_2 &= a(0,1,0)^T\\
+\vec{a}_3 &= a(0,0,1)^T
+\end{align}
+den gesamten Kristallraum auf. Jeder Gitterpunkt lässt sich eindeutig als
+\[
+\vec{r} = n_1\vec{a}_1 + n_2\vec{a}_2 + n_3\vec{a}_3
+\]
+mit ganzen Zahlen $n_i$ darstellen. Die drei Basisvektoren sind linear unabhängig und erzeugen den ganzen $\mathbb{R}^3$.
+\end{chemiebox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Basis in $\mathbb{R}^3$}
+
+Betrachten Sie die Vektoren:
+\[
+\vec{v}_1 = (1,0,1)^T, \quad \vec{v}_2 = (0,1,1)^T, \quad \vec{v}_3 = (1,1,0)^T
+\]
+
+Lineare Unabhängigkeit prüfen:
+\[
+c_1\vec{v}_1 + c_2\vec{v}_2 + c_3\vec{v}_3 = \vec{0}
+\]
+\[
+c_1(1,0,1)^T + c_2(0,1,1)^T + c_3(1,1,0)^T = (0,0,0)^T
+\]
+
+Dies führt auf das Gleichungssystem:
+\begin{align}
+c_1 + c_3 &= 0\\
+c_2 + c_3 &= 0\\
+c_1 + c_2 &= 0
+\end{align}
+
+Die einzige Lösung ist $c_1 = c_2 = c_3 = 0$, also sind die Vektoren linear unabhängig und bilden eine Basis von $\mathbb{R}^3$.
+\end{beispielbox}
+
+\begin{theorem}[Basistauschsatz]
+Sei $V$ ein endlichdimensionaler Vektorraum und $\mathcal{B} = \{v_1,\ldots,v_n\}$ eine Basis von $V$.
+Ist $w \in V$ ein Vektor mit $w \neq \mathbf{0}$, dann gibt es einen Index $i$, 
+sodass auch $\{v_1,\ldots,v_{i-1},w,v_{i+1},\ldots,v_n\}$ eine Basis von $V$ ist.
+\end{theorem}
+
+\begin{definition}[Dimension]
+Die Dimension $\dim(V)$ eines Vektorraums $V$ ist die Anzahl der Elemente in einer Basis von $V$.
+Alle Basen eines endlichdimensionalen Vektorraums haben dieselbe Anzahl von Elementen.
+\end{definition}
+
+\subsubsection{Matrizen als Darstellungen linearer Abbildungen}
+
+\begin{definition}[Matrix]
+Eine $m \times n$-Matrix über einem Körper $K$ ist ein rechteckiges Schema
+\[
+A = \begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}
+\]
+mit Einträgen $a_{ij} \in K$. Wir schreiben $A \in M_{m \times n}(K)$ oder $A \in K^{m \times n}$.
+\end{definition}
+
+\begin{definition}[Matrixoperationen]
+Für Matrizen $A, B \in M_{m \times n}(K)$ und $\lambda \in K$:
+\begin{itemize}
+  \item \textbf{Addition:} $(A + B)_{ij} = a_{ij} + b_{ij}$
+  \item \textbf{Skalarmultiplikation:} $(\lambda A)_{ij} = \lambda a_{ij}$
+  \item \textbf{Multiplikation:} Für $A \in M_{m \times n}(K)$, $B \in M_{n \times p}(K)$ ist
+  \[
+  (AB)_{ij} = \sum_{k=1}^n a_{ik} b_{kj}
+  \]
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Spezielle Matrizen]
+\begin{itemize}
+  \item \textbf{Nullmatrix:} $O \in M_{m \times n}(K)$ mit $(O)_{ij} = 0$ für alle $i,j$
+  \item \textbf{Einheitsmatrix:} $I_n \in M_{n \times n}(K)$ mit $(I_n)_{ij} = \delta_{ij}$ (Kronecker-Delta)
+  \item \textbf{Transponierte:} $(A^T)_{ij} = a_{ji}$ für $A \in M_{m \times n}(K)$
+  \item \textbf{Diagonalmatrix:} $a_{ij} = 0$ für $i \neq j$
+  \item \textbf{Symmetrische Matrix:} $A = A^T$ (nur für quadratische Matrizen)
+\end{itemize}
+\end{definition}
+
+\begin{theorem}[Matrixmultiplikation ist assoziativ]
+Für Matrizen $A \in M_{m \times n}(K)$, $B \in M_{n \times p}(K)$, $C \in M_{p \times q}(K)$ gilt:
+\[
+(AB)C = A(BC)
+\]
+\end{theorem}
+
+\begin{bemerkung}
+Matrixmultiplikation ist im Allgemeinen \textbf{nicht} kommutativ: $AB \neq BA$ in den meisten Fällen.
+\end{bemerkung}
+
+\subsection{Beispielrechnung: Stöchiometrischer Unterraum}
+
+Betrachten wir ein System mit Spezies $\mathrm{A,B,C}$ und der Beziehung
+\[
+c_A + 2c_B + c_C = 0
+\]
+(als lineare Zwangsbedingung für Variationen, z.B. Erhaltung eines Elements).
+
+Wir bestimmen eine Basis des Lösungsraums:
+\[
+c_A = -2c_B - c_C.
+\]
+Setze $s=c_B$, $t=c_C$:
+\[
+(c_A,c_B,c_C) = (-2s-t,\, s,\, t)
+= s(-2,1,0) + t(-1,0,1).
+\]
+Damit:
+\begin{itemize}
+  \item der Lösungsraum ist ein Unterraum von $\R^3$,
+  \item eine Basis ist $\{(-2,1,0),(-1,0,1)\}$,
+  \item die Dimension ist $2$.
+\end{itemize}
+
+Dies kann etwa die möglichen Richtungen von Konzentrationsänderungen unter
+Erhaltung eines Elements beschreiben.
+
+\begin{extrabox}
+Unterthemen:
+Vektorräume von Funktionen ($f:\R\to\R$), Polynome,
+Vektorräume von Matrizen selbst, Zustandsräume für Spektren.
+\end{extrabox}
+
+\subsection{Anwendungen in der analytischen Chemie}
+
+\subsubsection{Mehrkomponentenanalyse}
+
+Bei der spektroskopischen Bestimmung mehrerer Analyte gleichzeitig entstehen lineare Gleichungssysteme.
+Das Lambert-Beer-Gesetz für $n$ Komponenten bei $m$ Wellenlängen:
+
+\[
+\begin{pmatrix}
+A_{\lambda_1} \\
+A_{\lambda_2} \\
+\vdots \\
+A_{\lambda_m}
+\end{pmatrix}
+=
+\begin{pmatrix}
+\varepsilon_{1,\lambda_1} & \varepsilon_{2,\lambda_1} & \cdots & \varepsilon_{n,\lambda_1} \\
+\varepsilon_{1,\lambda_2} & \varepsilon_{2,\lambda_2} & \cdots & \varepsilon_{n,\lambda_2} \\
+\vdots & \vdots & \ddots & \vdots \\
+\varepsilon_{1,\lambda_m} & \varepsilon_{2,\lambda_m} & \cdots & \varepsilon_{n,\lambda_m}
+\end{pmatrix}
+\begin{pmatrix}
+c_1 \\
+c_2 \\
+\vdots \\
+c_n
+\end{pmatrix}
+\]
+
+Hier ist die Matrix der Extinktionskoeffizienten bekannt, die Konzentrationen sind gesucht.
+
+\begin{beispielbox}
+Bestimmung von Cu$^{2+}$ und Ni$^{2+}$ in Lösung:
+\begin{align}
+A_{600} &= 5.2 c_{\text{Cu}} + 1.1 c_{\text{Ni}} = 0.85 \\
+A_{700} &= 2.1 c_{\text{Cu}} + 3.8 c_{\text{Ni}} = 0.92
+\end{align}
+Lösung: $c_{\text{Cu}} = 0.12$ mol/L, $c_{\text{Ni}} = 0.18$ mol/L.
+\end{beispielbox}
+
+\subsubsection{Kalibriergeraden und Ausgleichsrechnung}
+
+In der Analytik erstellen wir oft Kalibriergeraden $y = ax + b$. 
+Bei $n$ Messpunkten $(x_i, y_i)$ führt die Methode der kleinsten Quadrate auf:
+
+\[
+\begin{pmatrix}
+\sum x_i^2 & \sum x_i \\
+\sum x_i & n
+\end{pmatrix}
+\begin{pmatrix}
+a \\ b
+\end{pmatrix}
+=
+\begin{pmatrix}
+\sum x_i y_i \\
+\sum y_i
+\end{pmatrix}
+\]
+
+\subsection{Molekülorbitale als Linearkombinationen}
+
+\subsubsection{LCAO-Ansatz (Linear Combination of Atomic Orbitals)}
+
+Ein Molekülorbital wird als Linearkombination von Atomorbitalen geschrieben:
+\[
+\psi_{\text{MO}} = c_1 \phi_1 + c_2 \phi_2 + \cdots + c_n \phi_n
+\]
+
+Für H$_2^+$ (einfachstes Molekülion):
+\[
+\psi_{\pm} = c_1 \phi_{1s}^{(A)} \pm c_2 \phi_{1s}^{(B)}
+\]
+
+Die Koeffizienten $c_i$ bilden einen Vektor im $\R^n$, die Normierungsbedingung
+$\sum c_i^2 = 1$ beschreibt die Einheitssphäre.
+
+\subsubsection{Hückel-Methode für pi-Systeme}
+
+Für konjugierte Systeme führt die Hückel-Näherung auf Eigenwertprobleme.
+Für Butadien (4 C-Atome):
+
+\[
+\begin{pmatrix}
+\alpha & \beta & 0 & 0 \\
+\beta & \alpha & \beta & 0 \\
+0 & \beta & \alpha & \beta \\
+0 & 0 & \beta & \alpha
+\end{pmatrix}
+\begin{pmatrix}
+c_1 \\ c_2 \\ c_3 \\ c_4
+\end{pmatrix}
+= E
+\begin{pmatrix}
+c_1 \\ c_2 \\ c_3 \\ c_4
+\end{pmatrix}
+\]
+
+\subsection{Übungsaufgaben}
+
+\begin{enumerate}
+  \item Lösen Sie das System für die Bestimmung von Fe$^{3+}$ und Cu$^{2+}$:
+  \begin{align}
+  A_{400} &= 12.5 c_{\text{Fe}} + 8.1 c_{\text{Cu}} = 2.15 \\
+  A_{500} &= 3.2 c_{\text{Fe}} + 15.7 c_{\text{Cu}} = 1.89
+  \end{align}
+  
+  \item Ein lineares Alkylbenzol hat die Hückel-Matrix:
+  \[
+  H = \begin{pmatrix}
+  \alpha & \beta & 0 \\
+  \beta & \alpha & \beta \\
+  0 & \beta & \alpha
+  \end{pmatrix}
+  \]
+  Bestimmen Sie die Energieniveaus (als Vielfache von $\beta$).
+  
+  \item Zeigen Sie, dass die drei Vektoren
+  $(1,2,3)$, $(2,1,0)$, $(0,1,2)$ linear unabhängig sind.
+\end{enumerate}
+
+\newpage
+
+% ====================================================================
+% 3. LINEARE ABBILDUNGEN
+% ====================================================================
+
+\section{Lineare Abbildungen}
+
+\subsection{Anschauliche Erklärung}
+
+Lineare Abbildungen sind die fundamentalen Transformationen der linearen Algebra.
+Sie erhalten die Struktur von Vektorräumen: Linearkombinationen werden auf 
+Linearkombinationen abgebildet, Proportionen bleiben erhalten.
+
+In der Chemie begegnen uns lineare Abbildungen überall:
+\begin{itemize}
+  \item Koordinatentransformationen (kartesisch $\leftrightarrow$ intern)
+  \item Symmetrieoperationen an Molekülen
+  \item Spektrale Transformationen (Fourier-Transformation)
+  \item Projektionen von hochdimensionalen Daten
+  \item Zeitentwicklung linearer Differentialgleichungen
+\end{itemize}
+
+\subsection{Chemische Beispiele linearer Abbildungen}
+
+\begin{chemiebox}
+\textbf{Symmetrieoperationen als lineare Abbildungen}
+
+\textbf{1. Spiegelung an einer Ebene:} Die Spiegelung eines Moleküls an der $yz$-Ebene wird durch die Matrix
+\[
+\sigma_{yz} = \begin{pmatrix} -1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}
+\]
+beschrieben. Ein Punkt $(x,y,z)^T$ wird auf $(-x,y,z)^T$ abgebildet.
+
+\textbf{2. Rotation um eine Achse:} Eine Drehung um die $z$-Achse mit Winkel $\theta$ entspricht der Matrix
+\[
+R_z(\theta) = \begin{pmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{pmatrix}
+\]
+
+\textbf{3. Inversion am Koordinatenursprung:} Die Matrix
+\[
+i = \begin{pmatrix} -1 & 0 & 0 \\ 0 & -1 & 0 \\ 0 & 0 & -1 \end{pmatrix}
+\]
+beschreibt die Punktspiegelung $(x,y,z)^T \mapsto (-x,-y,-z)^T$.
+\end{chemiebox}
+
+\begin{chemiebox}
+\textbf{Projektionsoperatoren in der Spektroskopie}
+
+In der Quantenchemie sind Projektionsoperatoren von zentraler Bedeutung:
+
+\textbf{1. Besetzungsprojektion:} Der Operator $\hat{P} = |\psi\rangle\langle\psi|$ projiziert auf den Zustand $|\psi\rangle$. Für normierte Zustände gilt $\hat{P}^2 = \hat{P}$.
+
+\textbf{2. Symmetrieprojektion:} Für eine Symmetrieoperation $\hat{R}$ einer Punktgruppe definiert
+\[
+\hat{P}_{\Gamma} = \frac{1}{|G|} \sum_{R \in G} \chi_{\Gamma}(R) \hat{R}
+\]
+die Projektion auf die irreduzible Darstellung $\Gamma$, wobei $\chi_{\Gamma}(R)$ der Charakter ist.
+
+\textbf{3. Elektronendichteprojektion:} In der DFT wird die Elektronendichte durch Linearkombination von Basisfunktionen projiziert:
+\[
+\rho(\vec{r}) = \sum_{i,j} P_{ij} \phi_i(\vec{r}) \phi_j(\vec{r})
+\]
+\end{chemiebox}
+
+\subsection{Mathematische Grundlagen}
+
+\begin{definition}[Lineare Abbildung]
+Seien $V$ und $W$ Vektorräume über dem gleichen Körper $K$. Eine Abbildung $f: V \to W$ heißt \emph{linear}, wenn gilt:
+\begin{enumerate}
+\item \textbf{Additivität:} $f(v_1 + v_2) = f(v_1) + f(v_2)$ für alle $v_1, v_2 \in V$
+\item \textbf{Homogenität:} $f(\lambda v) = \lambda f(v)$ für alle $\lambda \in K, v \in V$
+\end{enumerate}
+Äquivalent: $f(\alpha v_1 + \beta v_2) = \alpha f(v_1) + \beta f(v_2)$ für alle $\alpha, \beta \in K$ und $v_1, v_2 \in V$.
+\end{definition}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Linearität prüfen}
+
+Sei $f: \mathbb{R}^2 \to \mathbb{R}^3$ definiert durch $f\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}2x+y\\x-3y\\5x\end{pmatrix}$.
+
+\textbf{Additivität prüfen:}
+\begin{align}
+f\left(\begin{pmatrix}x_1\\y_1\end{pmatrix} + \begin{pmatrix}x_2\\y_2\end{pmatrix}\right) &= f\begin{pmatrix}x_1+x_2\\y_1+y_2\end{pmatrix}\\
+&= \begin{pmatrix}2(x_1+x_2)+(y_1+y_2)\\(x_1+x_2)-3(y_1+y_2)\\5(x_1+x_2)\end{pmatrix}\\
+&= \begin{pmatrix}2x_1+y_1\\x_1-3y_1\\5x_1\end{pmatrix} + \begin{pmatrix}2x_2+y_2\\x_2-3y_2\\5x_2\end{pmatrix}\\
+&= f\begin{pmatrix}x_1\\y_1\end{pmatrix} + f\begin{pmatrix}x_2\\y_2\end{pmatrix}
+\end{align}
+
+\textbf{Homogenität prüfen:}
+\begin{align}
+f\left(\lambda\begin{pmatrix}x\\y\end{pmatrix}\right) &= f\begin{pmatrix}\lambda x\\\lambda y\end{pmatrix}\\
+&= \begin{pmatrix}2\lambda x+\lambda y\\\lambda x-3\lambda y\\5\lambda x\end{pmatrix}\\
+&= \lambda\begin{pmatrix}2x+y\\x-3y\\5x\end{pmatrix} = \lambda f\begin{pmatrix}x\\y\end{pmatrix}
+\end{align}
+
+Also ist $f$ linear.
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Matrixdarstellung}
+
+Für die lineare Abbildung $f: \mathbb{R}^2 \to \mathbb{R}^3$ aus dem vorigen Beispiel bestimmen wir die Matrixdarstellung.
+
+\textbf{Bilder der Standardbasisvektoren:}
+\begin{align}
+f\begin{pmatrix}1\\0\end{pmatrix} &= \begin{pmatrix}2\\1\\5\end{pmatrix}\\
+f\begin{pmatrix}0\\1\end{pmatrix} &= \begin{pmatrix}1\\-3\\0\end{pmatrix}
+\end{align}
+
+\textbf{Matrixdarstellung:}
+\[
+A = \begin{pmatrix}2 & 1\\1 & -3\\5 & 0\end{pmatrix}
+\]
+
+\textbf{Verifikation:}
+\[
+A\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}2 & 1\\1 & -3\\5 & 0\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}2x+y\\x-3y\\5x\end{pmatrix} = f\begin{pmatrix}x\\y\end{pmatrix}
+\]
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Kern und Bild}
+
+Für die lineare Abbildung $g: \mathbb{R}^3 \to \mathbb{R}^2$ mit Matrix
+\[
+B = \begin{pmatrix}1 & 2 & -1\\3 & 1 & 2\end{pmatrix}
+\]
+
+\textbf{Kern bestimmen:} $\ker(g) = \{v \in \mathbb{R}^3 \mid Bv = 0\}$
+\[
+\begin{pmatrix}1 & 2 & -1\\3 & 1 & 2\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix} = \begin{pmatrix}0\\0\end{pmatrix}
+\]
+
+Gleichungssystem lösen:
+\begin{align}
+x + 2y - z &= 0\\
+3x + y + 2z &= 0
+\end{align}
+
+Gauß-Elimination:
+\[
+\begin{pmatrix}1 & 2 & -1\\3 & 1 & 2\end{pmatrix} \sim \begin{pmatrix}1 & 2 & -1\\0 & -5 & 5\end{pmatrix} \sim \begin{pmatrix}1 & 2 & -1\\0 & 1 & -1\end{pmatrix}
+\]
+
+Also: $y = z$ und $x = -2y + z = -z$
+
+\[
+\ker(g) = \text{span}\left\{\begin{pmatrix}-1\\1\\1\end{pmatrix}\right\}, \quad \dim(\ker(g)) = 1
+\]
+
+\textbf{Bild bestimmen:} $\text{Bild}(g) = \text{span}\{\text{Spalten von } B\}$
+
+Da $\text{rang}(B) = 2$, ist $\dim(\text{Bild}(g)) = 2$, also $\text{Bild}(g) = \mathbb{R}^2$.
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Komposition linearer Abbildungen}
+
+Seien $f: \mathbb{R}^2 \to \mathbb{R}^3$ mit Matrix $A = \begin{pmatrix}1 & 2\\0 & 1\\-1 & 3\end{pmatrix}$ und 
+$g: \mathbb{R}^3 \to \mathbb{R}^2$ mit Matrix $B = \begin{pmatrix}2 & 1 & 0\\1 & -1 & 2\end{pmatrix}$.
+
+\textbf{Komposition $g \circ f$:}
+\begin{align}
+BA &= \begin{pmatrix}2 & 1 & 0\\1 & -1 & 2\end{pmatrix}\begin{pmatrix}1 & 2\\0 & 1\\-1 & 3\end{pmatrix}\\
+&= \begin{pmatrix}2 \cdot 1 + 1 \cdot 0 + 0 \cdot (-1) & 2 \cdot 2 + 1 \cdot 1 + 0 \cdot 3\\1 \cdot 1 + (-1) \cdot 0 + 2 \cdot (-1) & 1 \cdot 2 + (-1) \cdot 1 + 2 \cdot 3\end{pmatrix}\\
+&= \begin{pmatrix}2 & 5\\-1 & 7\end{pmatrix}
+\end{align}
+
+\textbf{Verifikation:}
+\[
+(g \circ f)\begin{pmatrix}1\\0\end{pmatrix} = g\left(\begin{pmatrix}1\\0\\-1\end{pmatrix}\right) = \begin{pmatrix}2\\-1\end{pmatrix} = \begin{pmatrix}2 & 5\\-1 & 7\end{pmatrix}\begin{pmatrix}1\\0\end{pmatrix}
+\]
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Lineare Abbildung}
+
+Betrachten Sie die Abbildung $f: \mathbb{R}^2 \to \mathbb{R}^2$ mit
+\[
+f\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 2x + y \\ x - y \end{pmatrix}
+\]
+
+Überprüfung der Linearität:
+\begin{align}
+f(\alpha \vec{u} + \beta \vec{v}) &= f\left(\alpha \begin{pmatrix} u_1 \\ u_2 \end{pmatrix} + \beta \begin{pmatrix} v_1 \\ v_2 \end{pmatrix}\right)\\
+&= f\begin{pmatrix} \alpha u_1 + \beta v_1 \\ \alpha u_2 + \beta v_2 \end{pmatrix}\\
+&= \begin{pmatrix} 2(\alpha u_1 + \beta v_1) + (\alpha u_2 + \beta v_2) \\ (\alpha u_1 + \beta v_1) - (\alpha u_2 + \beta v_2) \end{pmatrix}\\
+&= \alpha \begin{pmatrix} 2u_1 + u_2 \\ u_1 - u_2 \end{pmatrix} + \beta \begin{pmatrix} 2v_1 + v_2 \\ v_1 - v_2 \end{pmatrix}\\
+&= \alpha f(\vec{u}) + \beta f(\vec{v})
+\end{align}
+
+Die Abbildung ist linear.
+\end{beispielbox}
+
+\subsection{Mathematische Definition und Eigenschaften}
+
+\begin{definition}[Lineare Abbildung]
+Eine Abbildung $f: V \to W$ zwischen Vektorräumen heißt linear, wenn für alle 
+$u, v \in V$ und alle $\alpha, \beta \in K$ gilt:
+\[
+f(\alpha u + \beta v) = \alpha f(u) + \beta f(v)
+\]
+Diese Bedingung ist äquivalent zu:
+\begin{enumerate}
+  \item $f(u + v) = f(u) + f(v)$ (Additivität)
+  \item $f(\alpha v) = \alpha f(v)$ (Homogenität)
+\end{enumerate}
+\end{definition}
+
+\begin{bemerkung}
+Aus der Linearität folgt automatisch $f(\mathbf{0}) = \mathbf{0}$, denn:
+\[
+f(\mathbf{0}) = f(0 \cdot \mathbf{0}) = 0 \cdot f(\mathbf{0}) = \mathbf{0}
+\]
+\end{bemerkung}
+
+\begin{definition}[Kern und Bild einer linearen Abbildung]
+Für eine lineare Abbildung $f: V \to W$ definieren wir:
+\begin{itemize}
+  \item \textbf{Kern:} $\ker(f) = \{v \in V \mid f(v) = \mathbf{0}\}$
+  \item \textbf{Bild:} $\operatorname{im}(f) = \{f(v) \mid v \in V\} = \{w \in W \mid \exists v \in V: f(v) = w\}$
+\end{itemize}
+\end{definition}
+
+\begin{theorem}[Eigenschaften von Kern und Bild]
+Für eine lineare Abbildung $f: V \to W$ gilt:
+\begin{enumerate}
+  \item $\ker(f)$ ist ein Untervektorraum von $V$
+  \item $\operatorname{im}(f)$ ist ein Untervektorraum von $W$
+  \item $f$ ist injektiv $\Leftrightarrow \ker(f) = \{\mathbf{0}\}$
+  \item $f$ ist surjektiv $\Leftrightarrow \operatorname{im}(f) = W$
+\end{enumerate}
+\end{theorem}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Projektionsabbildungen}
+
+\textbf{1. Orthogonale Projektion auf eine Gerade:}
+
+Projektion eines Vektors $\vec{v} \in \mathbb{R}^3$ auf die Gerade durch $\vec{u} = \begin{pmatrix}1\\1\\1\end{pmatrix}$:
+
+\[
+\text{proj}_{\vec{u}}(\vec{v}) = \frac{\vec{v} \cdot \vec{u}}{|\vec{u}|^2} \vec{u} = \frac{\vec{v} \cdot \vec{u}}{3} \vec{u}
+\]
+
+Für $\vec{v} = \begin{pmatrix}2\\-1\\4\end{pmatrix}$:
+\begin{align}
+\vec{v} \cdot \vec{u} &= 2 \cdot 1 + (-1) \cdot 1 + 4 \cdot 1 = 5\\
+\text{proj}_{\vec{u}}(\vec{v}) &= \frac{5}{3}\begin{pmatrix}1\\1\\1\end{pmatrix} = \begin{pmatrix}5/3\\5/3\\5/3\end{pmatrix}
+\end{align}
+
+\textbf{2. Matrixdarstellung der Projektion:}
+\[
+P = \frac{\vec{u}\vec{u}^T}{|\vec{u}|^2} = \frac{1}{3}\begin{pmatrix}1\\1\\1\end{pmatrix}\begin{pmatrix}1 & 1 & 1\end{pmatrix} = \frac{1}{3}\begin{pmatrix}1 & 1 & 1\\1 & 1 & 1\\1 & 1 & 1\end{pmatrix}
+\]
+
+\textbf{Eigenschaften:} $P^2 = P$ (idempotent), $\ker(P) = \{\vec{u}\}^{\perp}$, $\text{Bild}(P) = \text{span}\{\vec{u}\}$
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Drehmatrizen}
+
+\textbf{Drehung um die $z$-Achse mit Winkel $\theta$:}
+\[
+R_z(\theta) = \begin{pmatrix}\cos\theta & -\sin\theta & 0\\\sin\theta & \cos\theta & 0\\0 & 0 & 1\end{pmatrix}
+\]
+
+\textbf{Eigenschaften prüfen:}
+\begin{itemize}
+\item \textbf{Längenerhaltung:} $|R_z(\theta)\vec{v}| = |\vec{v}|$ für alle $\vec{v}$
+\item \textbf{Orthogonalität:} $R_z(\theta)^T R_z(\theta) = I$
+\item \textbf{Determinante:} $\det(R_z(\theta)) = 1$
+\end{itemize}
+
+\textbf{Beispielrechnung für $\theta = \pi/2$:}
+\[
+R_z(\pi/2) = \begin{pmatrix}0 & -1 & 0\\1 & 0 & 0\\0 & 0 & 1\end{pmatrix}
+\]
+
+Anwendung auf $\vec{v} = \begin{pmatrix}1\\0\\0\end{pmatrix}$:
+\[
+R_z(\pi/2)\begin{pmatrix}1\\0\\0\end{pmatrix} = \begin{pmatrix}0\\1\\0\end{pmatrix}
+\]
+($90^\circ$-Drehung der $x$-Achse zur $y$-Achse)
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Spiegelungsmatrizen}
+
+\textbf{1. Spiegelung an der $xy$-Ebene:}
+\[
+S_{xy} = \begin{pmatrix}1 & 0 & 0\\0 & 1 & 0\\0 & 0 & -1\end{pmatrix}
+\]
+
+\textbf{2. Spiegelung an der Geraden $y = x$ (in der $xy$-Ebene):}
+\[
+S_{y=x} = \begin{pmatrix}0 & 1 & 0\\1 & 0 & 0\\0 & 0 & 1\end{pmatrix}
+\]
+
+\textbf{3. Spiegelung an einer beliebigen Ebene mit Normalenvektor $\vec{n}$:}
+\[
+S = I - 2\frac{\vec{n}\vec{n}^T}{|\vec{n}|^2}
+\]
+
+\textbf{Eigenschaften von Spiegelungen:}
+\begin{itemize}
+\item $S^2 = I$ (Involution)
+\item $\det(S) = -1$
+\item Eigenwerte: $+1$ (für Vektoren in der Spiegelebene), $-1$ (für Normalenrichtung)
+\end{itemize}
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Lineare Differentialoperatoren}
+
+\textbf{Ableitungsoperator:} $D: C^1(\mathbb{R}) \to C^0(\mathbb{R})$, $D(f) = f'$
+
+\textbf{Linearität prüfen:}
+\begin{align}
+D(f + g) &= (f + g)' = f' + g' = D(f) + D(g)\\
+D(\lambda f) &= (\lambda f)' = \lambda f' = \lambda D(f)
+\end{align}
+
+\textbf{Matrixdarstellung im Polynomraum $P_3$:}
+
+Basis: $\{1, x, x^2, x^3\}$
+
+Bilder unter $D$:
+\begin{align}
+D(1) &= 0 = 0 \cdot 1 + 0 \cdot x + 0 \cdot x^2 + 0 \cdot x^3\\
+D(x) &= 1 = 1 \cdot 1 + 0 \cdot x + 0 \cdot x^2 + 0 \cdot x^3\\
+D(x^2) &= 2x = 0 \cdot 1 + 2 \cdot x + 0 \cdot x^2 + 0 \cdot x^3\\
+D(x^3) &= 3x^2 = 0 \cdot 1 + 0 \cdot x + 3 \cdot x^2 + 0 \cdot x^3
+\end{align}
+
+\textbf{Matrixdarstellung:}
+\[
+[D] = \begin{pmatrix}0 & 1 & 0 & 0\\0 & 0 & 2 & 0\\0 & 0 & 0 & 3\\0 & 0 & 0 & 0\end{pmatrix}
+\]
+
+\textbf{Kern:} $\ker(D) = \{c \cdot 1 \mid c \in \mathbb{R}\} = \text{span}\{1\}$ (konstante Polynome)
+\end{beispielbox}
+
+\begin{theorem}[Dimensionsformel (Rang-Nullitäts-Satz)]
+Für eine lineare Abbildung $f: V \to W$ zwischen endlichdimensionalen Vektorräumen gilt:
+\[
+\dim(V) = \dim(\ker(f)) + \dim(\operatorname{im}(f))
+\]
+Dabei heißt $\dim(\operatorname{im}(f))$ der \textbf{Rang} von $f$.
+\end{theorem}
+
+\subsection{Matrixdarstellung linearer Abbildungen}
+
+\begin{theorem}[Matrixdarstellung]
+Seien $V$ und $W$ endlichdimensionale Vektorräume mit Basen 
+$\mathcal{B}_V = \{v_1, \ldots, v_n\}$ und $\mathcal{B}_W = \{w_1, \ldots, w_m\}$.
+
+Jede lineare Abbildung $f: V \to W$ wird eindeutig durch eine Matrix 
+$A \in M_{m \times n}(K)$ dargestellt, wobei die $j$-te Spalte von $A$ 
+die Koordinaten von $f(v_j)$ bezüglich der Basis $\mathcal{B}_W$ enthält.
+\end{theorem}
+
+\begin{definition}[Koordinatenvektor]
+Ist $\mathcal{B} = \{v_1, \ldots, v_n\}$ eine Basis von $V$ und $v = \alpha_1 v_1 + \cdots + \alpha_n v_n$,
+dann heißt
+\[
+[v]_{\mathcal{B}} = \begin{pmatrix} \alpha_1 \\ \vdots \\ \alpha_n \end{pmatrix}
+\]
+der Koordinatenvektor von $v$ bezüglich $\mathcal{B}$.
+\end{definition}
+
+\begin{theorem}[Dimensionssatz für lineare Abbildungen]
+Für eine lineare Abbildung $f: V \to W$ zwischen endlichdimensionalen Vektorräumen gilt:
+\[
+\dim(V) = \dim(\ker(f)) + \dim(\text{Bild}(f))
+\]
+\end{theorem}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Dimensionssatz anwenden}
+
+Sei $f: \mathbb{R}^4 \to \mathbb{R}^3$ mit Matrix
+\[
+A = \begin{pmatrix}1 & 2 & 0 & 1\\0 & 1 & -1 & 2\\2 & 5 & -1 & 4\end{pmatrix}
+\]
+
+\textbf{Rang bestimmen durch Gauß-Elimination:}
+\begin{align}
+A &= \begin{pmatrix}1 & 2 & 0 & 1\\0 & 1 & -1 & 2\\2 & 5 & -1 & 4\end{pmatrix}\\
+&\sim \begin{pmatrix}1 & 2 & 0 & 1\\0 & 1 & -1 & 2\\0 & 1 & -1 & 2\end{pmatrix} \quad (Z_3 - 2Z_1)\\
+&\sim \begin{pmatrix}1 & 2 & 0 & 1\\0 & 1 & -1 & 2\\0 & 0 & 0 & 0\end{pmatrix} \quad (Z_3 - Z_2)\\
+&\sim \begin{pmatrix}1 & 0 & 2 & -3\\0 & 1 & -1 & 2\\0 & 0 & 0 & 0\end{pmatrix} \quad (Z_1 - 2Z_2)
+\end{align}
+
+Also: $\text{rang}(A) = 2$, damit $\dim(\text{Bild}(f)) = 2$.
+
+\textbf{Dimensionssatz anwenden:}
+\[
+\dim(\mathbb{R}^4) = \dim(\ker(f)) + \dim(\text{Bild}(f)) \Rightarrow 4 = \dim(\ker(f)) + 2
+\]
+
+Also: $\dim(\ker(f)) = 2$.
+
+\textbf{Kern bestimmen:}
+Aus der reduzierten Matrix: $x_1 = -2x_3 + 3x_4$, $x_2 = x_3 - 2x_4$
+
+\[
+\ker(f) = \text{span}\left\{\begin{pmatrix}-2\\1\\1\\0\end{pmatrix}, \begin{pmatrix}3\\-2\\0\\1\end{pmatrix}\right\}
+\]
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Basiswechsel}
+
+Seien $\mathcal{B} = \{v_1, v_2\}$ und $\mathcal{C} = \{w_1, w_2\}$ Basen von $\mathbb{R}^2$ mit:
+\begin{align}
+v_1 = \begin{pmatrix}1\\0\end{pmatrix}, \quad v_2 = \begin{pmatrix}0\\1\end{pmatrix} \quad &\text{(Standardbasis)}\\
+w_1 = \begin{pmatrix}1\\1\end{pmatrix}, \quad w_2 = \begin{pmatrix}1\\-1\end{pmatrix} \quad &\text{(neue Basis)}
+\end{align}
+
+\textbf{Transformationsmatrix $\mathcal{B} \to \mathcal{C}$:}
+
+Zunächst drücken wir $w_1, w_2$ in $\mathcal{B}$-Koordinaten aus:
+\[
+[w_1]_{\mathcal{B}} = \begin{pmatrix}1\\1\end{pmatrix}, \quad [w_2]_{\mathcal{B}} = \begin{pmatrix}1\\-1\end{pmatrix}
+\]
+
+Die Transformationsmatrix ist:
+\[
+P_{\mathcal{C} \leftarrow \mathcal{B}} = \begin{pmatrix}1 & 1\\1 & -1\end{pmatrix}
+\]
+
+\textbf{Inverse Transformation $\mathcal{C} \to \mathcal{B}$:}
+\[
+P_{\mathcal{B} \leftarrow \mathcal{C}} = P_{\mathcal{C} \leftarrow \mathcal{B}}^{-1} = \frac{1}{-2}\begin{pmatrix}-1 & -1\\-1 & 1\end{pmatrix} = \frac{1}{2}\begin{pmatrix}1 & 1\\1 & -1\end{pmatrix}
+\]
+
+\textbf{Beispiel:} Für $x = \begin{pmatrix}3\\1\end{pmatrix}$ in $\mathcal{B}$-Koordinaten:
+\[
+[x]_{\mathcal{C}} = P_{\mathcal{C} \leftarrow \mathcal{B}}\begin{pmatrix}3\\1\end{pmatrix} = \begin{pmatrix}1 & 1\\1 & -1\end{pmatrix}\begin{pmatrix}3\\1\end{pmatrix} = \begin{pmatrix}4\\2\end{pmatrix}
+\]
+
+\textbf{Verifikation:} $4w_1 + 2w_2 = 4\begin{pmatrix}1\\1\end{pmatrix} + 2\begin{pmatrix}1\\-1\end{pmatrix} = \begin{pmatrix}6\\2\end{pmatrix} \neq \begin{pmatrix}3\\1\end{pmatrix}$
+
+\textbf{Korrektur:} Wir brauchen $P_{\mathcal{B} \leftarrow \mathcal{C}}$:
+\[
+[x]_{\mathcal{C}} = P_{\mathcal{B} \leftarrow \mathcal{C}}^{-1}[x]_{\mathcal{B}} = \frac{1}{2}\begin{pmatrix}1 & 1\\1 & -1\end{pmatrix}\begin{pmatrix}3\\1\end{pmatrix} = \begin{pmatrix}2\\1\end{pmatrix}
+\]
+
+\textbf{Verifikation:} $2w_1 + 1w_2 = 2\begin{pmatrix}1\\1\end{pmatrix} + 1\begin{pmatrix}1\\-1\end{pmatrix} = \begin{pmatrix}3\\1\end{pmatrix}$ \checkmark
+\end{beispielbox}
+
+\subsection{Beispielrechnung: Symmetrieoperationen am Wassermolekül}
+
+Betrachten wir das Wassermolekül H$_2$O in der $xy$-Ebene mit O im Ursprung.
+Die C$_{2v}$-Symmetriegruppe enthält vier Operationen:
+
+\begin{itemize}
+  \item $E$: Identität
+  \item $C_2$: Drehung um $180^\circ$ um die $z$-Achse
+  \item $\sigma_v$: Spiegelung an der $xz$-Ebene (Molekülebene)
+  \item $\sigma_v'$: Spiegelung an der $yz$-Ebene
+\end{itemize}
+
+In der Standard-Koordinatenbasis $(x,y)$ haben diese die Matrixdarstellungen:
+\[
+E = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \quad
+C_2 = \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}
+\]
+\[
+\sigma_v = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}, \quad
+\sigma_v' = \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}
+\]
+
+Diese Matrizen bilden eine Gruppe unter Matrixmultiplikation und stellen eine 
+\textbf{Darstellung} der abstrakten Symmetriegruppe C$_{2v}$ dar.
+
+\subsection{Übungsaufgaben}
+
+\begin{enumerate}
+  \item Zeigen Sie, dass die Abbildung $f: \R^3 \to \R^2$ mit 
+  $f(x,y,z) = (x + 2y - z, 3x - y + 2z)$ linear ist.
+  
+  \item Bestimmen Sie Kern und Bild der linearen Abbildung aus Aufgabe 1.
+  
+  \item Verifizieren Sie die Dimensionsformel für die Abbildung aus Aufgabe 1.
+  
+  \item Geben Sie die Matrixdarstellung der Drehung um $60^\circ$ in der Ebene an.
+\end{enumerate}
+
+\newpage
+
+% ====================================================================
+% 4. LINEARE GLEICHUNGSSYSTEME UND BASIS
+% ====================================================================
+
+\section{Lineare Gleichungssysteme und Basen}
+
+\subsection{Anschauliche Erklärung}
+
+Lineare Gleichungssysteme (LGS) sind das Rückgrat vieler Modelle:
+Stoffbilanzen, Ladungsneutralität, lineare Näherungen von Reaktionsraten
+oder Spektren. 
+Die Lösung eines LGS beschreibt alle Zustände, die mit den gegebenen
+linearen Bedingungen verträglich sind.
+
+Die Struktur des Lösungsraums (Dimension, Basis) zeigt:
+Wie viele Freiheitsgrade bleiben?
+Sind die Bedingungen konsistent?
+Gibt es eine eindeutige Lösung?
+
+\subsection{Mathematische Grundlagen}
+
+Ein LGS mit $m$ Gleichungen in $n$ Unbekannten lässt sich als
+\[
+A x = b
+\]
+schreiben, mit $A\in M_{m\times n}(\R)$, $x\in\R^n$, $b\in\R^m$.
+
+\begin{definition}[Rang]
+Der Rang $\operatorname{rang}(A)$ ist die Dimension des Spaltenraums von $A$,
+also die Anzahl linear unabhängiger Spalten.
+\end{definition}
+
+\begin{definition}[Homogenes System]
+Ein System $A x = 0$ heißt homogen.
+Sein Lösungsraum ist ein Untervektorraum von $\R^n$, nämlich $\ker A$.
+\end{definition}
+
+\begin{theorem}[Rang-Nullität]
+Für $A\in M_{m\times n}(\R)$ gilt:
+\[
+\dim(\ker A) + \operatorname{rang}(A) = n.
+\]
+\end{theorem}
+
+\subsection{Beispielrechnung: Konstruktives LGS}
+
+Wir lösen erneut
+\[
+\begin{cases}
+x + 2y + z = 1\\
+2x + 4y + 2z = 2\\
+x - y + z = 0.
+\end{cases}
+\]
+
+Erweiterte Matrix:
+\[
+\left(
+\begin{array}{ccc|c}
+1 & 2 & 1 & 1\\
+2 & 4 & 2 & 2\\
+1 & -1 & 1 & 0
+\end{array}
+\right).
+\]
+
+Zeilenumformungen:
+\[
+Z_2 \leftarrow Z_2 - 2Z_1,\quad
+Z_3 \leftarrow Z_3 - Z_1:
+\]
+\[
+\left(
+\begin{array}{ccc|c}
+1 & 2 & 1 & 1\\
+0 & 0 & 0 & 0\\
+0 & -3 & 0 & -1
+\end{array}
+\right).
+\]
+Dann
+\[
+Z_3 \leftarrow -\tfrac{1}{3} Z_3:
+\quad
+\left(
+\begin{array}{ccc|c}
+1 & 2 & 1 & 1\\
+0 & 0 & 0 & 0\\
+0 & 1 & 0 & \tfrac{1}{3}
+\end{array}
+\right).
+\]
+
+Ablesen:
+\[
+y = \tfrac{1}{3},\quad x + 2y + z = 1 \Rightarrow x + z = \tfrac{1}{3}.
+\]
+Mit freiem Parameter $t=z$:
+\[
+(x,y,z) = \left(\tfrac{1}{3}-t,\; \tfrac{1}{3},\; t\right).
+\]
+
+Hier:
+\begin{itemize}
+  \item $\operatorname{rang}(A)=2$,
+  \item eindimensionaler Freiheitsgrad,
+  \item Lösungsmenge ist eine affine Gerade in $\R^3$.
+\end{itemize}
+
+Unterthemen: überbestimmte Systeme, Ausgleichsrechnung,
+Interpretation von Rangmangel (z.B. redundante Bilanzgleichungen).
+
+\subsection{Chemische Gleichgewichte und Stoffbilanzen}
+
+\subsubsection{Massenwirkungsgesetz und lineare Abhängigkeiten}
+
+Betrachten wir das Gleichgewichtssystem:
+\begin{align}
+\text{H}_2\text{O} &\rightleftharpoons \text{H}^+ + \text{OH}^- \\
+\text{NH}_3 + \text{H}_2\text{O} &\rightleftharpoons \text{NH}_4^+ + \text{OH}^- \\
+\text{NH}_4^+ &\rightleftharpoons \text{NH}_3 + \text{H}^+
+\end{align}
+
+Die Bilanzgleichungen sind:
+\begin{align}
+[\text{H}^+] - [\text{OH}^-] + [\text{NH}_4^+] &= 0 \quad \text{(Elektroneutralität)} \\
+[\text{NH}_3] + [\text{NH}_4^+] &= c_0 \quad \text{(N-Bilanz)} \\
+[\text{H}^+][\text{OH}^-] &= K_w \quad \text{(nichtlinear!)}
+\end{align}
+
+Die ersten beiden Gleichungen sind linear und definieren einen 2-dimensionalen Unterraum 
+im 4-dimensionalen Konzentrationsraum.
+
+\subsubsection{Stöchiometrische Matrix}
+
+Für das Reaktionsnetzwerk:
+\begin{align}
+\text{A} + \text{B} &\to \text{C} \\
+2\text{A} &\to \text{D} \\
+\text{C} + \text{D} &\to \text{E}
+\end{align}
+
+Die stöchiometrische Matrix ist:
+\[
+S = \begin{pmatrix}
+-1 & -1 & +1 & 0 & 0 \\
+-2 & 0 & 0 & +1 & 0 \\
+0 & 0 & -1 & -1 & +1
+\end{pmatrix}
+\]
+
+Der Nullraum von $S$ beschreibt die Erhaltungsgrößen (stöchiometrische Invarianten).
+
+\subsection{Kristallographie und Gitterstrukturen}
+
+\subsubsection{Basisvektoren im Kristallgitter}
+
+Ein Kristallgitter wird durch drei linear unabhängige Basisvektoren $\mathbf{a}$, $\mathbf{b}$, $\mathbf{c}$ aufgespannt.
+Jeder Gitterpunkt hat die Form:
+\[
+\mathbf{r} = h\mathbf{a} + k\mathbf{b} + l\mathbf{c}
+\]
+mit ganzzahligen Miller-Indizes $h$, $k$, $l$.
+
+\begin{beispielbox}
+Kubisches Gitter mit Gitterkonstante $a$:
+\[
+\mathbf{a} = \begin{pmatrix} a \\ 0 \\ 0 \end{pmatrix}, \quad
+\mathbf{b} = \begin{pmatrix} 0 \\ a \\ 0 \end{pmatrix}, \quad
+\mathbf{c} = \begin{pmatrix} 0 \\ 0 \\ a \end{pmatrix}
+\]
+Die Position (1,1,1) entspricht $\mathbf{r} = (a, a, a)^T$.
+\end{beispielbox}
+
+\subsubsection{Netzebenen und Bragg-Gleichung}
+
+Eine Netzebene mit Miller-Indizes $(h,k,l)$ hat den Normalenvektor:
+\[
+\mathbf{n} = h\mathbf{a}^* + k\mathbf{b}^* + l\mathbf{c}^*
+\]
+wobei $\mathbf{a}^*$, $\mathbf{b}^*$, $\mathbf{c}^*$ die reziproken Gittervektoren sind.
+
+\subsection{Übungsaufgaben}
+
+\begin{enumerate}
+  \item Gegeben sei die Reaktion: $\text{A} + 2\text{B} \to \text{C}$ und $2\text{C} \to \text{D} + \text{E}$.
+  Stellen Sie die stöchiometrische Matrix auf und bestimmen Sie alle Erhaltungsgrößen.
+  
+  \item Lösen Sie das überbestimmte System:
+  \begin{align}
+  x + y &= 3 \\
+  2x - y &= 0 \\
+  x + 2y &= 5
+  \end{align}
+  mit der Methode der kleinsten Quadrate.
+  
+  \item In einem hexagonalen Kristall seien $\mathbf{a}$ und $\mathbf{b}$ um $120^\circ$ gedreht.
+  Zeigen Sie, dass $\mathbf{a}$, $\mathbf{b}$, $\mathbf{c}$ linear unabhängig sind.
+  
+  \item Bestimmen Sie den Rang der Matrix:
+  \[
+  A = \begin{pmatrix}
+  1 & 2 & 3 & 4 \\
+  2 & 4 & 6 & 8 \\
+  1 & 1 & 1 & 1 \\
+  0 & 1 & 2 & 3
+  \end{pmatrix}
+  \]
+\end{enumerate}
+
+\newpage
+
+% ====================================================================
+% 4. LINEARE ABBILDUNGEN UND GRUPPENTHEORIE
+% ====================================================================
+
+\section{Lineare Abbildungen und Gruppentheorie}
+
+\subsection{Anschauliche Erklärung}
+
+Lineare Abbildungen sind Transformationen, die „Proportionen“ und „Überlagerungen“
+erhalten. In der Chemie:
+\begin{itemize}
+  \item Koordinatentransformationen von Konzentrationen zu neuen Variablen,
+  \item Mischung und Zerlegung von Spektren,
+  \item Transformation von Orbitalbasen bei Symmetrieoperationen.
+\end{itemize}
+
+Die \emph{invertierbaren} linearen Abbildungen auf einem Raum bilden eine Gruppe:
+hintereinanderausführen entspricht Komposition von Matrizen,
+die Identität ist das „Nichtstun“, und jede Transformation hat eine Umkehrung.
+
+\subsection{Mathematische Definition}
+
+\begin{definition}[Lineare Abbildung]
+Eine Abbildung $T:V\to W$ zwischen Vektorräumen heißt linear, wenn
+für alle $u,v\in V$ und $\alpha,\beta\in K$:
+\[
+T(\alpha u + \beta v) = \alpha T(u) + \beta T(v).
+\]
+\end{definition}
+
+\begin{definition}[Allgemeine lineare Gruppe]
+Für einen endlichdimensionalen Vektorraum $V$ ist
+\[
+GL(V) = \{T:V\to V \mid T \text{ linear und invertierbar}\}
+\]
+eine Gruppe unter Komposition.
+Für $V=\R^n$ schreiben wir $GL_n(\R)$ für die Gruppe aller invertierbaren $n\times n$-Matrizen.
+\end{definition}
+
+\subsection{Beispielrechnung: Symmetrische/antisymmetrische Koordinaten}
+
+Betrachte $T:\R^2\to\R^2$,
+\[
+T(x,y) = (x+y, x-y).
+\]
+Die Matrix bzgl. der Standardbasis:
+\[
+A =
+\begin{pmatrix}
+1 & 1\\
+1 & -1
+\end{pmatrix}.
+\]
+Determinante:
+\[
+\det(A) = (1)(-1) - (1)(1) = -2 \neq 0.
+\]
+Also $A$ invertierbar, $T\in GL_2(\R)$.
+
+Die Inverse ist
+\[
+A^{-1} = -\tfrac{1}{2}
+\begin{pmatrix}
+-1 & -1\\
+-1 & 1
+\end{pmatrix}
+=
+\frac{1}{2}
+\begin{pmatrix}
+1 & 1\\
+1 & -1
+\end{pmatrix}.
+\]
+Damit:
+\[
+(x,y) = \tfrac{1}{2}\big( (x+y) + (x-y),\, (x+y)-(x-y)\big).
+\]
+
+In der Chemie:
+\begin{itemize}
+  \item $(x,y)$ könnten lokale Koordinaten zweier Bindungen sein,
+  \item $(x+y,x-y)$ symmetrische und antisymmetrische Kombinationen,
+  \item diese sind oft die „natürlichen“ Schwingungs- oder MO-Koordinaten.
+\end{itemize}
+
+Unterthemen: Darstellungen von Symmetriegruppen durch Matrizen,
+Reduktion von Darstellungen, Blockdiagonalisierung von Operatoren.
+
+\subsection{Koordinatentransformationen in der Chemie}
+
+\subsubsection{Interne Koordinaten bei Molekülen}
+
+Für Wassermolekül H$_2$O verwenden wir oft interne Koordinaten:
+\begin{itemize}
+  \item $r_1$, $r_2$: die beiden O-H-Bindungslängen
+  \item $\theta$: der H-O-H-Bindungswinkel
+\end{itemize}
+
+Die Transformation zu symmetrischen Koordinaten:
+\[
+\begin{pmatrix}
+s_1 \\
+s_2 \\
+s_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0 \\
+\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+r_1 \\
+r_2 \\
+\theta
+\end{pmatrix}
+\]
+
+Hier ist $s_1$ die symmetrische Streckschwingung, $s_2$ die antisymmetrische Streckschwingung 
+und $s_3$ die Biegeschwingung.
+
+\subsubsection{Principal Component Analysis (PCA) in der Spektroskopie}
+
+Bei der Analyse von Spektrendatensätzen suchen wir lineare Kombinationen der ursprünglichen 
+Variablen, die maximale Varianz aufweisen. Dies führt auf Eigenwertprobleme:
+\[
+C \mathbf{v} = \lambda \mathbf{v}
+\]
+wo $C$ die Kovarianzmatrix der Daten ist.
+
+\begin{beispielbox}
+Gegeben seien IR-Spektren von verschiedenen Konzentrationen zweier Komponenten.
+Die erste Hauptkomponente $\mathbf{v}_1$ zeigt die Richtung größter Variabilität,
+oft korreliert mit der Hauptkomponente in der Mischung.
+\end{beispielbox}
+
+\subsection{Gruppentheorie und Matrixdarstellungen}
+
+\subsubsection{Darstellungen von Punktgruppen}
+
+Jede Symmetrieoperation einer Punktgruppe kann durch eine Matrix dargestellt werden.
+Für die C$_{2v}$-Gruppe (wie H$_2$O):
+
+\[
+E = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}, \quad
+C_2 = \begin{pmatrix} -1 & 0 \\ 0 & -1 \end{pmatrix}
+\]
+\[
+\sigma_v = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}, \quad
+\sigma_v' = \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}
+\]
+
+\subsubsection{Irreduzible Darstellungen und Charaktertafeln}
+
+Eine Darstellung heißt irreduzibel, wenn sie nicht in kleinere Blöcke zerlegt werden kann.
+Die Charaktertafel von C2v:
+
+\begin{center}
+\begin{tabular}{c|cccc}
+C2v & E & C2 & sigma-v & sigma-v' \\
+\hline
+A1 & 1 & 1 & 1 & 1 \\
+A2 & 1 & 1 & -1 & -1 \\
+B1 & 1 & -1 & 1 & -1 \\
+B2 & 1 & -1 & -1 & 1
+\end{tabular}
+\end{center}
+
+\subsection{Übungsaufgaben}
+
+\begin{enumerate}
+  \item Bestimmen Sie die Matrix der linearen Abbildung, die 
+  $(1,0) \mapsto (2,1)$ und $(0,1) \mapsto (1,3)$ abbildet.
+  
+  \item Für CO$_2$ (linear): Geben Sie die Matrizen für die Symmetrieoperationen
+  $E$, $C_{\infty}^{\phi}$, $i$, $\sigma_h$ in einer geeigneten Basis an.
+  
+  \item Zeigen Sie, dass die Transformation
+  \[
+  T: \begin{pmatrix} x \\ y \end{pmatrix} \mapsto \begin{pmatrix} 2x + y \\ x - y \end{pmatrix}
+  \]
+  linear ist und bestimmen Sie $T^{-1}$.
+  
+  \item Bestimmen Sie alle irreduziblen Darstellungen der Gruppe $C_3$ (zyklische Gruppe der Ordnung 3).
+\end{enumerate}
+
+\newpage
+
+% ====================================================================
+% 5. INVERSION, KERN UND BILD
+% ====================================================================
+
+\section{Inversion, Kern und Bild}
+
+\subsection{Anschauliche Erklärung}
+
+In vielen Fragestellungen möchten wir von beobachteten Größen (z.B. Spektren)
+auf zugrundeliegende Parameter (z.B. Konzentrationen, Koeffizienten) schließen.
+Ist die zugehörige lineare Abbildung invertierbar, gelingt dies eindeutig.
+Kern und Bild beschreiben dabei:
+\begin{itemize}
+  \item Kern: welche Variationen bleiben „unsichtbar“?
+  \item Bild: welche Zielgrößen kann das Modell überhaupt erzeugen?
+\end{itemize}
+
+\subsection{Definitionen}
+
+\begin{definition}[Kern]
+Für eine lineare Abbildung $T:V\to W$ ist
+\[
+\ker T = \{v\in V \mid T(v)=0\}.
+\]
+\end{definition}
+
+\begin{definition}[Bild]
+\[
+\operatorname{Bild}(T) = \{T(v)\mid v\in V\} \subseteq W.
+\]
+\end{definition}
+
+\begin{definition}[Invertierbarkeit]
+Eine lineare Abbildung $T:V\to V$ heißt invertierbar, wenn es $S:V\to V$ mit
+$S\circ T = T\circ S = \operatorname{id}_V$ gibt.
+Für Matrizen $A$: invertierbar $\Leftrightarrow \det(A)\neq 0$.
+\end{definition}
+
+\subsection{Beispielrechnung}
+
+Gegeben
+\[
+A =
+\begin{pmatrix}
+1 & 1 & 0\\
+0 & 1 & 1\\
+0 & 0 & 1
+\end{pmatrix}.
+\]
+Dies ist eine obere Dreiecksmatrix mit Diagonaleinträgen $1$,
+also $\det(A)=1\neq 0$, also ist $A$ invertierbar.
+
+Wir bestimmen explizit $A^{-1}$:
+Gesucht $B$ mit $AB=I$:
+\[
+B =
+\begin{pmatrix}
+b_{11} & b_{12} & b_{13}\\
+b_{21} & b_{22} & b_{23}\\
+b_{31} & b_{32} & b_{33}
+\end{pmatrix}.
+\]
+
+Aus $AB=I$ folgt Zeile für Zeile:
+\[
+\begin{pmatrix}
+1 & 1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+b_{11}\\b_{21}\\b_{31}
+\end{pmatrix}
+= 1,\quad
+\begin{pmatrix}
+1 & 1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+b_{12}\\b_{22}\\b_{32}
+\end{pmatrix}
+= 0,\dots
+\]
+Schneller: man nutzt die Struktur:
+\[
+A^{-1} =
+\begin{pmatrix}
+1 & -1 & 1\\
+0 & 1 & -1\\
+0 & 0 & 1
+\end{pmatrix}
+\]
+(lässt sich durch Vorwärtseinsetzen prüfen).
+
+Da $A$ invertierbar ist:
+\[
+\ker T_A = \{0\},\quad \operatorname{Bild}(T_A) = \R^3.
+\]
+
+Unterthemen:
+Zusammenhang von Invertierbarkeit, Kern und Bild (Rang-Nullität),
+Interpretation nicht-invertierbarer Matrizen als Modell mit Informationsverlust.
+
+\subsection{Anwendungen in der Spektralanalyse}
+
+\subsubsection{Dekonvolution von Spektren}
+
+Bei der Spektralanalyse von Mischungen haben wir oft das Problem:
+Gegeben ist ein gemessenes Spektrum $\mathbf{s}_{\text{mess}}$, gesucht sind die Konzentrationen $\mathbf{c}$.
+
+\[
+\mathbf{s}_{\text{mess}} = \mathbf{S} \mathbf{c}
+\]
+
+wobei $\mathbf{S}$ die Matrix der Reinspektren ist. 
+
+\textbf{Fall 1:} $\mathbf{S}$ quadratisch und invertierbar → eindeutige Lösung $\mathbf{c} = \mathbf{S}^{-1} \mathbf{s}_{\text{mess}}$
+
+\textbf{Fall 2:} $\ker(\mathbf{S}) \neq \{0\}$ → es gibt Konzentrationsverteilungen, die spektral nicht unterscheidbar sind.
+
+\begin{beispielbox}
+Zwei Komponenten mit identischen Spektren bei allen gemessenen Wellenlängen:
+$\mathbf{s}_1 = \mathbf{s}_2$. Dann ist $(1, -1)^T \in \ker(\mathbf{S})$ und die Konzentrationen 
+sind nicht eindeutig bestimmbar.
+\end{beispielbox}
+
+\subsubsection{Faktoranalyse in der Analytik}
+
+Gegeben sei eine Datenmatrix $\mathbf{D}$ mit Spektren in den Spalten und Wellenlängen in den Zeilen.
+Das Ziel der Faktoranalyse ist die Zerlegung:
+\[
+\mathbf{D} = \mathbf{C} \mathbf{S}^T
+\]
+wobei $\mathbf{C}$ die Konzentrationsprofile und $\mathbf{S}$ die Reinspektren enthält.
+
+Der Rang von $\mathbf{D}$ gibt die Anzahl linear unabhängiger Komponenten an.
+
+\subsection{Inverse Probleme in der physikalischen Chemie}
+
+\subsubsection{Bestimmung von Reaktionsgeschwindigkeitskonstanten}
+
+Für ein System gekoppelter Reaktionen erster Ordnung:
+\[
+\frac{d\mathbf{c}}{dt} = \mathbf{K} \mathbf{c}
+\]
+
+Gemessen werden Konzentrationen zu verschiedenen Zeiten. Gesucht ist die Ratenmatrix $\mathbf{K}$.
+
+Wenn $\mathbf{K}$ diagonalisierbar ist: $\mathbf{K} = \mathbf{P} \mathbf{\Lambda} \mathbf{P}^{-1}$, dann:
+\[
+\mathbf{c}(t) = \mathbf{P} e^{\mathbf{\Lambda} t} \mathbf{P}^{-1} \mathbf{c}_0
+\]
+
+Die Bestimmung von $\mathbf{K}$ aus Messdaten ist ein inverses Problem.
+
+\subsubsection{Strukturbestimmung aus Streuexperimenten}
+
+Bei Röntgen- oder Neutronenstreu-experimenten messen wir Intensitäten $I(\mathbf{q})$ 
+im reziproken Raum. Die Elektronendichte $\rho(\mathbf{r})$ im Realraum ist durch 
+Fourier-Transformation verknüpft:
+\[
+I(\mathbf{q}) \propto |\mathcal{F}[\rho(\mathbf{r})](\mathbf{q})|^2
+\]
+
+Die Bestimmung von $\rho(\mathbf{r})$ aus $I(\mathbf{q})$ ist das berühmte "Phasenproblem".
+
+\subsection{Übungsaufgaben}
+
+\begin{enumerate}
+  \item Bestimmen Sie Kern und Bild der linearen Abbildung:
+  \[
+  T: \begin{pmatrix} x \\ y \\ z \end{pmatrix} \mapsto \begin{pmatrix} x + y \\ 2x + 2y \\ x - z \end{pmatrix}
+  \]
+  
+  \item Eine Spektralmischung zweier Komponenten zeigt bei drei Wellenlängen:
+  $A_{400} = 0.8$, $A_{500} = 1.2$, $A_{600} = 0.6$.
+  Die Reinspektren sind:
+  \[
+  \text{Komp. 1: } (0.5, 0.8, 0.3)^T, \quad \text{Komp. 2: } (0.2, 0.6, 0.4)^T
+  \]
+  Bestimmen Sie die Konzentrationen.
+  
+  \item Zeigen Sie, dass für eine $2 \times 2$-Matrix $A$ gilt:
+  $A$ invertierbar $\Leftrightarrow \ker(A) = \{0\} \Leftrightarrow \operatorname{Bild}(A) = \R^2$.
+  
+  \item Welche Bedingung muss eine $3 \times 2$-Matrix $B$ erfüllen, damit 
+  das Gleichungssystem $B\mathbf{x} = \mathbf{b}$ für jeden Vektor $\mathbf{b} \in \R^3$ lösbar ist?
+\end{enumerate}
+
+\newpage
+
+% ====================================================================
+% 6. DETERMINANTEN UND PERMUTATIONEN
+% ====================================================================
+
+\section{Determinanten und Permutationen}
+
+\subsection{Anschauliche Erklärung}
+
+Die Determinante misst, wie eine lineare Abbildung Volumina im Raum streckt oder staucht.
+Sie entscheidet auch, ob ein Gleichungssystem eindeutige Lösungen besitzt:
+$\det(A)\neq 0$ bedeutet: kein Kollaps, eindeutige Invertierbarkeit.
+
+Permutationen spielen in der Definition der Determinante eine zentrale Rolle
+und tauchen zugleich in der Chemie in Form von Teilchenvertauschungen oder Ligandenpermutationen auf.
+
+\subsection{Definition}
+
+Für $A=(a_{ij})\in M_{n\times n}(K)$ ist
+\[
+\det(A) = \sum_{\sigma\in S_n} \operatorname{sgn}(\sigma)
+a_{1,\sigma(1)}a_{2,\sigma(2)}\dots a_{n,\sigma(n)},
+\]
+wobei $S_n$ die Menge aller Permutationen von $\{1,\dots,n\}$ ist und
+$\operatorname{sgn}(\sigma)\in\{+1,-1\}$ das Vorzeichen der Permutation bezeichnet.
+
+\subsection{Beispielrechnung}
+
+Für
+\[
+B =
+\begin{pmatrix}
+2 & 0 & 1\\
+-1 & 3 & 0\\
+0 & 1 & 1
+\end{pmatrix}
+\]
+verwenden wir Entwicklung nach der ersten Zeile:
+\[
+\det(B)
+= 2\cdot\det\begin{pmatrix}3 & 0\\1 & 1\end{pmatrix}
+- 0 \cdot (\cdots)
++ 1\cdot\det\begin{pmatrix}-1 & 3\\0 & 1\end{pmatrix}.
+\]
+Die $2\times 2$-Determinanten:
+\[
+\det\begin{pmatrix}3 & 0\\1 & 1\end{pmatrix} = 3\cdot 1 - 0\cdot 1 = 3,
+\quad
+\det\begin{pmatrix}-1 & 3\\0 & 1\end{pmatrix} = (-1)\cdot 1 - 0\cdot 3 = -1.
+\]
+Somit:
+\[
+\det(B) = 2\cdot 3 + 1\cdot(-1) = 6 - 1 = 5 \neq 0.
+\]
+Also ist $B$ invertierbar.
+
+Unterthemen:
+Eigenschaften (Multiplizierbarkeit: $\det(AB)=\det(A)\det(B)$),
+Verhalten unter Zeilenoperationen,
+Permutationmatrizen, Signum der Permutation.
+
+\subsection{Chemische Anwendungen der Determinante}
+
+\subsubsection{Slater-Determinanten in der Quantenchemie}
+
+Für Mehrelektronensysteme werden Wellenfunktionen als antisymmetrische Produkte geschrieben:
+\[
+\Psi = \frac{1}{\sqrt{n!}} \det \begin{pmatrix}
+\phi_1(\mathbf{r}_1) & \phi_2(\mathbf{r}_1) & \cdots & \phi_n(\mathbf{r}_1) \\
+\phi_1(\mathbf{r}_2) & \phi_2(\mathbf{r}_2) & \cdots & \phi_n(\mathbf{r}_2) \\
+\vdots & \vdots & \ddots & \vdots \\
+\phi_1(\mathbf{r}_n) & \phi_2(\mathbf{r}_n) & \cdots & \phi_n(\mathbf{r}_n)
+\end{pmatrix}
+\]
+
+Das Pauli-Prinzip (keine zwei Elektronen in identischen Zuständen) wird automatisch erfüllt:
+$\det = 0$ wenn zwei Spalten identisch sind.
+
+\subsubsection{Jacobi-Determinante bei Koordinatentransformationen}
+
+Bei der Transformation von kartesischen zu internen Koordinaten:
+\[
+\mathbf{q} = \mathbf{f}(\mathbf{x})
+\]
+
+ist die Jacobi-Matrix $\mathbf{J} = \frac{\partial \mathbf{q}}{\partial \mathbf{x}}$ wichtig für Volumenelement-Transformationen:
+\[
+d^3x = |\det(\mathbf{J})| d^3q
+\]
+
+\subsection{Übungsaufgaben}
+
+\begin{enumerate}
+  \item Berechnen Sie $\det(A)$ für $A = \begin{pmatrix} 1 & 2 & 3 \\ 0 & 4 & 5 \\ 0 & 0 & 6 \end{pmatrix}$.
+  
+  \item Zeigen Sie: Ist $\det(A) = 0$, dann hat $A\mathbf{x} = \mathbf{0}$ nichttriviale Lösungen.
+  
+  \item Für welche Werte von $\lambda$ ist $\det(A - \lambda I) = 0$ mit $A = \begin{pmatrix} 2 & 1 \\ 1 & 2 \end{pmatrix}$?
+\end{enumerate}
+
+\newpage
+
+% ====================================================================
+% 7. EIGENWERTE UND EIGENVektoren
+% ====================================================================
+
+\section{Eigenwerte und Eigenvektoren}
+
+\subsection{Anschauliche Erklärung}
+
+Eigenwerte und Eigenvektoren beschreiben „Richtungen“, in denen eine lineare Abbildung
+nur skaliert, nicht „verbogen“ wird.
+In der Chemie:
+\begin{itemize}
+  \item Normale Schwingungsmoden eines Moleküls,
+  \item Relaxationsmoden gekoppelter Kinetiken,
+  \item Energieniveaus und Eigenzustände eines Hamiltonoperators.
+\end{itemize}
+
+\subsection{Eigenwertprobleme in der Chemie}
+
+In der Quantenchemie sind Eigenwertprobleme allgegenwärtig und bilden das Herzstück der modernen Chemie:
+
+\begin{chemiebox}
+\textbf{Die zeitunabhängige Schrödinger-Gleichung}
+
+Das fundamentale Eigenwertproblem der Quantenchemie:
+\[
+\hat{H}\psi = E\psi
+\]
+
+Hier ist:
+\begin{itemize}
+\item $\hat{H}$: Hamiltonoperator (Gesamtenergie des Systems)
+\item $\psi$: Wellenfunktion (Eigenvektor) 
+\item $E$: Energie (Eigenwert)
+\end{itemize}
+
+Für ein Wasserstoffatom in atomaren Einheiten:
+\[
+\hat{H} = -\frac{1}{2}\nabla^2 - \frac{1}{r}
+\]
+
+Die Eigenwerte sind die bekannten Energieniveaus: $E_n = -\frac{1}{2n^2}$ Hartree.
+\end{chemiebox}
+
+\begin{chemiebox}
+\textbf{Molekülorbitaltheorie (LCAO-Methode)}
+
+Für H$_2^+$ approximieren wir die Molekülorbitale als Linearkombination der 1s-Atomorbitale:
+\[
+\psi = c_1\phi_1 + c_2\phi_2
+\]
+
+Dies führt auf das verallgemeinerte Eigenwertproblem:
+\[
+\mathbf{H}\mathbf{c} = E\mathbf{S}\mathbf{c}
+\]
+
+mit der Hamilton-Matrix $\mathbf{H}$ und Überlappungsmatrix $\mathbf{S}$:
+\[
+\mathbf{H} = \begin{pmatrix} H_{11} & H_{12} \\ H_{21} & H_{22} \end{pmatrix}, \quad
+\mathbf{S} = \begin{pmatrix} 1 & S_{12} \\ S_{12} & 1 \end{pmatrix}
+\]
+
+Die Eigenwerte liefern die MO-Energien, die Eigenvektoren die MO-Koeffizienten.
+\end{chemiebox}
+
+\begin{chemiebox}
+\textbf{Normale Schwingungsmoden}
+
+Für ein $N$-atomiges Molekül führt die Wilson-GF-Methode auf das Eigenwertproblem:
+\[
+\mathbf{GF}\mathbf{L} = \mathbf{L}\boldsymbol{\Lambda}
+\]
+
+Hierbei ist:
+\begin{itemize}
+\item $\mathbf{G}$: kinematische Matrix (Massenbewertung)
+\item $\mathbf{F}$: Kraftkonstantenmatrix
+\item $\mathbf{L}$: Matrix der Normalschwingungsvektoren
+\item $\boldsymbol{\Lambda}$: Diagonalmatrix der Eigenfrequenzen $\lambda_i = 4\pi^2\nu_i^2$
+\end{itemize}
+
+Die Normalmoden sind orthogonal und entkoppelt.
+\end{chemiebox}
+
+\subsection{Mathematische Definitionen}
+
+\begin{definition}[Eigenwert und Eigenvektor]
+Sei $A$ eine $n \times n$-Matrix. Ein Skalar $\lambda$ heißt \emph{Eigenwert} von $A$, wenn es einen Vektor $v \neq 0$ gibt mit
+\[
+Av = \lambda v
+\]
+Jeder solche Vektor $v$ heißt \emph{Eigenvektor} zum Eigenwert $\lambda$.
+\end{definition}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Eigenwerte einer 2×2-Matrix}
+
+Sei $A = \begin{pmatrix}3 & 1\\1 & 3\end{pmatrix}$. Bestimme alle Eigenwerte und Eigenvektoren.
+
+\textbf{Charakteristisches Polynom:}
+\begin{align}
+\det(A - \lambda I) &= \det\begin{pmatrix}3-\lambda & 1\\1 & 3-\lambda\end{pmatrix}\\
+&= (3-\lambda)^2 - 1\\
+&= \lambda^2 - 6\lambda + 8\\
+&= (\lambda - 4)(\lambda - 2)
+\end{align}
+
+Eigenwerte: $\lambda_1 = 4$, $\lambda_2 = 2$
+
+\textbf{Eigenvektoren zu $\lambda_1 = 4$:}
+\[
+(A - 4I)v = 0 \Rightarrow \begin{pmatrix}-1 & 1\\1 & -1\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}0\\0\end{pmatrix}
+\]
+
+Gleichungssystem: $-x + y = 0 \Rightarrow y = x$
+
+Eigenraum: $E_4 = \text{span}\left\{\begin{pmatrix}1\\1\end{pmatrix}\right\}$
+
+\textbf{Eigenvektoren zu $\lambda_2 = 2$:}
+\[
+(A - 2I)v = 0 \Rightarrow \begin{pmatrix}1 & 1\\1 & 1\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix} = \begin{pmatrix}0\\0\end{pmatrix}
+\]
+
+Gleichungssystem: $x + y = 0 \Rightarrow y = -x$
+
+Eigenraum: $E_2 = \text{span}\left\{\begin{pmatrix}1\\-1\end{pmatrix}\right\}$
+\end{beispielbox}
+
+\begin{definition}[Charakteristisches Polynom]
+Für eine $n \times n$-Matrix $A$ ist das charakteristische Polynom definiert als:
+\[
+p_A(\lambda) = \det(A - \lambda I)
+\]
+Die Nullstellen von $p_A$ sind die Eigenwerte von $A$.
+\end{definition}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: 3×3-Matrix diagonalisieren}
+
+Sei $B = \begin{pmatrix}2 & 1 & 0\\0 & 2 & 1\\0 & 0 & 3\end{pmatrix}$ (obere Dreiecksmatrix).
+
+\textbf{Charakteristisches Polynom:}
+\[
+p_B(\lambda) = \det\begin{pmatrix}2-\lambda & 1 & 0\\0 & 2-\lambda & 1\\0 & 0 & 3-\lambda\end{pmatrix} = (2-\lambda)^2(3-\lambda)
+\]
+
+Eigenwerte: $\lambda_1=2$ (doppelt), $\lambda_2=3$.
+
+\textbf{Eigenvektor zu $\lambda_2 = 3$:}
+\[
+(B - 3I)v = 0 \Rightarrow \begin{pmatrix}-1 & 1 & 0\\0 & -1 & 1\\0 & 0 & 0\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}
+\]
+
+Aus $-x + y = 0$ und $-y + z = 0$ folgt $x = y = z$.
+
+Eigenvektor: $v_3 = \begin{pmatrix}1\\1\\1\end{pmatrix}$
+
+\textbf{Eigenvektoren zu $\lambda_1 = 2$:}
+\[
+(B - 2I)v = 0 \Rightarrow \begin{pmatrix}0 & 1 & 0\\0 & 0 & 1\\0 & 0 & 1\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}
+\]
+
+Aus $y = 0$ und $z = 0$ folgt: $v_1 = \begin{pmatrix}1\\0\\0\end{pmatrix}$
+
+Da $\dim(E_2) = 1 < 2$, ist $B$ nicht diagonalisierbar über $\mathbb{R}$.
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Symmetrische Matrix}
+
+Sei $C = \begin{pmatrix}1 & 2 & 2\\2 & 1 & 2\\2 & 2 & 1\end{pmatrix}$ (symmetrisch).
+
+\textbf{Charakteristisches Polynom:}
+\begin{align}
+p_C(\lambda) &= \det\begin{pmatrix}1-\lambda & 2 & 2\\2 & 1-\lambda & 2\\2 & 2 & 1-\lambda\end{pmatrix}\\
+&= -\lambda^3 + 3\lambda^2 + 9\lambda - 27\\
+&= -(\lambda - 5)(\lambda + 3)^2
+\end{align}
+
+Eigenwerte: $\lambda_1 = 5$, $\lambda_2 = -3$ (doppelt).
+
+\textbf{Eigenvektor zu $\lambda_1 = 5$:}
+\[
+(C - 5I)v = 0 \Rightarrow \begin{pmatrix}-4 & 2 & 2\\2 & -4 & 2\\2 & 2 & -4\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}
+\]
+
+Lösbar durch $x = y = z$, also $v_1 = \begin{pmatrix}1\\1\\1\end{pmatrix}$ (nach Normierung: $\frac{1}{\sqrt{3}}\begin{pmatrix}1\\1\\1\end{pmatrix}$).
+
+\textbf{Eigenvektoren zu $\lambda_2 = -3$:}
+\[
+(C + 3I)v = 0 \Rightarrow \begin{pmatrix}4 & 2 & 2\\2 & 4 & 2\\2 & 2 & 4\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}
+\]
+
+Dies vereinfacht sich zu $2x + y + z = 0$. Zwei orthonormale Lösungen:
+\[
+v_2 = \frac{1}{\sqrt{2}}\begin{pmatrix}1\\-1\\0\end{pmatrix}, \quad v_3 = \frac{1}{\sqrt{6}}\begin{pmatrix}1\\1\\-2\end{pmatrix}
+\]
+
+Die Matrix $C$ ist diagonalisierbar mit orthogonaler Basis!
+\end{beispielbox}
+
+\begin{theorem}[Spektralsatz für symmetrische Matrizen]
+Sei $A$ eine reelle symmetrische $n \times n$-Matrix. Dann gilt:
+\begin{enumerate}
+\item Alle Eigenwerte sind reell
+\item Eigenvektoren zu verschiedenen Eigenwerten sind orthogonal
+\item $A$ ist orthogonal diagonalisierbar: $A = QDQ^T$ mit orthogonaler Matrix $Q$
+\end{enumerate}
+\end{theorem}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Quadratische Formen}
+
+Betrachte die quadratische Form $q(x,y) = 3x^2 + 2xy + 3y^2$.
+
+\textbf{Matrixdarstellung:}
+\[
+q(x,y) = \begin{pmatrix}x & y\end{pmatrix}\begin{pmatrix}3 & 1\\1 & 3\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}
+\]
+
+Aus dem vorigen Beispiel: Eigenwerte $\lambda_1 = 4$, $\lambda_2 = 2$ mit orthonormalen Eigenvektoren
+\[
+v_1 = \frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\end{pmatrix}, \quad v_2 = \frac{1}{\sqrt{2}}\begin{pmatrix}1\\-1\end{pmatrix}
+\]
+
+\textbf{Hauptachsentransformation:}
+In den neuen Koordinaten $\begin{pmatrix}u\\v\end{pmatrix} = Q^T\begin{pmatrix}x\\y\end{pmatrix}$ mit $Q = \frac{1}{\sqrt{2}}\begin{pmatrix}1 & 1\\1 & -1\end{pmatrix}$:
+
+\[
+q(u,v) = 4u^2 + 2v^2
+\]
+
+Die Ellipse $q(x,y) = 1$ wird zu $4u^2 + 2v^2 = 1$ (Halbachsen: $\frac{1}{2}$ und $\frac{1}{\sqrt{2}}$).
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Potenzmethode}
+
+Für große Matrizen kann der betragsmäßig größte Eigenwert durch Iteration bestimmt werden.
+
+Sei $A = \begin{pmatrix}5 & 1\\1 & 3\end{pmatrix}$ mit Startwert $x_0 = \begin{pmatrix}1\\1\end{pmatrix}$.
+
+\textbf{Iteration:}
+\begin{align}
+x_1 &= Ax_0 = \begin{pmatrix}6\\4\end{pmatrix}, \quad \|x_1\| = \sqrt{52} \approx 7.21\\
+y_1 &= \frac{x_1}{\|x_1\|} = \frac{1}{\sqrt{52}}\begin{pmatrix}6\\4\end{pmatrix}\\
+x_2 &= Ay_1 = \frac{1}{\sqrt{52}}\begin{pmatrix}5 & 1\\1 & 3\end{pmatrix}\begin{pmatrix}6\\4\end{pmatrix} = \frac{1}{\sqrt{52}}\begin{pmatrix}34\\18\end{pmatrix}\\
+\end{align}
+
+\textbf{Eigenwertschätzung:}
+\[
+\lambda \approx \frac{x_2^T y_1}{y_1^T y_1} = \frac{\begin{pmatrix}34 & 18\end{pmatrix}\begin{pmatrix}6\\4\end{pmatrix}}{52} = \frac{276}{52} \approx 5.31
+\]
+
+Der exakte größte Eigenwert ist $\lambda = 3 + \sqrt{5} \approx 5.236$.
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Jordansche Normalform}
+
+Sei $J = \begin{pmatrix}2 & 1 & 0\\0 & 2 & 1\\0 & 0 & 2\end{pmatrix}$ (Jordan-Block).
+
+\textbf{Charakteristisches Polynom:}
+\[
+p_J(\lambda) = (2-\lambda)^3
+\]
+
+Einziger Eigenwert: $\lambda = 2$ (dreifach).
+
+\textbf{Eigenraum bestimmen:}
+\[
+(J - 2I)v = 0 \Rightarrow \begin{pmatrix}0 & 1 & 0\\0 & 0 & 1\\0 & 0 & 0\end{pmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix} = \begin{pmatrix}0\\0\\0\end{pmatrix}
+\]
+
+Aus $y = 0$ und $z = 0$ folgt: $\dim(E_2) = 1$.
+
+Da $\dim(E_2) = 1 < 3$, ist $J$ nicht diagonalisierbar.
+
+\textbf{Hauptvektoren bestimmen:}
+\begin{itemize}
+\item Eigenvektor: $v_1 = \begin{pmatrix}1\\0\\0\end{pmatrix}$
+\item Hauptvektor 1. Stufe: $(J-2I)v_2 = v_1 \Rightarrow v_2 = \begin{pmatrix}0\\1\\0\end{pmatrix}$
+\item Hauptvektor 2. Stufe: $(J-2I)v_3 = v_2 \Rightarrow v_3 = \begin{pmatrix}0\\0\\1\end{pmatrix}$
+\end{itemize}
+
+Die Jordan-Basis ist $\{v_1, v_2, v_3\}$.
+\end{beispielbox}
+
+\begin{chemiebox}
+\textbf{Normale Koordinaten in der Schwingungsspektroskopie}
+
+Molekülschwingungen werden durch das Eigenwertproblem
+\[
+\mathbf{F}\mathbf{L} = \mathbf{M}\mathbf{L}\boldsymbol{\lambda}
+\]
+beschrieben, wobei:
+\begin{itemize}
+\item $\mathbf{F}$: Kraftkonstantenmatrix
+\item $\mathbf{M}$: Massenmatrix (diagonal)
+\item $\boldsymbol{\lambda}$: Matrix der Eigenfrequenzen $\omega_i^2$
+\item $\mathbf{L}$: Matrix der Eigenvektoren (normale Koordinaten)
+\end{itemize}
+
+Jeder Eigenvektor beschreibt eine kollektive Schwingungsmode des gesamten Moleküls.
+\end{chemiebox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Eigenwerte berechnen}
+
+Betrachten Sie die Matrix:
+\[
+A = \begin{pmatrix} 3 & 1 \\ 1 & 3 \end{pmatrix}
+\]
+
+Charakteristisches Polynom:
+\[
+\det(A - \lambda I) = \det\begin{pmatrix} 3-\lambda & 1 \\ 1 & 3-\lambda \end{pmatrix} = (3-\lambda)^2 - 1 = \lambda^2 - 6\lambda + 8
+\]
+
+Eigenwerte: $\lambda_1 = 4$, $\lambda_2 = 2$
+
+Eigenvektoren:
+Für $\lambda_1 = 4$: $(A-4I)v = 0 \Rightarrow v_1 = \begin{pmatrix} 1 \\ 1 \end{pmatrix}$
+
+Für $\lambda_2 = 2$: $(A-2I)v = 0 \Rightarrow v_2 = \begin{pmatrix} 1 \\ -1 \end{pmatrix}$
+\end{beispielbox}
+
+\subsection{Definitionen}
+
+\begin{definition}[Eigenwert, Eigenvektor]
+Sei $T:V\to V$ linear. Ein Skalar $\lambda\in K$ heißt Eigenwert,
+wenn es einen Vektor $v\neq 0$ mit
+\[
+T(v) = \lambda v
+\]
+gibt. Ein solcher $v$ heißt Eigenvektor zu $\lambda$.
+\end{definition}
+
+\begin{definition}[Charakteristisches Polynom]
+Für eine Matrix $A$:
+\[
+p_A(\lambda) = \det(A - \lambda I).
+\]
+Die Nullstellen von $p_A$ sind die Eigenwerte von $A$.
+\end{definition}
+
+\subsection{Beispielrechnung}
+
+Betrachte
+\[
+A =
+\begin{pmatrix}
+2 & 1\\
+0 & 3
+\end{pmatrix}.
+\]
+Charakteristisches Polynom:
+\[
+p_A(\lambda) = \det\begin{pmatrix}
+2-\lambda & 1\\
+0 & 3-\lambda
+\end{pmatrix}
+= (2-\lambda)(3-\lambda).
+\]
+Eigenwerte: $\lambda_1=2$, $\lambda_2=3$.
+
+Eigenvektoren:
+\begin{itemize}
+  \item Für $\lambda=2$:
+  \(
+  (A-2I)x = 0
+  \Rightarrow
+  \begin{pmatrix}
+  0 & 1\\
+  0 & 1
+  \end{pmatrix}
+  \begin{pmatrix}x\\y\end{pmatrix}=0
+  \Rightarrow y=0,
+  \)
+  also Eigenvektoren von Form $(1,0)^T$.
+  \item Für $\lambda=3$:
+  \(
+  (A-3I)x = 0
+  \Rightarrow
+  \begin{pmatrix}
+  -1 & 1\\
+  0 & 0
+  \end{pmatrix}
+  \begin{pmatrix}x\\y\end{pmatrix}=0
+  \Rightarrow y=x,
+  \)
+  also Eigenvektoren von Form $(1,1)^T$.
+\end{itemize}
+
+Da wir zwei linear unabhängige Eigenvektoren haben, ist $A$ diagonalisierbar.
+
+Unterthemen:
+algebraische/geometrische Vielfachheit,
+Spektralsatz für symmetrische Matrizen (wichtige Rolle bei Schwingungen),
+Stabilitätsanalyse von kinetischen Systemen.
+
+\newpage
+
+% ====================================================================
+% 8. EUKLIDISCHE/UNITÄRE RÄUME, GRAM-SCHMIDT, HILBERTRAUM
+% ====================================================================
+
+\section{Euklidische und unitäre Räume, Gram-Schmidt, Hilberträume}
+
+\subsection{Anschauliche Erklärung}
+
+Skalarprodukte erlauben es, Winkel und Längen zu messen:
+„Wie ähnlich sind zwei Zustände oder Funktionen?“
+Orthogonalität bedeutet Unabhängigkeit ohne Überschneidung.
+In der Quantenchemie ist das Skalarprodukt zentral,
+da es Wahrscheinlichkeiten und Normierungen definiert.
+
+\subsection{Definitionen}
+
+\begin{definition}[Skalarprodukt auf $\R^n$]
+Ein Skalarprodukt ist eine Abbildung
+\[
+\langle\cdot,\cdot\rangle : \R^n\times\R^n \to \R
+\]
+mit:
+\begin{itemize}
+  \item Bilinearität,
+  \item Symmetrie: $\langle x,y\rangle = \langle y,x\rangle$,
+  \item positiv definit: $\langle x,x\rangle \ge 0$ und $=0$ nur für $x=0$.
+\end{itemize}
+Standard: $\langle x,y\rangle = \sum_i x_i y_i$.
+\end{definition}
+
+Auf $\C^n$ tritt Sesquilinearität und $\langle x,y\rangle = \overline{\langle y,x\rangle}$ auf.
+
+\begin{definition}[Norm, Orthogonalität]
+$\|x\| = \sqrt{\langle x,x\rangle}$.
+Vektoren $x,y$ heißen orthogonal, wenn $\langle x,y\rangle=0$.
+\end{definition}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Standard-Skalarprodukt}
+
+Im $\mathbb{R}^3$ mit dem Standard-Skalarprodukt:
+\[
+\langle \vec{u}, \vec{v} \rangle = u_1v_1 + u_2v_2 + u_3v_3
+\]
+
+Für $\vec{u} = \begin{pmatrix}2\\-1\\3\end{pmatrix}$ und $\vec{v} = \begin{pmatrix}1\\4\\-2\end{pmatrix}$:
+
+\textbf{Skalarprodukt:}
+\[
+\langle \vec{u}, \vec{v} \rangle = 2 \cdot 1 + (-1) \cdot 4 + 3 \cdot (-2) = 2 - 4 - 6 = -8
+\]
+
+\textbf{Normen:}
+\begin{align}
+\|\vec{u}\| &= \sqrt{2^2 + (-1)^2 + 3^2} = \sqrt{4 + 1 + 9} = \sqrt{14}\\
+\|\vec{v}\| &= \sqrt{1^2 + 4^2 + (-2)^2} = \sqrt{1 + 16 + 4} = \sqrt{21}
+\end{align}
+
+\textbf{Winkel zwischen den Vektoren:}
+\[
+\cos\theta = \frac{\langle \vec{u}, \vec{v} \rangle}{\|\vec{u}\| \|\vec{v}\|} = \frac{-8}{\sqrt{14} \cdot \sqrt{21}} = \frac{-8}{\sqrt{294}} \approx -0.467
+\]
+
+Also $\theta \approx 117.8^\circ$ (stumpfer Winkel).
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Gram-Schmidt-Verfahren}
+
+Orthonormalisierung der Vektoren $v_1 = \begin{pmatrix}1\\1\\0\end{pmatrix}$, $v_2 = \begin{pmatrix}1\\0\\1\end{pmatrix}$, $v_3 = \begin{pmatrix}0\\1\\1\end{pmatrix}$.
+
+\textbf{Schritt 1:} $u_1 = v_1 = \begin{pmatrix}1\\1\\0\end{pmatrix}$
+
+Normierung: $e_1 = \frac{u_1}{\|u_1\|} = \frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\\0\end{pmatrix}$
+
+\textbf{Schritt 2:} 
+\begin{align}
+u_2 &= v_2 - \langle v_2, e_1 \rangle e_1\\
+&= \begin{pmatrix}1\\0\\1\end{pmatrix} - \frac{1+0+0}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\\0\end{pmatrix}\\
+&= \begin{pmatrix}1\\0\\1\end{pmatrix} - \frac{1}{2}\begin{pmatrix}1\\1\\0\end{pmatrix}\\
+&= \begin{pmatrix}1/2\\-1/2\\1\end{pmatrix}
+\end{align}
+
+Normierung: $e_2 = \frac{u_2}{\|u_2\|} = \frac{1}{\sqrt{3/2}}\begin{pmatrix}1/2\\-1/2\\1\end{pmatrix} = \frac{1}{\sqrt{6}}\begin{pmatrix}1\\-1\\2\end{pmatrix}$
+
+\textbf{Schritt 3:}
+\begin{align}
+u_3 &= v_3 - \langle v_3, e_1 \rangle e_1 - \langle v_3, e_2 \rangle e_2\\
+&= \begin{pmatrix}0\\1\\1\end{pmatrix} - \frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\\0\end{pmatrix} - \frac{1}{\sqrt{6}} \cdot \frac{1}{\sqrt{6}}\begin{pmatrix}1\\-1\\2\end{pmatrix}\\
+&= \begin{pmatrix}0\\1\\1\end{pmatrix} - \frac{1}{2}\begin{pmatrix}1\\1\\0\end{pmatrix} - \frac{1}{6}\begin{pmatrix}1\\-1\\2\end{pmatrix}\\
+&= \begin{pmatrix}-2/3\\2/3\\2/3\end{pmatrix}
+\end{align}
+
+Normierung: $e_3 = \frac{1}{\sqrt{4/3}}\begin{pmatrix}-1\\1\\1\end{pmatrix} = \frac{1}{\sqrt{3}}\begin{pmatrix}-1\\1\\1\end{pmatrix}$
+
+\textbf{Orthonormale Basis:}
+\[
+\left\{\frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\\0\end{pmatrix}, \frac{1}{\sqrt{6}}\begin{pmatrix}1\\-1\\2\end{pmatrix}, \frac{1}{\sqrt{3}}\begin{pmatrix}-1\\1\\1\end{pmatrix}\right\}
+\]
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Orthogonale Projektion}
+
+Projektion des Vektors $\vec{v} = \begin{pmatrix}3\\2\\1\end{pmatrix}$ auf den Unterraum $U = \text{span}\left\{\begin{pmatrix}1\\0\\1\end{pmatrix}, \begin{pmatrix}0\\1\\0\end{pmatrix}\right\}$.
+
+\textbf{Orthonormalbasis von $U$ erstellen:}
+$u_1 = \begin{pmatrix}1\\0\\1\end{pmatrix}$ ist bereits normiert: $e_1 = \frac{1}{\sqrt{2}}\begin{pmatrix}1\\0\\1\end{pmatrix}$
+
+$u_2 = \begin{pmatrix}0\\1\\0\end{pmatrix}$ ist orthogonal zu $u_1$ und normiert: $e_2 = \begin{pmatrix}0\\1\\0\end{pmatrix}$
+
+\textbf{Orthogonale Projektion:}
+\begin{align}
+\text{proj}_U(\vec{v}) &= \langle \vec{v}, e_1 \rangle e_1 + \langle \vec{v}, e_2 \rangle e_2\\
+&= \frac{3+1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}}\begin{pmatrix}1\\0\\1\end{pmatrix} + 2 \cdot \begin{pmatrix}0\\1\\0\end{pmatrix}\\
+&= 2\begin{pmatrix}1\\0\\1\end{pmatrix} + \begin{pmatrix}0\\2\\0\end{pmatrix}\\
+&= \begin{pmatrix}2\\2\\2\end{pmatrix}
+\end{align}
+
+\textbf{Orthogonale Komponente:}
+\[
+\vec{v} - \text{proj}_U(\vec{v}) = \begin{pmatrix}3\\2\\1\end{pmatrix} - \begin{pmatrix}2\\2\\2\end{pmatrix} = \begin{pmatrix}1\\0\\-1\end{pmatrix}
+\]
+
+\textbf{Verifikation:} $\begin{pmatrix}1\\0\\-1\end{pmatrix} \perp U$ ?
+\[
+\langle \begin{pmatrix}1\\0\\-1\end{pmatrix}, \begin{pmatrix}1\\0\\1\end{pmatrix} \rangle = 1 - 1 = 0 \quad \checkmark
+\]
+\[
+\langle \begin{pmatrix}1\\0\\-1\end{pmatrix}, \begin{pmatrix}0\\1\\0\end{pmatrix} \rangle = 0 \quad \checkmark
+\]
+\end{beispielbox}
+
+\begin{theorem}[Cauchy-Schwarz-Ungleichung]
+Für alle Vektoren $u, v$ in einem Skalarprodukt-Raum gilt:
+\[
+|\langle u, v \rangle| \leq \|u\| \|v\|
+\]
+Gleichheit gilt genau dann, wenn $u$ und $v$ linear abhängig sind.
+\end{theorem}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: Cauchy-Schwarz-Ungleichung}
+
+Für $u = \begin{pmatrix}1\\2\\3\end{pmatrix}$ und $v = \begin{pmatrix}4\\5\\6\end{pmatrix}$:
+
+\textbf{Skalarprodukt:}
+\[
+\langle u, v \rangle = 1 \cdot 4 + 2 \cdot 5 + 3 \cdot 6 = 4 + 10 + 18 = 32
+\]
+
+\textbf{Normen:}
+\begin{align}
+\|u\| &= \sqrt{1^2 + 2^2 + 3^2} = \sqrt{14}\\
+\|v\| &= \sqrt{4^2 + 5^2 + 6^2} = \sqrt{77}
+\end{align}
+
+\textbf{Ungleichung prüfen:}
+\[
+|\langle u, v \rangle| = 32 \leq \sqrt{14} \cdot \sqrt{77} = \sqrt{1078} \approx 32.83
+\]
+
+Da $32 < 32.83$, ist die Ungleichung erfüllt. Die Vektoren sind nicht kollinear.
+
+\textbf{Beweis der Ungleichung:}
+Betrachte $\|u - tv\|^2 \geq 0$ für alle $t \in \mathbb{R}$:
+\begin{align}
+0 &\leq \|u - tv\|^2 = \langle u-tv, u-tv \rangle\\
+&= \|u\|^2 - 2t\langle u,v \rangle + t^2\|v\|^2
+\end{align}
+
+Diese quadratische Form in $t$ ist nicht-negativ, also ist die Diskriminante $\leq 0$:
+\[
+4\langle u,v \rangle^2 - 4\|u\|^2\|v\|^2 \leq 0
+\]
+\end{beispielbox}
+
+\begin{beispielbox}
+\textbf{Mathematisches Beispiel: QR-Zerlegung}
+
+Für die Matrix $A = \begin{pmatrix}1 & 1\\1 & 0\\0 & 1\end{pmatrix}$ bestimmen wir die QR-Zerlegung.
+
+\textbf{Gram-Schmidt auf die Spalten:}
+
+$a_1 = \begin{pmatrix}1\\1\\0\end{pmatrix}$, $a_2 = \begin{pmatrix}1\\0\\1\end{pmatrix}$
+
+$q_1 = \frac{a_1}{\|a_1\|} = \frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\\0\end{pmatrix}$
+
+\begin{align}
+u_2 &= a_2 - \langle a_2, q_1 \rangle q_1\\
+&= \begin{pmatrix}1\\0\\1\end{pmatrix} - \frac{1}{\sqrt{2}} \cdot \frac{1}{\sqrt{2}}\begin{pmatrix}1\\1\\0\end{pmatrix}\\
+&= \begin{pmatrix}1\\0\\1\end{pmatrix} - \frac{1}{2}\begin{pmatrix}1\\1\\0\end{pmatrix}\\
+&= \begin{pmatrix}1/2\\-1/2\\1\end{pmatrix}
+\end{align}
+
+$q_2 = \frac{u_2}{\|u_2\|} = \frac{1}{\sqrt{3/2}}\begin{pmatrix}1/2\\-1/2\\1\end{pmatrix} = \frac{1}{\sqrt{6}}\begin{pmatrix}1\\-1\\2\end{pmatrix}$
+
+\textbf{Orthogonale Matrix:}
+\[
+Q = \begin{pmatrix}1/\sqrt{2} & 1/\sqrt{6}\\1/\sqrt{2} & -1/\sqrt{6}\\0 & 2/\sqrt{6}\end{pmatrix}
+\]
+
+\textbf{Obere Dreiecksmatrix:}
+\begin{align}
+R_{11} &= \langle a_1, q_1 \rangle = \sqrt{2}\\
+R_{12} &= \langle a_2, q_1 \rangle = \frac{1}{\sqrt{2}}\\
+R_{22} &= \langle u_2, q_2 \rangle = \sqrt{\frac{3}{2}}
+\end{align}
+
+\[
+R = \begin{pmatrix}\sqrt{2} & 1/\sqrt{2}\\0 & \sqrt{3/2}\end{pmatrix}
+\]
+
+\textbf{Verifikation:} $QR = A$ \checkmark
+\end{beispielbox}
+
+\subsection{Gram-Schmidt-Verfahren (Beispiel)}
+
+Gegeben:
+\[
+v_1=(1,1,0),\quad v_2=(1,0,1),\quad v_3=(0,1,1).
+\]
+Wir konstruieren eine Orthonormalbasis.
+
+Schritt 1:
+\[
+u_1 = v_1,\quad
+e_1 = \frac{u_1}{\|u_1\|} = \frac{1}{\sqrt{2}}(1,1,0).
+\]
+
+Schritt 2:
+\[
+\operatorname{proj}_{u_1}(v_2) =
+\frac{\langle v_2,u_1\rangle}{\langle u_1,u_1\rangle}u_1
+= \frac{1}{2}(1,1,0),
+\]
+\[
+u_2 = v_2 - \operatorname{proj}_{u_1}(v_2)
+= \left(\tfrac{1}{2}, -\tfrac{1}{2}, 1\right).
+\]
+Dann
+\[
+\|u_2\|^2 = \tfrac{1}{4} + \tfrac{1}{4} + 1 = \tfrac{3}{2},
+\quad
+e_2 = \frac{u_2}{\sqrt{3/2}}.
+\]
+
+Schritt 3:
+\[
+u_3 = v_3 - \operatorname{proj}_{u_1}(v_3) - \operatorname{proj}_{u_2}(v_3),
+\]
+normieren zu $e_3$.
+Die explizite Rechnung zeigt, dass $(e_1,e_2,e_3)$ eine Orthonormalbasis bildet.
+
+\subsection{Hilberträume}
+
+\begin{definition}[Hilbertraum]
+Ein Hilbertraum ist ein vollständiger Vektorraum mit Skalarprodukt.
+„Vollständig“ bedeutet: jede Cauchy-Folge konvergiert im Raum.
+\end{definition}
+
+Wichtiges Beispiel:
+$L^2(\R^3)$, die Menge quadratintegrabler Wellenfunktionen $\psi(\mathbf{r})$
+mit
+\[
+\langle \psi,\phi\rangle = \int_{\R^3}\psi^*(\mathbf{r})\phi(\mathbf{r})\,d^3r.
+\]
+
+Unterthemen:
+Orthonormalsysteme, Projektionen, least-squares,
+orthogonale Polynome, MO-Orthonormalisierung.
+
+\newpage
+
+% ====================================================================
+% 9. ORTHOGONALE ABBILDUNGEN UND ENDOMORPHISMEN
+% ====================================================================
+
+\section{Orthogonale Abbildungen und Endomorphismen}
+
+\subsection{Anschauliche Erklärung}
+
+Orthogonale (bzw. unitäre) Transformationen drehen und spiegeln,
+ohne Längen und Winkel zu verändern. 
+Sie modellieren:
+\begin{itemize}
+  \item Rotationen von Molekülen,
+  \item Normerhaltende Basiswechsel,
+  \item unitäre Zeitentwicklung in der Quantenmechanik.
+\end{itemize}
+
+\subsection{Definitionen}
+
+\begin{definition}[Orthogonale Matrix]
+Eine Matrix $Q\in M_{n\times n}(\R)$ heißt orthogonal, wenn
+\[
+Q^T Q = I.
+\]
+\end{definition}
+
+\begin{definition}[Endomorphismus]
+Ein Endomorphismus ist eine lineare Abbildung $T:V\to V$.
+\end{definition}
+
+Orthogonale Endomorphismen erhalten das Skalarprodukt:
+$\langle Qx,Qy\rangle = \langle x,y\rangle$.
+
+\subsection{Beispielrechnung: Drehmatrix}
+
+Die Drehung in der Ebene um Winkel $\theta$:
+\[
+R(\theta) =
+\begin{pmatrix}
+\cos\theta & -\sin\theta\\
+\sin\theta & \cos\theta
+\end{pmatrix}.
+\]
+Wir prüfen Orthogonalität:
+\[
+R(\theta)^T R(\theta) =
+\begin{pmatrix}
+\cos\theta & \sin\theta\\
+-\sin\theta & \cos\theta
+\end{pmatrix}
+\begin{pmatrix}
+\cos\theta & -\sin\theta\\
+\sin\theta & \cos\theta
+\end{pmatrix}
+=
+\begin{pmatrix}
+\cos^2\theta+\sin^2\theta & 0\\
+0 & \cos^2\theta+\sin^2\theta
+\end{pmatrix}
+= I.
+\]
+
+Unterthemen:
+unitäre Matrizen ($U^*U=I$),
+Eigenwerte orthogonaler/unitärer Operatoren (auf dem Einheitskreis),
+Anwendungen in PCA, MO-Theorie, Symmetrieoperationen.
+
+\newpage
+
+% ====================================================================
+% 10. JORDAN-NORMALFORM
+% ====================================================================
+
+\section{Jordan-Normalform}
+
+\subsection{Anschauliche Erklärung}
+
+Nicht jede Matrix lässt sich diagonal darstellen.
+Tritt ein Eigenwert mit „zu wenigen“ Eigenvektoren auf, bleiben Kopplungen.
+Die Jordan-Normalform macht diese Struktur sichtbar:
+Sie besteht aus Blöcken, die aus einem Eigenwert plus Einsen auf der Nebendiagonale bestehen.
+
+In der Chemie betrifft dies z.B. Modelle mit degenerierten Energieniveaus
+oder linear abhängigen Relaxationsmoden.
+
+\subsection{Definitionen}
+
+\begin{definition}[Jordanblock]
+Ein Jordanblock der Größe $k$ zum Eigenwert $\lambda$ ist die Matrix
+\[
+J_k(\lambda) =
+\begin{pmatrix}
+\lambda & 1      &        & 0\\
+        & \lambda& \ddots &  \\
+        &        & \ddots & 1\\
+0       &        &        & \lambda
+\end{pmatrix}.
+\]
+\end{definition}
+
+\begin{definition}[Jordan-Normalform]
+Eine Matrix $J$ heißt Jordan-Normalform, wenn sie blockdiagonal ist
+mit Jordanblöcken auf der Diagonale. 
+Zu jeder Matrix $A$ über $\C$ gibt es eine invertierbare Matrix $P$ mit
+\[
+P^{-1} A P = J
+\]
+in Jordan-Normalform.
+\end{definition}
+
+\subsection{Beispielrechnung}
+
+Betrachte
+\[
+A =
+\begin{pmatrix}
+3 & 1 & 0\\
+0 & 3 & 1\\
+0 & 0 & 3
+\end{pmatrix}.
+\]
+Charakteristisches Polynom:
+\[
+p_A(\lambda) = (3-\lambda)^3.
+\]
+Es gibt nur den Eigenwert $\lambda=3$.
+
+Eigenvektoren:
+\[
+(A-3I)v=0,\quad
+A-3I =
+\begin{pmatrix}
+0 & 1 & 0\\
+0 & 0 & 1\\
+0 & 0 & 0
+\end{pmatrix}.
+\]
+Dies erzwingt $v_2=0$, $v_3=0$; $v_1$ frei.
+Also eindimensionaler Eigenraum, geometrische Vielfachheit $1$.
+
+Da algebraische Vielfachheit $3$ (vom Polynom) größer ist als geometrische $1$,
+ist $A$ nicht diagonalisierbar. Die gegebene Form ist bereits ein Jordanblock
+der Größe 3 zu $\lambda=3$.
+
+Unterthemen:
+Verhältnis algebraischer/geometrischer Vielfachheit,
+Berechnung von $\e^{tA}$ via Jordanform,
+Interpretation bei gekoppelten kinetischen Systemen.
+
+\newpage
+
+% ====================================================================
+% 11. DUALRÄUME
+% ====================================================================
+
+\section{Dualräume}
+
+\subsection{Anschauliche Erklärung}
+
+Ein Vektor beschreibt einen Zustand (z.B. Konzentrationen).
+Ein Linearfunktional weist jedem Zustand eine Zahl zu:
+z.B. Gesamtmasse, Gesamtladung, ein bestimmtes Signal.
+Die Menge aller solchen linearen Messvorschriften ist der \emph{Dualraum}.
+
+\subsection{Definitionen}
+
+\begin{definition}[Dualraum]
+Für einen Vektorraum $V$ über $K$ ist der Dualraum
+\[
+V^* = \{\varphi:V\to K \mid \varphi \text{ linear}\}.
+\]
+\end{definition}
+
+\begin{definition}[Dualbasis]
+Hat $V$ die Basis $(e_1,\dots,e_n)$, so ist die Dualbasis $(e^1,\dots,e^n)$
+in $V^*$ definiert durch
+\[
+e^i(e_j) = \delta^i_j.
+\]
+\end{definition}
+
+\subsection{Beispielrechnung}
+
+Sei $V=\R^3$ mit Standardbasis $e_1=(1,0,0)$, $e_2=(0,1,0)$, $e_3=(0,0,1)$.
+Die Dualbasis besteht aus Funktionalen $e^1,e^2,e^3$ mit
+\[
+e^1(x_1,x_2,x_3) = x_1,\quad
+e^2(x_1,x_2,x_3) = x_2,\quad
+e^3(x_1,x_2,x_3) = x_3.
+\]
+
+Ein chemisches Beispiel:
+\[
+\varphi(x_1,x_2,x_3) = x_1 + 2x_2
+\]
+kann als
+\[
+\varphi = e^1 + 2e^2
+\]
+geschrieben werden.
+Dies könnte die Gesamtzahl eines Elements beschreiben, das in Spezies 1 einfach
+und in Spezies 2 zweifach vorkommt.
+
+Unterthemen:
+Doppelte Dualräume, Darstellung linearer Abbildungen als Matrizen via Dualraum,
+Zusammenhang mit Gradienten und Messoperatoren.
+
+\newpage
+
+% ====================================================================
+% 12. TENSORPRODUKTE
+% ====================================================================
+
+\section{Tensorprodukte}
+
+\subsection{Anschauliche Erklärung}
+
+Wenn zwei Systeme getrennte Zustandsräume haben, z.B.
+\begin{itemize}
+  \item zwei Elektronen,
+  \item Spin- und Ortsanteil eines Teilchens,
+\end{itemize}
+dann beschreibt der kombinierte Zustand nicht einfach eine Summe der Räume,
+sondern deren \emph{Tensorprodukt}.
+Ein Tensorprodukt erlaubt Produktzustände und Überlagerungen,
+und bildet die Bühne für Verschränkung und Kopplungen.
+
+\subsection{Definition (endlichdimensional)}
+
+Seien $V,W$ endlichdimensionale Vektorräume über $K$.
+Das Tensorprodukt $V\otimes W$ ist ein Vektorraum zusammen mit einer bilinearen Abbildung
+\[
+\otimes: V\times W \to V\otimes W,
+\]
+so dass
+\begin{itemize}
+  \item $(v_1+v_2)\otimes w = v_1\otimes w + v_2\otimes w$,
+  \item $v\otimes (w_1+w_2) = v\otimes w_1 + v\otimes w_2$,
+  \item $(\alpha v)\otimes w = \alpha(v\otimes w) = v\otimes (\alpha w)$,
+\end{itemize}
+und jede bilineare Abbildung $B:V\times W\to U$ eindeutig über eine lineare Abbildung
+$V\otimes W\to U$ faktorisiert (universelle Eigenschaft).
+
+\subsection{Beispielrechnung: R2 Tensorprodukt R2}
+
+Sei $V=W=\R^2$ mit Basen
+\[
+e_1 = \begin{pmatrix}1\\0\end{pmatrix},\quad
+e_2 = \begin{pmatrix}0\\1\end{pmatrix}.
+\]
+Dann besitzt $V\otimes W$ die Basis
+\[
+e_1\otimes e_1,\quad
+e_1\otimes e_2,\quad
+e_2\otimes e_1,\quad
+e_2\otimes e_2.
+\]
+
+Ein allgemeines Element:
+\[
+v\otimes w
+= (\alpha_1 e_1 + \alpha_2 e_2)\otimes (\beta_1 e_1 + \beta_2 e_2)
+\]
+\[
+= \alpha_1\beta_1 (e_1\otimes e_1)
++ \alpha_1\beta_2 (e_1\otimes e_2)
++ \alpha_2\beta_1 (e_2\otimes e_1)
++ \alpha_2\beta_2 (e_2\otimes e_2).
+\]
+
+Physikalische Deutung: zwei Zweiniveau-Systeme (z.B. Spins)
+ergeben vier kombinierte Basiszustände.
+
+Unterthemen:
+Produktzustände vs. verschränkte Zustände,
+Spin-Kopplung, Clebsch-Gordan-Koeffizienten,
+Tensorprodukte von Operatoren (z.B. $A\otimes I$, $I\otimes B$).
+
+% ====================================================================
+
+\end{document}
