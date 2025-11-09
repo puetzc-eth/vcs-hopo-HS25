@@ -1,0 +1,757 @@
+\documentclass[a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[main=ngerman]{babel}
+\usepackage[babel=true,tracking=true,kerning=true,letterspace=500,expansion=true,protrusion=true]{microtype}
+\usepackage[german=swiss]{csquotes}
+\MakeOuterQuote{"}
+
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{enumitem}
+\usepackage{libertinus}
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  top=25mm,
+  left=20mm,
+  right=20mm,
+  bottom=30mm,
+  headsep=12mm,
+  footskip=25mm,
+  nomarginpar
+}
+\setlength\parindent{0pt}
+
+\usepackage[bf,sf]{titlesec}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage[table]{xcolor}
+\usepackage{longtable}
+\usepackage{comment}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black
+}
+\urlstyle{rm}
+
+% --- Dokumenttitel ---
+\title{\vspace{-1em}\textbf{Konkrete Umsetzung von PAKETH am D-CHAB}}
+\author{Connor Pütz (Präsident) \quad | \quad Paul Gärtner (HoPo-C) \quad | \quad Simon Gläser (HoPo-N)}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
+
+% ================================================================
+\section{Einleitung}
+
+Das Projekt \textbf{PAKETH} (Prüfungen und Akademischer Kalender an der ETH Zürich) ist eine umfassende Lehr- und Studienreform, mit der die ETH Zürich ihre Studienstrukturen, Prüfungszyklen und Lehrkonzepte modernisieren möchte.  
+Ziel des Projekts ist es, den akademischen Kalender zu vereinheitlichen, die Prüfungsphasen zu entzerren, Lehr- und Lernphasen klarer zu strukturieren und die Studierbarkeit der ETH-Programme zu verbessern. Dabei sollen sowohl Studierende als auch Lehrende von einer besseren Planbarkeit und Flexibilität profitieren.  
+
+Im Zentrum von PAKETH stehen drei große Veränderungen:
+\begin{itemize}[leftmargin=2em]
+    \item eine \textbf{Neugestaltung des akademischen Kalenders}, um Prüfungs- und Lernphasen zu harmonisieren,
+    \item die \textbf{Einführung modulbasierter Leistungsnachweise} anstelle großer Endprüfungen,
+    \item und die \textbf{Optimierung der Lehr- und Lernbelastung} über das gesamte Semester hinweg.
+\end{itemize}
+
+Diese Reform bringt für das \textbf{Departement Chemie und Angewandte Biowissenschaften (D-CHAB)} jedoch besondere Herausforderungen mit sich.  
+Das D-CHAB zeichnet sich durch eine intensive, praxisorientierte Ausbildung aus, die von zahlreichen Laborpraktika begleitet wird.  
+Während andere Departemente vergleichsweise mehr reine Vorlesungszeit haben, ist der Anteil an verpflichtenden Praktika am D-CHAB deutlich höher.  
+
+Die Umstellung des akademischen Kalenders im Rahmen von PAKETH bedeutet, dass die effektive Lernzeit zwischen den Unterrichtsphasen spürbar kürzer wird.  
+Da die Praktika weiterhin einen großen Teil der wöchentlichen Arbeitszeit beanspruchen, entsteht für die Studierenden ein \textbf{sehr volles Semester}, in dem weniger Zeit zum selbstständigen Lernen, Wiederholen und Vertiefen bleibt.  
+
+Diese erhöhte Belastung hat auch soziale und strukturelle Konsequenzen:  
+Viele Studierende engagieren sich ehrenamtlich in studentischen Organisationen, Fachvereinen oder Kommissionen oder übernehmen als Teaching Assistants (TAs) wertvolle Aufgaben in der Lehre.  
+Wenn durch die neue Struktur weniger zeitliche Freiräume bestehen, besteht die \textbf{Gefahr eines Rückgangs dieses Engagements}, was langfristig die studentische Mitgestaltung und die Qualität der Lehre beeinträchtigen könnte.  
+
+Daher ist es entscheidend, dass PAKETH am D-CHAB nicht einfach nur organisatorisch umgesetzt, sondern inhaltlich \textbf{durchdacht und fachgerecht adaptiert} wird.  
+Eine erfolgreiche Umsetzung muss darauf abzielen, die \textbf{Arbeitslast zu reduzieren}, ohne die \textbf{Qualität der Ausbildung zu gefährden}.  
+Dies erfordert insbesondere:
+\begin{itemize}[leftmargin=2em]
+    \item eine bessere Abstimmung zwischen Vorlesungen, Übungen und Praktika,
+    \item die inhaltliche Straffung von Lehrveranstaltungen ohne Substanzverlust,
+    \item und eine klare Priorisierung der Lernziele in allen Lehrmodulen.
+\end{itemize}
+
+Ziel dieses Dokuments ist es, Vorschläge und konkrete Maßnahmen für die Umsetzung von PAKETH am D-CHAB darzulegen.  
+Dabei soll der Fokus auf einer qualitativ hochwertigen, aber realistisch gestalteten Ausbildung liegen, die Studierende fordert, aber nicht überfordert, und die Raum für persönliches und akademisches Engagement lässt.
+
+% ================================================================
+\section{Änderungen an den Curricula der einzelnen Studiengänge}
+
+\subsection{Chemie BSc}
+
+Die Anpassung des Chemie-Bachelorstudiengangs an PAKETH erfordert eine umfassende Neustrukturierung der Modulverteilung über alle sechs Semester. Die Herausforderung liegt darin, die hohe fachliche Qualität der Ausbildung zu erhalten, während gleichzeitig die Arbeitsbelastung für die Studierenden reduziert wird.
+In diesem Vorschlag wurde der Workload konsequent abgerundet (beispielsweise wurde ein Wert von 4,7 auf 4 reduziert), wodurch sich ein Gesamtumfang von 180 Credits ergibt. Dennoch unterstützen wir den Vorschlag eines viersemestrigen Masterstudiengangs, da nur auf diese Weise die Intention von PAKETH vollständig umgesetzt werden kann.\\
+
+\textbf{Erstes Semester:} Das erste Semester erhält eine neue mathematische Grundlage durch die Verlegung der Linearen Algebra vom zweiten ins erste Semester. Diese Verschiebung ist essentiell, da die Lineare Algebra ohne Statistik als reine Tafelvorlesung deutlich ausführlicher behandelt werden kann und damit eine solidere Basis für spätere Module schafft. Die Analysis I wird um Differentialgleichungen als erstes Thema erweitert, um die Studierenden optimal auf die Physikalische Chemie vorzubereiten. Bei ACAC I werden die Sillen-Diagramme aus dem Curriculum entfernt, um Platz für eine umfassende Behandlung der MO-Theorie aus verschiedenen Perspektiven zu schaffen. Das Informatik-Modul wird gezielt darauf ausgerichtet, Grundlagen für fortgeschrittene Kurse wie Analytical and Physical Chemistry (APC), Digital Chemistry, Computer-aided Drug Design und Molecular Dynamics zu legen. In ACOC I werden homo- und isodesmische Reaktionen gestrichen, während Symmetrie-Inhalte nach ACAC II verlagert werden. Das AC-Praktikum wird gestrafft: Versuche wie der Ionentrennungsgang, überflüssige Titrationen und die Komplexsynthese ohne ausreichende theoretische Grundlagen werden reduziert, da diese Inhalte später in OACP II mit besserer Ausstattung und theoretischem Hintergrund behandelt werden.\\
+
+\textbf{Zweites Semester:} ACAC II wird von redundanten Inhalten wie den Hundschen Regeln befreit. Die Analysis II erhält konzeptuelle Integralsätze (Stokes, Green, Gauss). Die Physikalische Chemie I wird praxisorientierter gestaltet mit mehr Phasendiagrammen und klassischem Rechnen bei gleichzeitiger Reduktion von Mikrotheorie und Herleitungen. In ACAC II wird der gesamte Hauptgruppenchemie-Teil entfernt und beim Kristallgitter-Teil bereits Inhalte von AC II vorweggenommen. Statt homodesmischer Reaktionen wird eine NMR-Einführung implementiert. OACP I wird um NMR-Inhalte erweitert, während zwei Experimente in der zweiten Semesterhälfte gestrichen werden. Die Biochemie wird ins zweite Semester verlegt, um das vierte Semester zu entlasten. Dabei werden Genetik und Kinetik entfernt und eventuell ein kleiner Teil zur bioanorganischen Chemie ergänzt. ACOC II bleibt als bewährte, runde Vorlesung erhalten.\\
+
+\textbf{Drittes Semester:} OACP II wird teilweise in die Ferien verlegt, wobei die Hälfte der Stunden vor Semesterbeginn für Geräteeinführung und Sicherheitstests genutzt wird.\\
+
+\textbf{Viertes Semester:} Das PPAC-Praktikum wird durch weniger Reports und mehr Präsentationen entlastet. Eine mögliche Umstrukturierung sieht vor, den Analytik-Teil im vierten Semester zu belassen und den PC-Teil ins fünfte Semester mit Teilen des Spektroskopie-Labors zu verlagern, während der Rest des Spektroskopie-Labors ins sechste Semester wandert. Ausserdem werden die ECTS aus der Spektrenübung über die Analytik Prüfung abgerechnet und nicht wie bisher über das Praktikum.\\
+
+\textbf{Fünftes Semester:} Der EPR-Teil von PC IV wird als eigenständige Vorlesung in den Master verlagert. OC III und OC IV sind qualitativ hochwertige Vorlesungen mit überschaubaren Konzepten, jedoch erfordern sie extensive Prüfungsvorbereitung durch den hohen Übungsaufwand. Dies kann durch vereinfachte Prüfungsformate gemildert werden.\\
+
+\textbf{Sechstes Semester:} Das Sicherheitsmodul kann mit weniger ECTS-Punkten ausgestattet werden. AC IV könnte als Kernfach in den Master verlagert werden, was eine generelle Reform zu einem 120-ECTS-Master in vier Semestern unterstützen würde. Bei PC V kann der Lernaufwand durch besseres Erwartungsmanagement reduziert werden: Eine klare Unterscheidung zwischen prüfungsrelevanten Grundkonzepten und vertiefenden Erklärungen, die primär zum Nachschlagen dienen.\\
+\\
+Die Neustrukturierung des Chemie-Bachelorstudiums unter PAKETH erfordert eine durchdachte Anpassung der Modulverteilung, um die besonderen Herausforderungen des Faches zu berücksichtigen.
+
+Das zweite Studienjahr ist deutlich anspruchsvoller als das Basisjahr und erfordert eine solide mathematische Grundlage. Insbesondere für die Physikalische Chemie III (Molekulare Quantenmechanik) wird eine vertiefte Kenntnis der Linearen Algebra benötigt. Daher wird die Lineare Algebra bereits im ersten Semester platziert, um den Studierenden die nötigen mathematischen Werkzeuge frühzeitig zu vermitteln.
+
+Die Biochemie wird strategisch ins zweite Semester verschoben, um das vierte Semester zu entlasten. Diese Maßnahme ist besonders wichtig, da das dritte und vierte Semester sehr zeitintensive Praktika beinhalten, die eine hohe Arbeitsbelastung für die Studierenden darstellen. Der Inhalt der Biochemie wird dabei gestrafft: sowohl der Reaktionskinetik- als auch der Genetik-Teil werden aus dem Curriculum gestrichen, um das Modul zu fokussieren und die Arbeitsbelastung zu reduzieren.
+
+Eine weitere wichtige Änderung betrifft das Informatik-Modul: Es wird von einer Prüfung zu einer benoteten Semesterleistung umgestellt. Die Bewertung erfolgt über wöchentliche Abgaben von Übungsaufgaben, was eine kontinuierlichere Lernbetreuung ermöglicht und die Prüfungsbelastung in der Prüfungsphase reduziert.
+
+In der nachfolgenden Übersicht wurden die Spektrenübungen dem Praktikumsteil von PPAC zugeordnet und nicht der analytischen Chemie-Vorlesung.
+
+\renewcommand{\arraystretch}{1.2}
+
+\begin{longtable}{|p{0.7\textwidth}|>{\centering\arraybackslash}p{0.06\textwidth}|>{\centering\arraybackslash}p{0.06\textwidth}|>{\centering\arraybackslash}p{0.04\textwidth}|>{\centering\arraybackslash}p{0.04\textwidth}|}
+\hline
+\rowcolor{gray!60}
+\textbf{PAKETH (Vorschlag)} & \textbf{Typ} & \textbf{PR} & \textbf{NG} & \textbf{KP} \\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor{gray!60}
+\textbf{PAKETH (Vorschlag)} & \textbf{Typ} & \textbf{PR} & \textbf{NG} & \textbf{KP} \\
+\hline
+\endhead
+
+% ============================ Basisjahr ============================
+\rowcolor{gray!40}
+\multicolumn{5}{|l|}{\textbf{a. Module des Basisjahrs (Notengewichte) – 44 KP}} \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Basisprüfungsgruppe A (Pflichtmodule mit Kompensation – 20 KP)}} \\ \hline
+Allgemeine Chemie I (AC) & 2V+1U & 60\,s & 3 & \textcolor{red}{4} \\ \hline
+Allgemeine Chemie I (OC) & 2V+1U & 60\,s & 3 & \textcolor{red}{3} \\ \hline
+Allgemeine Chemie I (PC) & 2V+1U & 60\,s & 3 & \textcolor{red}{4} \\ \hline
+Physik I & 3V+1U & 60\,s & 3 & \textcolor{green}{3} \\ \hline
+Analysis I & 3V+2U & 60\,s & 3 & \textcolor{red}{4} \\ \hline
+Lineare Algebra \textit{(neues LinAlg $\approx$ Analysis A)} & 2V+1U & 60\,s & 2 & \textcolor{red}{4}  \\ \hline
+Informatik I & 2V+2U & 60\,s & 2 & \textcolor{red}{5} \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Basisprüfungsgruppe B (Pflichtmodule mit Kompensation – 23 KP)}} \\ \hline
+Allgemeine Chemie II (AC) \textit{(unser Vorschlag beinhaltet aber eine Erweiterung der ACAC II Inhalte)}& 3V+1U & 60\,s & 3 & \textcolor{red}{3} \\ \hline
+Allgemeine Chemie II (OC) & 3V+1U & 60\,s & 3 & \textcolor{red}{4} \\ \hline
+Physikalische Chemie I: Thermodynamik & 3V+1U & 60\,s & 3 & \textcolor{red}{5} \\ \hline
+Physik II & 3V+1U & 60\,s & 3 & \textcolor{green}{4} \\ \hline
+Analysis II & 2V+1U & 60\,s & 3 & \textcolor{green}{3} \\ \hline
+Biochemie & 4G & 60\,s & 3 & \textcolor{red}{4} \\ \hline
+
+% =================== Module höheres Bachelorstudium ===================
+\rowcolor{gray!40}
+\multicolumn{5}{|l|}{\textbf{b. Module höheres Bachelorstudium – 96 KP}} \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe A (Pflichtmodule mit Kompensation – 17 KP)}} \\ \hline
+Anorganische Chemie I & 2V+1U & 60\,s & 3 & \textcolor{green}{3} \\ \hline
+Organische Chemie I & 2V+1U & 60\,s & 4 & \textcolor{red}{4} \\ \hline
+Physikalische Chemie II: Chemische Reaktionskinetik & 2V+1U & 60\,s & 3 & \textcolor{red}{2} \\ \hline
+Analytische Chemie I & 2V+1U & 60\,s & 4 & \textcolor{green}{2} \\ \hline
+Analysis III: Partielle Differenzialgleichungen & 2V+1U & 60\,s & 2 & \textcolor{red}{3} \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe B (Pflichtmodule mit Kompensation – 17 KP)}} \\ \hline
+Anorganische Chemie II & 2V+1U & 60\,s & 3 & \textcolor{red}{4} \\ \hline
+Organische Chemie II & 2V+1U & 60\,s & 4 & \textcolor{red}{4} \\ \hline
+Physikalische Chemie III: Molekulare Quantenmechanik & 2V+1U & 60\,s & 3 & \textcolor{green}{4} \\ \hline
+Analytische Chemie II & 2V+2U & 60\,s & 4 & \textcolor{green}{3}  \\ \hline
+Chemieingenieurwissenschaften & 2V+1U & 60\,s & 3 & \textcolor{green}{3} \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe C (Pflichtmodule mit Kompensation – 12 KP)}} \\ \hline
+Anorganische Chemie III: Metallorganische Chemie und Homogenkatalyse & 2V+1U & 60\,+30\,m & 3 & \textcolor{green}{4} \\ \hline
+Organische Chemie III: Einführung in die Asymmetrische Synthese & 2V+1U & 30\,m & 3 & \textcolor{red}{5} \\ \hline
+Physikalische Chemie IV: Magnetische Resonanz & 2V+1U & 30\,m & 3 & \textcolor{red}{5} \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe D (Pflichtmodule mit Kompensation – 16 KP)}} \\ \hline
+Anorganische Chemie IV: Nanomaterialien: Synthese, Eigenschaften und Oberflächenchemie & 2V+1U & 30\,m & 3 & \textcolor{red}{5} \\ \hline
+Organische Chemie IV: Physikalisch Organische Chemie & 2V+1U & 60\,s+30\,m & 3 & \textcolor{green}{4} \\ \hline
+Physikalische Chemie V: Spektroskopie & 2V+1U & 30\,m & 3 & \textcolor{red}{4} \\ \hline
+Sicherheit & 2V & 180\,s & 2 & \textcolor{red}{2} \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Vertiefungsmodule (Wahlpflichtmodule – 15 KP)}} \\ \hline
+\textit{Gemäß Wahl der Studierenden} & 2V+1U & variabel & - & 15 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Wissenschaft im Kontext (WIK) – Wahlpflichtmodule – 6 KP}} \\ \hline
+\textit{Gemäß Vorgabe des D-CHAB} & 2V+1U & variabel & - & 6 \\ \hline
+
+\rowcolor{gray!35}
+\multicolumn{5}{|l|}{\textbf{c. Praxismodule – Pflichtmodule – 50 KP}} \\ \hline
+Allgemeine Chemie (Praktikum) & 10P & - & - & 7 \\ \hline
+Anorganische und Organische Chemie I & 8P & - & - & 8 \\ \hline
+Anorganische und Organische Chemie II & 16P & - & - & 11 \\ \hline
+Analytische Chemie & 8P & - & - & \textcolor{red}{6} \\ \hline
+Physikalische Chemie & 8P & - & - & \textcolor{red}{6} \\ \hline
+Spektroskopie & 8P & - & - & \textcolor{red}{8} \\ \hline
+\end{longtable}
+
+\begin{comment}
+\subsection{Chemieingenieurwissenschaften BSc}
+
+\renewcommand{\arraystretch}{1.2}
+
+\begin{longtable}{|p{0.7\textwidth}|>{\centering\arraybackslash}p{0.06\textwidth}|>{\centering\arraybackslash}p{0.06\textwidth}|>{\centering\arraybackslash}p{0.04\textwidth}|>{\centering\arraybackslash}p{0.04\textwidth}|}
+\hline
+\rowcolor{gray!60}
+\textbf{PAKETH (Vorschlag)} & \textbf{Typ} & \textbf{PR} & \textbf{NG} & \textbf{KP} \\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor{gray!60}
+\textbf{PAKETH (Vorschlag)} & \textbf{Typ} & \textbf{PR} & \textbf{NG} & \textbf{KP} \\
+\hline
+\endhead
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe C (Pflichtmodule mit Kompensation – 21 KP)}} \\ \hline
+Thermodynamik für Chemieingenieure & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Stofftransport & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Wärmetransport und Strömungslehre & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Homogene Reaktionstechnik & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Mikrobiologie & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Statistische und Numerische Methoden & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Technologieunternehmertum & 2V+1U & 60\,s & 3 & 3 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe D (Pflichtmodule mit Kompensation – 17 KP)}} \\ \hline
+Industrielle Chemie & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Heterogene Reaktionstechnik & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Trennprozesstechnologie & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Regelungstechnik & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Chemometrik und Maschinelles Lernen & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Sicherheit & 2V+1U & - & 2 & 2 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Vertiefungsmodule (Wahlpflichtmodule – 15 KP)}} \\ \hline
+\textit{Gemäß Wahl der Studierenden} & 2V+1U & variabel & - & 15 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Wissenschaft im Kontext (WIK) – Wahlpflichtmodule – 6 KP}} \\ \hline
+\textit{Gemäß Vorgabe des D-CHAB} & 2V+1U & variabel & - & 6 \\ \hline
+
+\rowcolor{gray!35}
+\multicolumn{5}{|l|}{\textbf{c. Praxismodule – Pflichtmodule – 41 KP}} \\ \hline
+\textit{Gemäß definierter Praktika} & 2V+1U & - & - & 41 \\ \hline
+\end{longtable}
+\end{comment}
+
+\begin{comment}
+\subsection{Biochemie BSc}
+
+\renewcommand{\arraystretch}{1.2}
+
+\begin{longtable}{|p{0.7\textwidth}|>{\centering\arraybackslash}p{0.06\textwidth}|>{\centering\arraybackslash}p{0.06\textwidth}|>{\centering\arraybackslash}p{0.04\textwidth}|>{\centering\arraybackslash}p{0.04\textwidth}|}
+\hline
+\rowcolor{gray!60}
+\textbf{PAKETH (Vorschlag)} & \textbf{Typ} & \textbf{PR} & \textbf{NG} & \textbf{KP} \\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor{gray!60}
+\textbf{PAKETH (Vorschlag)} & \textbf{Typ} & \textbf{PR} & \textbf{NG} & \textbf{KP} \\
+\hline
+\endhead
+
+% ============================ Basisjahr ============================
+\rowcolor{gray!40}
+\multicolumn{5}{|l|}{\textbf{a. Module des Basisjahrs (Notengewichte) – 43 KP}} \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Basisprüfungsgruppe A (Pflichtmodule mit Kompensation – 20 KP)}} \\ \hline
+Allgemeine Chemie I (AC) & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Allgemeine Chemie I (OC) & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Allgemeine Chemie I (PC) & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Physik I & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Analysis I & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Lineare Algebra & 2V+1U & 60\,s & 2 & 2 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Basisprüfungsgruppe B (Pflichtmodule mit Kompensation – 23 KP)}} \\ \hline
+Allgemeine Chemie II (AC) & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Allgemeine Chemie II (OC) & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Physikalische Chemie I: Thermodynamik & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Physik II & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Analysis II & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Informatik I & 2V+1U & 60\,s & 2 & 2 \\ \hline
+Biologie: Biochemie & 2V+1U & 60\,s & 3 & 3 \\ \hline
+
+% =================== Module höheres Bachelorstudium ===================
+\rowcolor{gray!40}
+\multicolumn{5}{|l|}{\textbf{b. Module höheres Bachelorstudium – 114 KP}} \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe A (Pflichtmodule mit Kompensation – 24 KP)}} \\ \hline
+Anorganische Chemie I & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Physikalische Chemie II & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Statistik II & 2V+1U & 60\,s & 2 & 2 \\ \hline
+Informatik I & 2V+1U & 60\,s & 2 & 2 \\ \hline
+Organische Chemie I & 2V+1U & 60\,s & 6 & 6 \\ \hline
+Physik I & 2V+1U & 60\,s & 6 & 6 \\ \hline
+Analytische Chemie I & 2V+1U & 60\,s & 6 & 6 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe B (Pflichtmodule mit Kompensation – 20 KP)}} \\ \hline
+Organische Chemie II & 2V+1U & 60\,s & 6 & 6 \\ \hline
+Physik II & 2V+1U & 60\,s & 6 & 6 \\ \hline
+Analytische Chemie II & 2V+1U & 60\,s & 6 & 6 \\ \hline
+Biochemie & 2V+1U & 60\,s & 5 & 5 \\ \hline
+Systembiologie & 2V+1U & 60\,s & 5 & 5 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe C (Pflichtmodule mit Kompensation – 24 KP)}} \\ \hline
+Molekular- und Strukturbiologie I & 2V+1U & 60\,s & 1 & 1 \\ \hline
+Molekular- und Strukturbiologie II & 2V+1U & 60\,s & 1 & 1 \\ \hline
+Nukleinsäuren und Kohlenhydrate & 2V+1U & 60\,s & 1 & 1 \\ \hline
+Proteine und Lipide & 2V+1U & 60\,s & 1 & 1 \\ \hline
+Organische Chemie für BCB & 2V+1U & 60\,s & 1 & 1 \\ \hline
+
+\rowcolor{gray!30}
+\multicolumn{5}{|l|}{\quad\textbf{Vertiefungsmodule – Wahlpflichtmodule – 46 KP}} \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\qquad\textbf{Blockkurse – Wahlpflichtmodule – 24 KP}} \\ \hline
+\textit{Gemäß Wahl der Studierenden} & 2V+1U & variabel & - & 24 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\qquad\textbf{Wahlmodule BCB – Wahlpflichtmodule – 16 KP}} \\ \hline
+\textit{Gemäß Wahl der Studierenden} & 2V+1U & variabel & - & 16 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\qquad\textbf{Wissenschaft im Kontext – Wahlpflichtmodule – 6 KP}} \\ \hline
+\textit{Gemäß Vorgabe des D-CHAB} & 2V+1U & variabel & - & 6 \\ \hline
+
+\rowcolor{gray!35}
+\multicolumn{5}{|l|}{\textbf{c. Praxismodule – Pflichtmodule – 30 KP}} \\ \hline
+\textit{Gemäß definierter Praktika} & 2V+1U & - & - & 30 \\ \hline
+\end{longtable}
+\end{comment}
+
+\begin{comment}
+\subsection{Interdisziplinäre Naturwissenschaften BSc (Biochemisch-physikalische Fachrichtung)}
+
+\renewcommand{\arraystretch}{1.2}
+
+\begin{longtable}{|p{0.7\textwidth}|>{\centering\arraybackslash}p{0.06\textwidth}|>{\centering\arraybackslash}p{0.06\textwidth}|>{\centering\arraybackslash}p{0.04\textwidth}|>{\centering\arraybackslash}p{0.04\textwidth}|}
+\hline
+\rowcolor{gray!60}
+\textbf{PAKETH (Vorschlag)} & \textbf{Typ} & \textbf{PR} & \textbf{NG} & \textbf{KP} \\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor{gray!60}
+\textbf{PAKETH (Vorschlag)} & \textbf{Typ} & \textbf{PR} & \textbf{NG} & \textbf{KP} \\
+\hline
+\endhead
+
+% ============================ Basisjahr ============================
+\rowcolor{gray!40}
+\multicolumn{5}{|l|}{\textbf{a. Module des Basisjahrs (Notengewichte) – 43 KP}} \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Basisprüfungsgruppe A (Pflichtmodule mit Kompensation – 20 KP)}} \\ \hline
+Allgemeine Chemie I (AC) & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Allgemeine Chemie I (OC) & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Allgemeine Chemie I (PC) & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Physik I & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Analysis I & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Lineare Algebra & 2V+1U & 60\,s & 2 & 2 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Basisprüfungsgruppe B (Pflichtmodule mit Kompensation – 23 KP)}} \\ \hline
+Allgemeine Chemie II (AC) & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Allgemeine Chemie II (OC) & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Physikalische Chemie I: Thermodynamik & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Physik II & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Analysis II & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Informatik I & 2V+1U & 60\,s & 2 & 2 \\ \hline
+Biologie: Biochemie & 2V+1U & 60\,s & 3 & 3 \\ \hline
+
+% =================== Module höheres Bachelorstudium ===================
+\rowcolor{gray!40}
+\multicolumn{5}{|l|}{\textbf{b. Module höheres Bachelorstudium – 96 KP}} \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe A (Pflichtmodule mit Kompensation – 17 KP)}} \\ \hline
+Anorganische Chemie I & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Organische Chemie I & 2V+1U & 60\,s & 4 & 4 \\ \hline
+Physikalische Chemie II: Chemische Reaktionskinetik & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Analytische Chemie I & 2V+1U & 60\,s & 4 & 4 \\ \hline
+Analysis III: Partielle Differenzialgleichungen & 2V+1U & 60\,s & 2 & 2 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe B (Pflichtmodule mit Kompensation – 17 KP)}} \\ \hline
+Anorganische Chemie II & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Organische Chemie II & 2V+1U & 60\,s & 4 & 4 \\ \hline
+Physikalische Chemie III: Molekulare Quantenmechanik & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Analytische Chemie II & 2V+1U & 60\,s & 4 & 4 \\ \hline
+Chemieingenieurwissenschaften & 2V+1U & 60\,s & 3 & 3 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe C (Pflichtmodule mit Kompensation – 9 KP)}} \\ \hline
+Anorganische Chemie III: Metallorganische Chemie und Homogenkatalyse & 2V+1U & 30\,m & 3 & 3 \\ \hline
+Organische Chemie III: Einführung in die asymmetrische Synthese & 2V+1U & 30\,m & 3 & 3 \\ \hline
+Physikalische Chemie IV: Magnetische Resonanz & 2V+1U & 30\,m & 3 & 3 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe D (Pflichtmodule mit Kompensation – 11 KP)}} \\ \hline
+Anorganische Chemie IV: Nanomaterialien: Synthese, Eigenschaften und Oberflächenchemie & 2V+1U & 30\,m & 3 & 3 \\ \hline
+Organische Chemie IV: Physikalisch Organische Chemie & 2V+1U & 30\,m & 3 & 3 \\ \hline
+Physikalische Chemie V: Spektroskopie & 2V+1U & 30\,m & 3 & 3 \\ \hline
+Sicherheit & 2V+1U & - & 2 & 2 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Vertiefungsmodule (Wahlpflichtmodule – 15 KP)}} \\ \hline
+\textit{Gemäß Wahl der Studierenden} & 2V+1U & variabel & - & 15 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Wissenschaft im Kontext (WIK) – Wahlpflichtmodule – 6 KP}} \\ \hline
+\textit{Gemäß Vorgabe des D-CHAB} & 2V+1U & variabel & - & 6 \\ \hline
+
+\rowcolor{gray!35}
+\multicolumn{5}{|l|}{\textbf{c. Praxismodule – Pflichtmodule – 41 KP}} \\ \hline
+\textit{Gemäß definierter Praktika} & 2V+1U & - & - & 41 \\ \hline
+\end{longtable}
+\end{comment}
+
+\begin{comment}
+\subsection{Interdisziplinäre Naturwissenschaften BSc (Physikalisch-chemische Fachrichtung)}
+
+\renewcommand{\arraystretch}{1.2}
+
+\begin{longtable}{|p{0.7\textwidth}|>{\centering\arraybackslash}p{0.06\textwidth}|>{\centering\arraybackslash}p{0.06\textwidth}|>{\centering\arraybackslash}p{0.04\textwidth}|>{\centering\arraybackslash}p{0.04\textwidth}|}
+\hline
+\rowcolor{gray!60}
+\textbf{PAKETH (Vorschlag)} & \textbf{Typ} & \textbf{PR} & \textbf{NG} & \textbf{KP} \\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor{gray!60}
+\textbf{PAKETH (Vorschlag)} & \textbf{Typ} & \textbf{PR} & \textbf{NG} & \textbf{KP} \\
+\hline
+\endhead
+
+% ============================ Basisjahr ============================
+\rowcolor{gray!40}
+\multicolumn{5}{|l|}{\textbf{a. Module des Basisjahrs (Notengewichte) – 43 KP}} \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Basisprüfungsgruppe A (Pflichtmodule mit Kompensation – 20 KP)}} \\ \hline
+Allgemeine Chemie I (AC) & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Allgemeine Chemie I (OC) & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Allgemeine Chemie I (PC) & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Physik I & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Analysis I & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Lineare Algebra & 2V+1U & 60\,s & 2 & 2 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Basisprüfungsgruppe B (Pflichtmodule mit Kompensation – 23 KP)}} \\ \hline
+Allgemeine Chemie II (AC) & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Allgemeine Chemie II (OC) & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Physikalische Chemie I: Thermodynamik & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Physik II & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Analysis II & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Informatik I & 2V+1U & 60\,s & 2 & 2 \\ \hline
+Biologie: Biochemie & 2V+1U & 60\,s & 3 & 3 \\ \hline
+
+% =================== Module höheres Bachelorstudium ===================
+\rowcolor{gray!40}
+\multicolumn{5}{|l|}{\textbf{b. Module höheres Bachelorstudium – 96 KP}} \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe A (Pflichtmodule mit Kompensation – 17 KP)}} \\ \hline
+Anorganische Chemie I & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Organische Chemie I & 2V+1U & 60\,s & 4 & 4 \\ \hline
+Physikalische Chemie II: Chemische Reaktionskinetik & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Analytische Chemie I & 2V+1U & 60\,s & 4 & 4 \\ \hline
+Analysis III: Partielle Differenzialgleichungen & 2V+1U & 60\,s & 2 & 2 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe B (Pflichtmodule mit Kompensation – 17 KP)}} \\ \hline
+Anorganische Chemie II & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Organische Chemie II & 2V+1U & 60\,s & 4 & 4 \\ \hline
+Physikalische Chemie III: Molekulare Quantenmechanik & 2V+1U & 60\,s & 3 & 3 \\ \hline
+Analytische Chemie II & 2V+1U & 60\,s & 4 & 4 \\ \hline
+Chemieingenieurwissenschaften & 2V+1U & 60\,s & 3 & 3 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe C (Pflichtmodule mit Kompensation – 9 KP)}} \\ \hline
+Anorganische Chemie III: Metallorganische Chemie und Homogenkatalyse & 2V+1U & 30\,m & 3 & 3 \\ \hline
+Organische Chemie III: Einführung in die asymmetrische Synthese & 2V+1U & 30\,m & 3 & 3 \\ \hline
+Physikalische Chemie IV: Magnetische Resonanz & 2V+1U & 30\,m & 3 & 3 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Kernmodulgruppe D (Pflichtmodule mit Kompensation – 11 KP)}} \\ \hline
+Anorganische Chemie IV: Nanomaterialien: Synthese, Eigenschaften und Oberflächenchemie & 2V+1U & 30\,m & 3 & 3 \\ \hline
+Organische Chemie IV: Physikalisch Organische Chemie & 2V+1U & 30\,m & 3 & 3 \\ \hline
+Physikalische Chemie V: Spektroskopie & 2V+1U & 30\,m & 3 & 3 \\ \hline
+Sicherheit & 2V+1U & - & 2 & 2 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Vertiefungsmodule (Wahlpflichtmodule – 15 KP)}} \\ \hline
+\textit{Gemäß Wahl der Studierenden} & 2V+1U & variabel & - & 15 \\ \hline
+
+\rowcolor{gray!20}
+\multicolumn{5}{|l|}{\quad\textbf{Wissenschaft im Kontext (WIK) – Wahlpflichtmodule – 6 KP}} \\ \hline
+\textit{Gemäß Vorgabe des D-CHAB} & 2V+1U & variabel & - & 6 \\ \hline
+
+\rowcolor{gray!35}
+\multicolumn{5}{|l|}{\textbf{c. Praxismodule – Pflichtmodule – 41 KP}} \\ \hline
+\textit{Gemäß definierter Praktika} & 2V+1U & - & - & 41 \\ \hline
+\end{longtable}
+\end{comment}
+
+\section{Arbeitsbelastung}
+
+\subsection{Chemie BSc}
+
+Die folgende Aufstellung zeigt die detaillierte Arbeitsbelastung für alle Module im Chemie-Bachelorstudiengang unter PAKETH.
+
+\subsubsection{Basisjahr}
+
+\renewcommand{\arraystretch}{1.3}
+
+\begin{longtable}{|m{0.28\textwidth}|m{0.08\textwidth}|m{0.12\textwidth}|m{0.12\textwidth}|m{0.12\textwidth}|m{0.08\textwidth}|}
+\hline
+\rowcolor{gray!30}
+\textbf{Modul} & \textbf{KP} & \textbf{Kontaktzeit} & \textbf{Selbststudium} & \textbf{Prüfungsvorbereitung} & \textbf{Gesamtaufwand} \\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor{gray!30}
+\textbf{Modul} & \textbf{KP} & \textbf{Kontaktzeit} & \textbf{Selbststudium} & \textbf{Prüfungsvorbereitung} & \textbf{Gesamtaufwand} \\
+\hline
+\endhead
+
+Allgemeine Chemie I (AC) & 4 & 42h & 42h & 45h & 129h \\
+\hline
+Allgemeine Chemie I (OC) & 3 & 42h & 28h & 40h & 110h \\
+\hline
+Allgemeine Chemie I (PC) & 4 & 42h & 42h & 48h & 132h \\
+\hline
+Physik I & 3 & 56h & 35h & 24h & 115h \\
+\hline
+Analysis I & 4 & 71h & 42h & 28h & 141h \\
+\hline
+Lineare Algebra & 4 & 71h & 42h & 28h & 141h \\
+\hline
+Allgemeine Chemie II (AC) & 3 & 56h & 24h & 32h & 112h \\
+\hline
+Allgemeine Chemie II (OC) & 4 & 42h & 42h & 48h & 132h \\
+\hline
+Physikalische Chemie I & 5 & 56h & 56h & 52h & 164h \\
+\hline
+Physik II & 4 & 56h & 42h & 24h & 122h \\
+\hline
+Analysis II & 3 & 42h & 35h & 28h & 105h \\
+\hline
+Informatik I & 5 & 56h & 98h & 0h & 154h \\
+\hline
+Biologie: Biochemie & 4 & 56h & 34h & 40h & 130h \\
+\hline
+\rowcolor{gray!20}
+\textbf{Summe Basisjahr} & \textbf{50} & \textbf{688h} & \textbf{562h} & \textbf{428h} & \textbf{1715h} \\
+\hline
+\end{longtable}
+
+\subsubsection{Kernmodule höheres Bachelorstudium}
+
+\begin{longtable}{|m{0.28\textwidth}|m{0.08\textwidth}|m{0.12\textwidth}|m{0.12\textwidth}|m{0.12\textwidth}|m{0.08\textwidth}|}
+\hline
+\rowcolor{gray!30}
+\textbf{Modul} & \textbf{KP} & \textbf{Kontaktzeit} & \textbf{Selbststudium} & \textbf{Prüfungsvorbereitung} & \textbf{Gesamtaufwand} \\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor{gray!30}
+\textbf{Modul} & \textbf{KP} & \textbf{Kontaktzeit} & \textbf{Selbststudium} & \textbf{Prüfungsvorbereitung} & \textbf{Gesamtaufwand} \\
+\hline
+\endhead
+
+Anorganische Chemie I & 3 & 42h & 28h & 24h & 94h \\
+\hline
+Organische Chemie I & 4 & 42h & 42h & 24h & 108h \\
+\hline
+Physikalische Chemie II & 2 & 56h & 12h & 12h & 80h \\
+\hline
+Analytische Chemie I & 2 & 42h & 28h & 13.5h & 83.5h \\
+\hline
+Analysis III & 3 & 42h & 21h & 16h & 79h \\
+\hline
+Anorganische Chemie II & 4 & 42h & 30h & 40h & 112h \\
+\hline
+Organische Chemie II & 4 & 42h & 51h & 50h & 143h \\
+\hline
+Physikalische Chemie III & 4 & 56h & 44h & 40h & 140h \\
+\hline
+Analytische Chemie II & 3 & 42h & 24h & 13.5h & 79.5h \\
+\hline
+Chemieingenieurwissenschaften & 3 & 42h & 30h & 40h & 112h \\
+\hline
+Anorganische Chemie III & 4.0 & 42h & 42h & 32h & 116h \\
+\hline
+Organische Chemie III & 5 & 42h & 42h & 72h & 156h \\
+\hline
+Physikalische Chemie IV & 5 & 42h & 56h & 56h & 154h \\
+\hline
+Anorganische Chemie IV & 5 & 42h & 42h & 60h & 144h \\
+\hline
+Organische Chemie IV & 4 & 42h & 28h & 40h & 110h \\
+\hline
+Physikalische Chemie V & 4 & 42h & 56h & 20h & 118h \\
+\hline
+Safety & 2 & 28h & 14h & 16h & 58h \\
+\hline
+\rowcolor{gray!20}
+\textbf{Summe Kernmodule} & \textbf{61} & \textbf{728h} & \textbf{590h} & \textbf{569h} & \textbf{1887h} \\
+\hline
+\end{longtable}
+
+\subsubsection{Wahlmodule und Praktika}
+
+\begin{longtable}{|m{0.28\textwidth}|m{0.08\textwidth}|m{0.12\textwidth}|m{0.12\textwidth}|m{0.12\textwidth}|m{0.08\textwidth}|}
+\hline
+\rowcolor{gray!30}
+\textbf{Modul} & \textbf{KP} & \textbf{Kontaktzeit} & \textbf{Selbststudium} & \textbf{Prüfungsvorbereitung} & \textbf{Gesamtaufwand} \\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor{gray!30}
+\textbf{Modul} & \textbf{KP} & \textbf{Kontaktzeit} & \textbf{Selbststudium} & \textbf{Prüfungsvorbereitung} & \textbf{Gesamtaufwand} \\
+\hline
+\endhead
+
+Vertiefungsmodule & 15 & 210h & 240h & 0h & 450h \\
+\hline
+Wissenschaft im Kontext & 6.0 & 84h & 96h & 0h & 180h \\
+\hline
+Allgemeines Chemie Praktikum & 7 & 118h & 126.5h & 0h & 244.5h \\
+\hline
+OACP I & 8 & 112h & 126h & 0h & 238h \\
+\hline
+OACP II & 11 & 192h & 150h & 0h & 342h \\
+\hline
+PPAC & 12 & 112h & 282h & 0h & 394h \\
+\hline
+Spektroskopie Praktikum & 8 & 48 h & 180h & 0h & 228h \\
+\hline
+\hline
+\rowcolor{gray!20}
+\textbf{Summe Wahlmodule/Praktika} & \textbf{67} & \textbf{2004h} & \textbf{696h} & \textbf{0h} & \textbf{2700h} \\
+\hline
+\end{longtable}
+
+\subsubsection{Gesamtübersicht Chemie BSc}
+
+\begin{longtable}{|m{0.28\textwidth}|m{0.08\textwidth}|m{0.12\textwidth}|m{0.12\textwidth}|m{0.12\textwidth}|m{0.08\textwidth}|}
+\hline
+\rowcolor{gray!40}
+\textbf{Studienbereich} & \textbf{KP} & \textbf{Kontaktzeit} & \textbf{Selbststudium} & \textbf{Prüfungsvorbereitung} & \textbf{Gesamtaufwand} \\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor{gray!40}
+\textbf{Studienbereich} & \textbf{KP} & \textbf{Kontaktzeit} & \textbf{Selbststudium} & \textbf{Prüfungsvorbereitung} & \textbf{Gesamtaufwand} \\
+\hline
+\endhead
+
+Basisjahr & 50 & 688h & 562h & 428h & 1715h \\
+\hline
+Kernmodule & 61 & 728h & 590h & 569h & 1887h \\
+\hline
+Wahlmodule/Praktika & Praktika+GESS: 67 & 2004h & 696h & 0h & 2700h \\
+\hline
+\rowcolor{gray!60}
+\textbf{TOTAL CHEMIE BSc} & \textbf{183} & \textbf{3572h} & \textbf{1597h} & \textbf{258h} & \textbf{5431h} \\
+\hline
+\end{longtable}
+
+\normalsize
+\renewcommand{\arraystretch}{1.2}
+
+\section{Alternative Leistungsnachweise}
+
+Die Neugestaltung des Chemie-Bachelorstudiums unter PAKETH eröffnet Möglichkeiten für flexiblere und studierendenfreundlichere Prüfungsformen. Anstatt ausschließlich auf Endprüfungen zu setzen, können verschiedene Module durch alternative Leistungsnachweise bewertet werden, die eine kontinuierlichere Betreuung ermöglichen und die Prüfungsbelastung entzerren.
+
+\subsection{Midterm-Prüfungen}
+
+Folgende Module eignen sich besonders für eine Bewertung durch Midterm-Prüfungen, da sie aufbauenden Charakter haben und eine frühzeitige Leistungsrückmeldung sinnvoll ist:
+
+\begin{itemize}
+    \item \textbf{Allgemeine Chemie I (AC)} - Midterm nach 7 Wochen zu Säuren und Basen
+    \item \textbf{Allgemeine Chemie II (AC)} - Midterm nach 7 Wochen zu Symmetrie, VSEPR und Kristallstrukturen
+    \item \textbf{Analysis I} - Midterm nach 7 Wochen zu DGLs, Folgen, Reihen, 
+    \item \textbf{Analysis II} - Midterm nach 7 Wochen zu Mehrdimensionaler Differenzialrechneung
+    \item \textbf{Anorganische Chemie I} - Midterm nach 7 Wochen zu MO-Diagramme
+    \item \textbf{Anorganische Chemie III} - Midterm nach 7 Wochen zum Bezdek Teil
+\end{itemize}
+
+Die Midterm-Prüfungen finden idealerweise in der 8. Semesterwoche statt und decken etwa 40-50\% des Gesamtstoffs ab. Die Endprüfung umfasst alle Inhalte und Verknüpfungen zwischen den Themenbereichen.
+
+\subsection{Notenbonus-Systeme}
+
+Für Module mit starkem Übungscharakter bieten sich Notenbonus-Systeme an, die kontinuierliche Mitarbeit und regelmäßige Leistung belohnen:
+
+\begin{itemize}
+    \item \textbf{Allgemeine Chemie I (OC)} - Wöchentliche Übungsabgaben mit Bonus zur Endnote
+    \item \textbf{Allgemeine Chemie II (OC)} - Wöchentliche Übungsabgaben mit Bonus zur Endnote
+    \item \textbf{Physik I} - Wöchentliche Übungsabgaben mit Bonus zur Endnote
+    \item \textbf{Physik II} - Wöchentliche Übungsabgaben mit Bonus zur Endnote
+    \item \textbf{Organische Chemie I} - Wöchentliche Übungsabgaben mit Bonus zur Endnote
+    \item \textbf{Organische Chemie II} - Wöchentliche Übungsabgaben mit Bonus zur Endnote
+    \item \textbf{Organische Chemie IV} - Wöchentliche Übungsabgaben mit Bonus zur Endnote
+\end{itemize}
+
+Das Bonussystem kann bis zu 0.5 Notenpunkte Verbesserung zur Endprüfung beitragen, wenn mindestens 75\% der Übungsaufgaben erfolgreich bearbeitet wurden. Dies motiviert zur kontinuierlichen Mitarbeit und reduziert die Abhängigkeit von einer einzigen Prüfungsleistung.
+
+\subsection{Vorteile der alternativen Bewertungsformen}
+
+\begin{itemize}
+    \item \textbf{Entzerrung der Prüfungsphasen:} Durch Midterms und kontinuierliche Bewertung wird die Belastung gleichmäßiger über das Semester verteilt
+    \item \textbf{Bessere Lernbegleitung:} Frühzeitige Rückmeldungen ermöglichen rechtzeitige Korrekturen im Lernprozess
+    \item \textbf{Reduzierte Prüfungsangst:} Multiple Bewertungsmöglichkeiten verringern den Druck auf einzelne Prüfungstermine
+    \item \textbf{Förderung kontinuierlichen Lernens:} Bonussysteme motivieren zur regelmäßigen Auseinandersetzung mit dem Stoff
+    \item \textbf{Praxisnähere Bewertung:} Alternative Formate spiegeln besser die spätere Berufspraxis wider
+\end{itemize}
+
+Die Implementation dieser alternativen Leistungsnachweise erfordert eine enge Koordination zwischen den Dozierenden und eine entsprechende Anpassung der Prüfungsordnung. Die gewonnene Flexibilität trägt jedoch erheblich zur Verbesserung der Studienbedingungen und zur Reduktion der Arbeitsbelastung bei.
+
+\section{Conclusion}
+
+Die dargestellte Struktur zeigt die neue modulare Organisation des Chemie-Bachelorstudiums unter PAKETH.  
+Das Modell fasst verwandte Lehrveranstaltungen zu größeren Modulen zusammen und stärkt die Kohärenz zwischen Theorie und Praxis.  
+Für die erfolgreiche Umsetzung sind jedoch gezielte Anpassungen bei Praktika, Prüfungszeitpunkten und Leistungsnachweisen erforderlich, um die Balance zwischen Workload und Qualität zu gewährleisten.
+
+\vfill
+\noindent\textbf{Kontakt:}\\
+\href{mailto:puetzc@vcs.ethz.ch}{puetzc@vcs.ethz.ch} \quad
+\href{mailto:pgaertner@vcs.ethz.ch}{pgaertner@vcs.ethz.ch} \quad
+\href{mailto:glaesers@vcs.ethz.ch}{glaesers@vcs.ethz.ch}
+
+\end{document}
+
